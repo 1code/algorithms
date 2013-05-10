@@ -1,11 +1,11 @@
 package algorithm.cc150.chapter1;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import algorithm.cc150.TestBase;
+import algorithm.TestBase;
 
 public class TestQuestion1 extends TestBase{
 	

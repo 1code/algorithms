@@ -1,4 +1,4 @@
-package algorithm.cc150;
+package algorithm;
 
 import org.junit.Before;
 
