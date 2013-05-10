@@ -1,4 +1,4 @@
 interview
 =========
 
-Include the testcases and the sketch of the algorithms of the interview questions.
+Include the test-cases and the sketch of the algorithms of the interview questions.
