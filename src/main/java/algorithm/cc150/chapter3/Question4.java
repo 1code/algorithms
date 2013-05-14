@@ -23,7 +23,19 @@ public class Question4 {
 
 	public List<Action> hanoi(int numDisks) {
 		//	Write the implementation here.
+		hanoiHelp(numDisks, 1, 2, 3);
 		return actions;
+	}
+	
+	private void hanoiHelp(int numDisks, int from, int via, int to) {
+		if (numDisks == 1) {
+			actions.add(new Action(from, to));
+		}
+		else {
+			hanoiHelp(numDisks - 1, from, to, via);
+			actions.add(new Action(from, to));
+			hanoiHelp(numDisks - 1, via, from, to);
+		}
 	}
 	
 	/** The auxiliary data structure to record the actions. */
