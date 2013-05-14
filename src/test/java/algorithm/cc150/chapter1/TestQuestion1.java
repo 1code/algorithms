@@ -24,7 +24,6 @@ public class TestQuestion1 extends TestBase{
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		assertTrue(question.allUnique(""));
 		assertTrue(question.allUnique("12345abcde"));
 		assertTrue(question.allUnique("1SD&^@ 2345abcde"));
@@ -33,7 +32,6 @@ public class TestQuestion1 extends TestBase{
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
 		assertFalse(question.allUnique("aaaaaaa"));
 		assertFalse(question.allUnique("abcdefge"));
 		assertFalse(question.allUnique("abcdefge_12345a"));

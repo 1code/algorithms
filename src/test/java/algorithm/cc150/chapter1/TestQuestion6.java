@@ -16,14 +16,12 @@ public class TestQuestion6 extends TestBase{
 	
 	@Override
 	protected void initInstance() {
-		// TODO Auto-generated method stub
 		question = new Question6();
 	}
 
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		int[][] case1 = {
 				{1, 2, 3},
 				{4, 5, 6},
@@ -59,8 +57,6 @@ public class TestQuestion6 extends TestBase{
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -18,7 +18,6 @@ public class TestQuestion4 extends TestBase{
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		String case1 = "Mr John Smith    ";
 		assertEquals(case1.trim().replace(" ", "%20"), question.replace(case1.toCharArray(), case1.trim().length()));
 		String case2 = " Mr John Smith      ";
@@ -28,8 +27,6 @@ public class TestQuestion4 extends TestBase{
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

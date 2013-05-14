@@ -16,14 +16,12 @@ public class TestQuestion3 extends TestBase {
 	private Question3 question;
 	@Override
 	protected void initInstance() {
-		// TODO Auto-generated method stub
 		question = new Question3();
 	}
 
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		assertTrue(question.isPermutation("", ""));
 		assertTrue(question.isPermutation("abcde", "bdeac"));
 		assertTrue(question.isPermutation("@!#$%^&*()", ")(*&^%$#!@"));
@@ -33,7 +31,6 @@ public class TestQuestion3 extends TestBase {
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
 		assertFalse(question.isPermutation(null, ""));
 		assertFalse(question.isPermutation("", null));
 		assertFalse(question.isPermutation("aaa", "aaaa"));

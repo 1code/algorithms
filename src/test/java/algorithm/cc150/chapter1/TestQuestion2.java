@@ -19,13 +19,11 @@ public class TestQuestion2 extends TestBase{
 	
 	@Override
 	protected void initInstance() {
-		// TODO Auto-generated method stub
 		question = new Question2();
 	}
 	
 	@Override
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		assertTrue(Arrays.equals("".toCharArray(), question.reverse(null)));
 		
 		assertArrayEquals("".toCharArray(), question.reverse("".toCharArray()));
@@ -37,7 +35,6 @@ public class TestQuestion2 extends TestBase{
 
 	@Override
 	public void testNegCase() {
-		// TODO Auto-generated method stub
 		assertFalse(Arrays.equals("abc".toCharArray(), question.reverse("abc".toCharArray())));
 	}
 

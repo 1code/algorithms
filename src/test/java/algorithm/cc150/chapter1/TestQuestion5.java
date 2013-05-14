@@ -22,14 +22,12 @@ public class TestQuestion5 extends TestBase {
 	
 	@Override
 	protected void initInstance() {
-		// TODO Auto-generated method stub
 		question = new Question5();
 	}
 
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		assertEquals("a2b1c5a3", question.encoding("aabcccccaaa"));
 		assertEquals("abcde", question.encoding("abcde"));
 		assertEquals("aabbccddee", question.encoding("aabbccddee"));
@@ -39,7 +37,6 @@ public class TestQuestion5 extends TestBase {
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
 		assertNotEquals("a1b1c1d1e1", question.encoding("abcde"));
 		assertNotEquals("a2b2c2d2e2", question.encoding("aabbccddee"));
 		assertNotEquals("a3b1c1d3e1", question.encoding("aaabcddde"));

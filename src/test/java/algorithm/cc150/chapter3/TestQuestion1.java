@@ -13,14 +13,12 @@ public class TestQuestion1 extends TestBase {
 	
 	@Override
 	protected void initInstance() {
-		// TODO Auto-generated method stub
 		question = new Question1();
 	}
 
 	@Override
 	@Test
 	public void testPosCase() {
-		// TODO Auto-generated method stub
 		question.push(0, 1);	//	push 1 to first stack
 		assertEquals(1, question.size(0));
 		assertEquals(1, question.top(0));
@@ -55,8 +53,6 @@ public class TestQuestion1 extends TestBase {
 	@Override
 	@Test
 	public void testNegCase() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
