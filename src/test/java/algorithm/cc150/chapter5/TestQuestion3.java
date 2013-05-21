@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter5;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import algorithm.TestBase;
@@ -21,7 +23,10 @@ public class TestQuestion3 extends TestBase {
 	@Override
 	@Test
 	public void testPosCase() {
-		
+		assertEquals(7, question.nextSmallest(11));
+		assertEquals(13, question.nextLargest(11));
+		assertEquals(11, question.nextSmallest(13));
+		assertEquals(11, question.nextLargest(7));
 	}
 
 	@Override
