@@ -4,6 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+/**
+ * TestBase defines the sketch of the test cases.
+ *
+ */
 public abstract class TestBase{
 	
 	@Before
