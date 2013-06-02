@@ -11,10 +11,18 @@ package algorithm.cc150.chapter9;
  */
 public class Question3 {
 	
+	/**
+	 * Return the index of the array that is the magic index.
+	 * If there are multiple, return the first one.
+	 * If there is none, return -1.
+	 * 
+	 * @param array
+	 * @return
+	 */
 	public int findMagicIndex(int[] array) {
 		//	write implement here
-		
-		return 0;
+
+		return -1;
 	}
 
 }
