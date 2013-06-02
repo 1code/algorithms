@@ -8,9 +8,8 @@ package algorithm.cc150.chapter9;
  */
 public class Question1 {
 	
-	public int numOfWays(int numOfStairs) {
+	public long numOfWays(int numOfStairs) {
 		//	write the implement here
-		
 		return 0;
 	}
 }
