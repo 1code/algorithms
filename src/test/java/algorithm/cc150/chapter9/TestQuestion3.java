@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter9;
 
+import java.util.Random;
+
 import org.junit.Test;
 
 import algorithm.TestBase;
@@ -25,6 +27,7 @@ public class TestQuestion3 extends TestBase {
 	@Override
 	@Test
 	public void testPosCase() {
+		//	generate 100 test cases
 		
 	}
 
