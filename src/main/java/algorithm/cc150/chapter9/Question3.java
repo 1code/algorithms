@@ -21,6 +21,12 @@ public class Question3 {
 	 */
 	public int findMagicIndex(int[] array) {
 		//	write implement here
+		
+		for (int i = 0; i < array.length; ++i) {
+			if (array[i] == i) {
+				return i;
+			}
+		}
 
 		return -1;
 	}
