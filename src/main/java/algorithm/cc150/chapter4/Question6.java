@@ -7,7 +7,7 @@ package algorithm.cc150.chapter4;
  * 
  */
 public class Question6 {
-  
-  //  this question is available at leetcode, Binary Tree Inorder Traversal
+
+  // this question is available at leetcode, Binary Tree Inorder Traversal
 
 }

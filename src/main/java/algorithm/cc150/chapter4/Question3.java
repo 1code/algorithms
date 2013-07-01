@@ -7,5 +7,6 @@ package algorithm.cc150.chapter4;
  */
 public class Question3 {
 
-  //  this question is available at leetcode, question Convert Sorted Array to Binary Search Tree
+  // this question is available at leetcode, question Convert Sorted Array to
+  // Binary Search Tree
 }

@@ -11,18 +11,18 @@ import java.util.List;
  * 
  */
 public class Question10 {
-  
+
   public long talleast(List<Box> boxes) {
-    //  write implementaion here
-    
+    // write implementaion here
+
     return 0;
   }
-  
+
   public static class Box {
     public int width;
     public int height;
     public int depth;
-    
+
     public Box(int width, int height, int depth) {
       this.width = width;
       this.height = height;

@@ -5,18 +5,16 @@ package algorithm.cc150.chapter9;
  * desired boolean result value result, implement a function to count the number
  * of ways of parenthesizing the expression such that it evaluates to result.
  * 
- * EXAMPLE
- * Expression: 1^0|0|1
- * Desired result: false (0)
- * Output: 2 ways. 1^((0|0)|1) and 1^(0|(0|1))
+ * EXAMPLE Expression: 1^0|0|1 Desired result: false (0) Output: 2 ways.
+ * 1^((0|0)|1) and 1^(0|(0|1))
  * 
  */
 public class Question11 {
 
   public long numberOfWays(String expression) {
-    //  write implementation here
-    
+    // write implementation here
+
     return 0;
   }
-  
+
 }

@@ -8,5 +8,5 @@ package algorithm.cc150.chapter11;
 public class Question4 {
 
   // this is not a pure algorithm problem
-  
+
 }

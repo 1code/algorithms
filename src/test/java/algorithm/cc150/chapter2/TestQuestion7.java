@@ -11,11 +11,11 @@ import algorithm.TestBase;
 import algorithm.cc150.chapter2.Question7.Node;
 
 /**
- * Implement a function to check if a linked list is a palindrome. 
- *
+ * Implement a function to check if a linked list is a palindrome.
+ * 
  */
 public class TestQuestion7 extends TestBase {
-  
+
   private Question7 question;
 
   @Override
@@ -26,31 +26,30 @@ public class TestQuestion7 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    //  test empty
+    // test empty
     Node<Integer> empty = null;
     assertTrue(question.isPalindrome(empty));
-    
-    //  with only one element
+
+    // with only one element
     Random rnd = new Random();
     Node<Integer> one = new Node<Integer>(rnd.nextInt());
     assertTrue(question.isPalindrome(one));
-    
-    //  palindrome with even elements
+
+    // palindrome with even elements
     Node<Integer> headEven = null;
     Node<Integer> cur = headEven;
     for (int i = 0; i < 10; ++i) {
       cur = new Node<Integer>(i);
       cur = cur.next;
     }
-    
+
     for (int i = 0; i < 10; ++i) {
       cur = new Node<Integer>(10 - i - 1);
       cur = cur.next;
     }
     assertTrue(question.isPalindrome(headEven));
-    
-    
-    //  palindrome with odd elements
+
+    // palindrome with odd elements
     Node<Integer> headOdd = null;
     cur = headOdd;
     for (int i = 0; i < 10; ++i) {
@@ -77,7 +76,5 @@ public class TestQuestion7 extends TestBase {
     }
     assertFalse(question.isPalindrome(head));
   }
-  
-  
 
 }

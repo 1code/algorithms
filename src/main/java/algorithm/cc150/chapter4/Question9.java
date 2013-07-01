@@ -8,5 +8,5 @@ package algorithm.cc150.chapter4;
  */
 public class Question9 {
 
-  //  this question is available at leetcode, question Path Sum II
+  // this question is available at leetcode, question Path Sum II
 }

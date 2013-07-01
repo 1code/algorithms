@@ -38,10 +38,10 @@ public class Question2 {
     }
 
   }
-  
+
   public boolean isRouteBetween(DirectedGraph g, int nodeIdx1, int nodeIdx2) {
-    //  write implementation here
-    
+    // write implementation here
+
     return true;
   }
 

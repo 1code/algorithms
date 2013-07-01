@@ -16,7 +16,7 @@ import algorithm.cc150.chapter4.Question7.Node;
 public class TestQuestion7 extends TestBase {
 
   private Question7 question;
-  
+
   @Override
   protected void initInstance() {
     question = new Question7();
@@ -25,29 +25,29 @@ public class TestQuestion7 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    //  empty tree
+    // empty tree
     assertEquals(null, question.lca(null, null, null));
-    
-    //  all the same node
+
+    // all the same node
     Node<Integer> root = new Node<Integer>(1);
     assertEquals(root.elem, question.lca(root, root, root).elem);
-    
-    //  lca is first
+
+    // lca is first
     Node<Integer> root2 = new Node<Integer>(1);
     Node<Integer> left2 = new Node<Integer>(2);
     root2.left = left2;
     assertEquals(root2.elem, question.lca(root2, root2, left2).elem);
     assertEquals(root2.elem, question.lca(root2, left2, root2).elem);
-    
-    //  lca is root
+
+    // lca is root
     Node<Integer> root3 = new Node<Integer>(1);
     Node<Integer> left3 = new Node<Integer>(2);
     Node<Integer> right3 = new Node<Integer>(3);
     root3.left = left3;
     root3.right = right3;
     assertEquals(root3.elem, question.lca(root3, left3, right3).elem);
-    
-    //  more complex example
+
+    // more complex example
     Node<Integer> root4 = new Node<Integer>(1);
     Node<Integer> level2l = new Node<Integer>(2);
     Node<Integer> level2r = new Node<Integer>(3);
@@ -66,13 +66,13 @@ public class TestQuestion7 extends TestBase {
     assertEquals(root4.elem, question.lca(root, level2l, level4rrr).elem);
     assertEquals(level2r.elem, question.lca(root, level3rl, level3rr));
     assertEquals(level2r.elem, question.lca(root, level3rl, level4rrr));
-    
+
   }
 
   @Override
   @Test
   public void testNegCase() {
-    //  no negative case
+    // no negative case
   }
 
 }

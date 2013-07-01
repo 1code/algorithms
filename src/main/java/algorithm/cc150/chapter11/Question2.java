@@ -6,10 +6,10 @@ package algorithm.cc150.chapter11;
  * 
  */
 public class Question2 {
-  
+
   public void sortAnagrams(String[] strs) {
-    //  write implementation here
-    
+    // write implementation here
+
   }
 
 }

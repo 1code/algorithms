@@ -7,6 +7,6 @@ package algorithm.cc150.chapter11;
  */
 public class Question6 {
 
-  //  this question is available at leetcode, question Search a 2D matrix
-  
+  // this question is available at leetcode, question Search a 2D matrix
+
 }

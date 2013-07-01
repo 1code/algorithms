@@ -9,5 +9,5 @@ package algorithm.cc150.chapter4;
 public class Question1 {
 
   // this question is available at leetcode, question Balanced Binary Tree
-  
+
 }

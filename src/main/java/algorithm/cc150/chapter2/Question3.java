@@ -5,12 +5,11 @@ package algorithm.cc150.chapter2;
  * list, given only access to that node.
  * 
  * 
- * EXAMPLE 
+ * EXAMPLE
  * 
- * Input: the node c from the linked list a ->b ->c ->d ->e 
+ * Input: the node c from the linked list a ->b ->c ->d ->e
  * 
- * Result:
- * nothing is returned, but the new linked list looks like a ->b ->d ->e
+ * Result: nothing is returned, but the new linked list looks like a ->b ->d ->e
  * 
  */
 public class Question3 {

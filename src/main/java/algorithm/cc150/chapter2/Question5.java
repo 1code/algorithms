@@ -9,6 +9,6 @@ package algorithm.cc150.chapter2;
  * 
  */
 public class Question5 {
-  
-  //  this question is available at leetcode, question Add Two Numbers
+
+  // this question is available at leetcode, question Add Two Numbers
 }

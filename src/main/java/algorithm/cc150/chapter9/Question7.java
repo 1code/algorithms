@@ -12,5 +12,5 @@ public class Question7 {
   public void fill(char[][] screen, int x, int y, char color) {
     // write the implementation here
   }
-  
+
 }

@@ -9,9 +9,9 @@ package algorithm.cc150.chapter9;
 public class Question8 {
 
   public long numberOfWays(int cents) {
-    //  write the implementation here
-    
+    // write the implementation here
+
     return 0;
   }
-  
+
 }

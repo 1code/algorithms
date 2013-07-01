@@ -8,7 +8,7 @@ package algorithm.cc150.chapter9;
  * 
  */
 public class Question9 {
-  
-  //available at leetcode.com online judge, question N-Queens
+
+  // available at leetcode.com online judge, question N-Queens
 
 }

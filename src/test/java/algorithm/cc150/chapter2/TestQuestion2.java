@@ -9,11 +9,10 @@ import org.junit.Test;
 import algorithm.TestBase;
 import algorithm.cc150.chapter2.Question2.Node;
 
-
 public class TestQuestion2 extends TestBase {
 
   private Question2 question;
-  
+
   @Override
   protected void initInstance() {
     question = new Question2();
@@ -22,7 +21,7 @@ public class TestQuestion2 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    
+
     Random rnd = new Random();
     for (int c = 0; c < 10; ++c) {
       Node<Integer> head = new Node<Integer>(0);
@@ -37,13 +36,13 @@ public class TestQuestion2 extends TestBase {
       assertEquals(99, question.findKthToLast(0, head).elem.intValue());
       assertEquals(0, question.findKthToLast(99, head).elem.intValue());
     }
-    
+
   }
 
   @Override
   @Test
   public void testNegCase() {
-    //  no negative case
+    // no negative case
   }
 
 }

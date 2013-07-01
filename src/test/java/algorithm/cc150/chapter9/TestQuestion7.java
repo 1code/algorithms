@@ -20,55 +20,37 @@ public class TestQuestion7 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    char[][] screen1 = new char[][] {
-        "rrrrrrrrrr".toCharArray(),
-        "rwwwwwwwwr".toCharArray(),
-        "rwrrwrrrwr".toCharArray(),
-        "rwrrrrrrwr".toCharArray(),
-        "rwwwrrrrwr".toCharArray(),
-        "rwrwwwwwwr".toCharArray(),
-        "rwwwrrrrrw".toCharArray(),
-        "rwwrrrrrww".toCharArray(),
-        "rwwwrrrrrr".toCharArray(),
-        "rrrwwwwrrr".toCharArray()
-    };
-    
-    char[][] result1 = new char[][] {
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray(),
-        "rrrrrrrrrr".toCharArray() 
-    };
-    
+    char[][] screen1 = new char[][] { "rrrrrrrrrr".toCharArray(),
+        "rwwwwwwwwr".toCharArray(), "rwrrwrrrwr".toCharArray(),
+        "rwrrrrrrwr".toCharArray(), "rwwwrrrrwr".toCharArray(),
+        "rwrwwwwwwr".toCharArray(), "rwwwrrrrrw".toCharArray(),
+        "rwwrrrrrww".toCharArray(), "rwwwrrrrrr".toCharArray(),
+        "rrrwwwwrrr".toCharArray() };
+
+    char[][] result1 = new char[][] { "rrrrrrrrrr".toCharArray(),
+        "rrrrrrrrrr".toCharArray(), "rrrrrrrrrr".toCharArray(),
+        "rrrrrrrrrr".toCharArray(), "rrrrrrrrrr".toCharArray(),
+        "rrrrrrrrrr".toCharArray(), "rrrrrrrrrr".toCharArray(),
+        "rrrrrrrrrr".toCharArray(), "rrrrrrrrrr".toCharArray(),
+        "rrrrrrrrrr".toCharArray() };
+
     char[][] copy1 = null;
     cloneArray(copy1, screen1);
     question.fill(copy1, 1, 1, 'r');
     assertArrayEquals(result1, copy1);
-    
-    char[][] result2 = new char[][] {
-        "rrrrrrrrrr".toCharArray(),
-        "rbbbbbbbbr".toCharArray(),
-        "rbrrbrrrbr".toCharArray(),
-        "rbrrrrrrbr".toCharArray(),
-        "rbbbrrrrbr".toCharArray(),
-        "rbrbbbbbbr".toCharArray(),
-        "rbbbrrrrrb".toCharArray(),
-        "rbbrrrrrbb".toCharArray(),
-        "rbbbrrrrrr".toCharArray(),
-        "rrrbbbbrrr".toCharArray()
-    };
-    
+
+    char[][] result2 = new char[][] { "rrrrrrrrrr".toCharArray(),
+        "rbbbbbbbbr".toCharArray(), "rbrrbrrrbr".toCharArray(),
+        "rbrrrrrrbr".toCharArray(), "rbbbrrrrbr".toCharArray(),
+        "rbrbbbbbbr".toCharArray(), "rbbbrrrrrb".toCharArray(),
+        "rbbrrrrrbb".toCharArray(), "rbbbrrrrrr".toCharArray(),
+        "rrrbbbbrrr".toCharArray() };
+
     char[][] copy2 = null;
     cloneArray(copy2, screen1);
     question.fill(copy2, 1, 1, 'b');
     assertArrayEquals(result2, copy2);
-    
+
   }
 
   @Override
@@ -76,7 +58,7 @@ public class TestQuestion7 extends TestBase {
   public void testNegCase() {
     // no negative cases
   }
-  
+
   private static void cloneArray(char[][] dest, char[][] source) {
     if (dest == null) {
       dest = new char[source.length][source[0].length];

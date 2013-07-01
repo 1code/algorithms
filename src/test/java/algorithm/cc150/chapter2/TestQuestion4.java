@@ -16,7 +16,7 @@ import algorithm.cc150.chapter2.Question4.Pair;
  * 
  */
 public class TestQuestion4 extends TestBase {
-  
+
   private Question4 question;
 
   @Override
@@ -44,7 +44,7 @@ public class TestQuestion4 extends TestBase {
         assertTrue(x > first.elem.intValue());
         first = first.next;
       }
-      
+
       while (second != null) {
         assertTrue(x <= second.elem.intValue());
         second = second.next;
@@ -55,8 +55,7 @@ public class TestQuestion4 extends TestBase {
   @Override
   @Test
   public void testNegCase() {
-    //  no negative case
+    // no negative case
   }
 
-  
 }

@@ -7,7 +7,8 @@ package algorithm.cc150.chapter4;
  * 
  */
 public class Question4 {
-  
-  //  this question is available at leetcode, question Populating Next Right Pointers in Each Node I and II
+
+  // this question is available at leetcode, question Populating Next Right
+  // Pointers in Each Node I and II
 
 }

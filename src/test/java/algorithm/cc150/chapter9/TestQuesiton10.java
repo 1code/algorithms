@@ -13,7 +13,7 @@ import algorithm.TestBase;
  * 
  */
 public class TestQuesiton10 extends TestBase {
-  
+
   private Question10 question;
 
   @Override
@@ -25,14 +25,14 @@ public class TestQuesiton10 extends TestBase {
   @Test
   public void testPosCase() {
     // TODO Auto-generated method stub
-    
+
   }
 
   @Override
   @Test
   public void testNegCase() {
     // TODO Auto-generated method stub
-    
+
   }
 
 }
