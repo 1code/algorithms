@@ -32,8 +32,8 @@ public class TestQuestion1 extends TestBase {
      * 1. create an list. 2. fill in unique numbers 3. get a copy list 3. fill
      * in duplicate numbers. 4. shuffle original list 5. call removeDuplicate
      */
-    int[] arr = new int[] {1, 2, 3, 3, 4, 5, 6, 7, 8, 8, 8, 9};
-    int[] expectArr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] arr = new int[] {1, 6, 8, 7, 8, 6, 8, 1, 6, 6, 8, 1};
+    int[] expectArr = new int[] {1, 6, 8, 7};
     ListNode head = arrayToList(arr);
     ListNode expectHead = arrayToList(expectArr);
     Utils.printListNode(head);

@@ -1,8 +1,5 @@
 package algorithm.cc150.chapter2;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import algorithm.common.ListNode;
 
 
@@ -14,24 +11,28 @@ import algorithm.common.ListNode;
  * How would you solve this problem if a temporary buffer is not allowed?
  * 
  */
-//  O(1) space, O(n) time
 public class Question1 {
-  
+
   public void removeDuplicateWithoutBuffer(ListNode head) {
     // write implementation here
     if (head == null) {
       return;
     }
     ListNode cur = head;
-    ListNode nextDiff = cur.next;
-    while (nextDiff != null) {
-      if (cur.val != nextDiff.val) {
-        cur.next = nextDiff;
-        cur = nextDiff;
+    while (cur != null) {
+      ListNode runner = cur;
+      
+      while (runner.next != null) {
+        if (runner.next.val == cur.val) {
+          runner.next = runner.next.next;
+        }
+        else {
+          runner = runner.next;
+        }
       }
-      nextDiff = nextDiff.next;
+      
+      cur = cur.next;
     }
-    cur.next = null;
   }
 
 }
