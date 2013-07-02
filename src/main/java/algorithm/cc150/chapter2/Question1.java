@@ -12,12 +12,12 @@ import java.util.LinkedList;
  */
 public class Question1 {
 
-  public void removeDuplicate(LinkedList list) {
+  public void removeDuplicate(LinkedList<Integer> list) {
     // write implementation here
 
   }
 
-  public void removeDuplicateWithoutBuffer(LinkedList list) {
+  public void removeDuplicateWithoutBuffer(LinkedList<Integer> list) {
     // write implementation here
 
   }

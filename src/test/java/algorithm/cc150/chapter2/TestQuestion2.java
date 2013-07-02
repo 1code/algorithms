@@ -23,7 +23,8 @@ public class TestQuestion2 extends TestBase {
   public void testPosCase() {
 
     Random rnd = new Random();
-    for (int c = 0; c < 10; ++c) {
+    for (int c = 0; c < 100; ++c) {
+      // create list with length 100
       Node<Integer> head = new Node<Integer>(0);
       Node<Integer> cur = head;
       for (int i = 1; i < 100; ++i) {
@@ -32,9 +33,8 @@ public class TestQuestion2 extends TestBase {
         cur = node;
       }
       int k = rnd.nextInt(100);
+      // find the kth to the last
       assertEquals(99 - k, question.findKthToLast(k, head).elem.intValue());
-      assertEquals(99, question.findKthToLast(0, head).elem.intValue());
-      assertEquals(0, question.findKthToLast(99, head).elem.intValue());
     }
 
   }
