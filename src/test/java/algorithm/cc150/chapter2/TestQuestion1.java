@@ -1,13 +1,12 @@
 package algorithm.cc150.chapter2;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Collections;
-import java.util.LinkedList;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 import algorithm.TestBase;
+import algorithm.common.ListNode;
+import algorithm.util.Utils;
 
 /**
  * Write code to remove duplicates from an unsorted linked list.
@@ -33,37 +32,40 @@ public class TestQuestion1 extends TestBase {
      * 1. create an list. 2. fill in unique numbers 3. get a copy list 3. fill
      * in duplicate numbers. 4. shuffle original list 5. call removeDuplicate
      */
-    LinkedList<Integer> list1 = new LinkedList<Integer>();
-    for (int i = 0; i < 100; ++i) {
-      list1.add(i);
+    int[] arr = new int[] {1, 2, 3, 3, 4, 5, 6, 7, 8, 8, 8, 9};
+    int[] expectArr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    ListNode head = arrayToList(arr);
+    ListNode expectHead = arrayToList(expectArr);
+    Utils.printListNode(head);
+    question.removeDuplicateWithoutBuffer(head);
+    Utils.printListNode(head);
+    assertTrue(listEqual(head, expectHead));
+   
+  }
+  
+  private ListNode arrayToList(int[] arr) {
+    if (arr == null) {
+      return null;
     }
-
-    LinkedList<Integer> list1Copy = new LinkedList<Integer>(list1);
-    // add duplicate
-    for (int i = 0; i < 10; ++i) {
-      list1.add(i);
+    ListNode head = new ListNode(arr[0]);
+    ListNode cur = head;
+    for (int i = 1; i < arr.length; ++i) {
+      cur.next = new ListNode(arr[i]);
+      cur = cur.next;
     }
-
-    Collections.shuffle(list1);
-    question.removeDuplicate(list1);
-    Collections.sort(list1);
-    assertEquals(list1Copy, list1);
-
-    LinkedList<Integer> list2 = new LinkedList<Integer>();
-    for (int i = 0; i < 100; ++i) {
-      list2.add(i);
+    return head;
+  }
+  
+  private boolean listEqual(ListNode head1, ListNode head2) {
+    if (head1 == null && head2 == null) {
+      return true;
     }
-
-    LinkedList<Integer> list2Copy = new LinkedList<Integer>(list2);
-    // add duplicate
-    for (int i = 0; i < 10; ++i) {
-      list2.add(i);
+    else if (head1 != null && head2 != null) {
+      return (head1.val == head2.val) && listEqual(head1.next, head2.next);
     }
-
-    Collections.shuffle(list2);
-    question.removeDuplicateWithoutBuffer(list2);
-    Collections.sort(list2);
-    assertEquals(list2Copy, list2);
+    else {
+      return false;
+    }
   }
 
   @Override

@@ -27,8 +27,6 @@ public class Question2 {
     while (cur != null) {
       Node<T> next = cur.next;
       cur.next = prev;
-//      if (prev != null)
-//        System.out.printf("cur [%d].next = prev [%d]\n", cur.elem, prev.elem);
       prev = cur;
       cur = next;
     }
