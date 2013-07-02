@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter2;
 
+import algorithm.common.ListNode;
+
 /**
  * Implement an algorithm to delete a node in the middle of a singly linked
  * list, given only access to that node.
@@ -14,18 +16,30 @@ package algorithm.cc150.chapter2;
  */
 public class Question3 {
 
-  public static class Node<T> {
-    public T elem;
-    public Node<T> next;
-
-    public Node(T elem) {
-      this.elem = elem;
-    }
-  }
-
-  public <T> void deleteMiddle(Node<T> head) {
+  public ListNode deleteMiddle(ListNode head) {
     // write implementation here
-
+    // 1. count length 2. remove the middle
+    int count = 0;
+    ListNode cur = head;
+    while (cur != null) {
+      ++count;
+      cur = cur.next;
+    }
+    if (count == 2) {  // remove all two
+      return null;
+    }
+    cur = head;
+    for (int i = 0; i < (count - 1) / 2 - 1; ++i) {
+      cur = cur.next;
+    }
+    if (count % 2 == 1) {
+      cur.next = cur.next.next;
+    }
+    else {
+      cur.next = cur.next.next.next;
+    }
+    return head;
   }
 
 }
+

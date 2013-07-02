@@ -34,40 +34,13 @@ public class TestQuestion1 extends TestBase {
      */
     int[] arr = new int[] {1, 6, 8, 7, 8, 6, 8, 1, 6, 6, 8, 1};
     int[] expectArr = new int[] {1, 6, 8, 7};
-    ListNode head = arrayToList(arr);
-    ListNode expectHead = arrayToList(expectArr);
-    Utils.printListNode(head);
+    ListNode head = ListNode.arrayToList(arr);
+    ListNode expectHead = ListNode.arrayToList(expectArr);
     question.removeDuplicateWithoutBuffer(head);
-    Utils.printListNode(head);
-    assertTrue(listEqual(head, expectHead));
+    assertTrue(ListNode.listEqual(head, expectHead));
    
   }
   
-  private ListNode arrayToList(int[] arr) {
-    if (arr == null) {
-      return null;
-    }
-    ListNode head = new ListNode(arr[0]);
-    ListNode cur = head;
-    for (int i = 1; i < arr.length; ++i) {
-      cur.next = new ListNode(arr[i]);
-      cur = cur.next;
-    }
-    return head;
-  }
-  
-  private boolean listEqual(ListNode head1, ListNode head2) {
-    if (head1 == null && head2 == null) {
-      return true;
-    }
-    else if (head1 != null && head2 != null) {
-      return (head1.val == head2.val) && listEqual(head1.next, head2.next);
-    }
-    else {
-      return false;
-    }
-  }
-
   @Override
   @Test
   public void testNegCase() {

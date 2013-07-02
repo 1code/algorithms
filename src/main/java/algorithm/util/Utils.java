@@ -32,12 +32,13 @@ public class Utils {
   public static void printListNode(ListNode head) {
     ListNode cur = head;
     StringBuffer sb = new StringBuffer();
+    sb.append('[');
     while (cur != null) {
       sb.append(cur.val);
       sb.append(' ');
       cur = cur.next;
     }
-    sb.append('\n');
+    sb.append("]\n");
     System.out.println(sb.toString());
   }
   

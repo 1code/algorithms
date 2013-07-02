@@ -1,13 +1,14 @@
 package algorithm.cc150.chapter2;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
 
 import org.junit.Test;
 
 import algorithm.TestBase;
-import algorithm.cc150.chapter2.Question3.Node;
+import algorithm.common.ListNode;
+import algorithm.util.Utils;
 
 /**
  * Implement an algorithm to delete a node in the middle of a singly linked
@@ -36,29 +37,30 @@ public class TestQuestion3 extends TestBase {
 
     Random rnd = new Random();
 
-    Node<Integer> actualList = new Node<Integer>(-1);
-    Node<Integer> expectedList = new Node<Integer>(-1);
-    Node<Integer> curActualList = actualList;
-    Node<Integer> curExpectedList = expectedList;
-    int length = 2 * rnd.nextInt(10) + 1;
-    for (int i = 0; i < length; ++i) {
-      curActualList.next = new Node<Integer>(i);
-      curActualList = curActualList.next;
-      if (i != length / 2) {
-        curExpectedList.next = new Node<Integer>(i);
-        curExpectedList = curExpectedList.next;
-      }
-    }
+    // create list
+    int[] arr1 = {1, 2, 3, 4, 5};
+    int[] expectArr1 = {1, 2, 4, 5};
+    ListNode list1 = ListNode.arrayToList(arr1);
+    ListNode expectList1 = ListNode.arrayToList(expectArr1);
+    
+    ListNode newHead1 = question.deleteMiddle(list1);
+    assertTrue(ListNode.listEqual(expectList1, newHead1));
 
-    curActualList = actualList;
-    curExpectedList = expectedList;
-    while (expectedList != null) {
-      assertEquals(curExpectedList.elem.intValue(),
-          curActualList.elem.intValue());
-      curActualList = curActualList.next;
-      curExpectedList = curExpectedList.next;
-    }
-
+    int[] arr2 = {1, 2, 3, 4};
+    int[] expectArr2 = {1, 4};
+    ListNode list2 = ListNode.arrayToList(arr2);
+    ListNode expectList2 = ListNode.arrayToList(expectArr2);
+    
+    ListNode newHead2 = question.deleteMiddle(list2);
+    assertTrue(ListNode.listEqual(expectList2, newHead2));
+    
+    int[] arr3 = {1, 2};
+    int[] expectArr3 = {};
+    ListNode list3 = ListNode.arrayToList(arr3);
+    ListNode expectList3 = ListNode.arrayToList(expectArr3);
+    
+    ListNode newHead3 = question.deleteMiddle(list3);
+    assertTrue(ListNode.listEqual(expectList3, newHead3));
   }
 
   @Override
