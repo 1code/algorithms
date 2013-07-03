@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import algorithm.TestBase;
 import algorithm.common.ListNode;
+import algorithm.util.Utils;
 
 /**
  * Implement a function to check if a linked list is a palindrome.
@@ -36,32 +37,34 @@ public class TestQuestion7 extends TestBase {
     assertTrue(question.isPalindrome(one));
 
     // palindrome with even elements
-    ListNode headEven = null;
+    ListNode headEven = new ListNode(0);
     ListNode cur = headEven;
-    for (int i = 0; i < 10; ++i) {
-      cur = new ListNode(i);
+    for (int i = 0; i < 5; ++i) {
+      cur.next = new ListNode(i);
       cur = cur.next;
     }
 
-    for (int i = 0; i < 10; ++i) {
-      cur = new ListNode(10 - i - 1);
+    for (int i = 0; i < 5; ++i) {
+      cur.next = new ListNode(5 - i - 1);
       cur = cur.next;
     }
+    cur.next = new ListNode(0);
     assertTrue(question.isPalindrome(headEven));
 
     // palindrome with odd elements
-    ListNode headOdd = null;
+    ListNode headOdd = new ListNode(0);
     cur = headOdd;
-    for (int i = 0; i < 10; ++i) {
-      cur = new ListNode(i);
+    for (int i = 0; i < 5; ++i) {
+      cur.next = new ListNode(i);
       cur = cur.next;
     }
-    cur = new ListNode(rnd.nextInt());
+    cur.next = new ListNode(rnd.nextInt());
     cur = cur.next;
-    for (int i = 0; i < 10; ++i) {
-      cur = new ListNode(10 - i - 1);
+    for (int i = 0; i < 5; ++i) {
+      cur.next = new ListNode(5 - i - 1);
       cur = cur.next;
     }
+    cur.next = new ListNode(0);
     assertTrue(question.isPalindrome(headOdd));
   }
 

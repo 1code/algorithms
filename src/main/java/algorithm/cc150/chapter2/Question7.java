@@ -13,10 +13,6 @@ public class Question7 {
 
   public boolean isPalindrome(ListNode head) {
     // write implementation here
-    if (head == null || head.next == null) {
-      return true;
-    }
-
     Stack<Integer> stack = new Stack<Integer>();
     ListNode slow = head;
     ListNode fast = head;
@@ -27,14 +23,16 @@ public class Question7 {
       fast = fast.next.next;
     }
     // if list has odd number of elements
-    if (fast == null) {
+    if (fast != null) {
       slow = slow.next;
     }
 
     while (slow != null) {
-      if (slow.val != stack.pop()) {
+      int top = stack.pop();
+      if (slow.val != top) {
         return false;
       }
+      slow = slow.next;
     }
 
     return true;
