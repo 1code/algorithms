@@ -7,8 +7,8 @@ import java.util.Random;
 import org.junit.Test;
 
 import algorithm.TestBase;
-import algorithm.cc150.chapter2.Question4.Node;
-import algorithm.cc150.chapter2.Question4.Pair;
+import algorithm.common.ListNode;
+import algorithm.util.Utils;
 
 /**
  * Write code to partition a linked list around a value x, such that all nodes
@@ -28,26 +28,28 @@ public class TestQuestion4 extends TestBase {
   @Test
   public void testPosCase() {
     Random rnd = new Random();
+    
     for (int c = 0; c < 10; ++c) {
-      int length = rnd.nextInt(100);
+      int length = rnd.nextInt(20) + 10;
       int x = rnd.nextInt(length);
-      Node<Integer> head = null;
-      Node<Integer> cur = head;
+      ListNode head = new ListNode(0);
+      ListNode cur = head;
       for (int i = 0; i < length; ++i) {
-        cur = new Node<Integer>(i);
+        cur.next = new ListNode(rnd.nextInt(100));
         cur = cur.next;
       }
-      Pair<Integer> pair = question.partition(head, x);
-      Node<Integer> first = pair.first;
-      Node<Integer> second = pair.second;
-      while (first != null) {
-        assertTrue(x > first.elem.intValue());
-        first = first.next;
-      }
-
-      while (second != null) {
-        assertTrue(x <= second.elem.intValue());
-        second = second.next;
+      ListNode newHead = question.partition(head, x);
+      
+      cur = newHead;
+      boolean afterX = newHead.val >= x;
+      while (cur != null) {
+        if (x <= cur.val) {
+          afterX = true;
+        }
+        if (afterX) {
+          assertTrue(x <= cur.val);
+        }
+        cur = cur.next;
       }
     }
   }

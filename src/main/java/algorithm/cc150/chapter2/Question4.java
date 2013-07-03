@@ -1,30 +1,14 @@
 package algorithm.cc150.chapter2;
 
+import algorithm.common.ListNode;
+
 /**
  * Write code to partition a linked list around a value x, such that all nodes
  * less than x come before all nodes greater than or equal to x.
  * 
  */
+// O(n) space, O(n) time
 public class Question4 {
-
-  public static class Node<T> {
-    public T elem;
-    public Node<T> next;
-
-    public Node(T elem) {
-      this.elem = elem;
-    }
-  }
-
-  public static class Pair<T> {
-    public Node<T> first;
-    public Node<T> second;
-
-    public Pair(Node<T> first, Node<T> second) {
-      this.first = first;
-      this.second = second;
-    }
-  }
 
   /**
    * Return a pair of lists, where the first list contains the nodes whose
@@ -35,9 +19,32 @@ public class Question4 {
    * @param x
    * @return
    */
-  public <T> Pair<T> partition(Node<T> head, T x) {
+  public ListNode partition(ListNode head, int x) {
     // write implementation here
-    return null;
+    if (head == null) {
+      return null;
+    }
+
+    ListNode headL = new ListNode(0);
+    ListNode headGe = new ListNode(0);
+    ListNode headLCur = headL;
+    ListNode headGeCur = headGe;
+    ListNode cur = head;
+    while (cur != null) {
+      if (cur.val < x) {
+        headLCur.next = new ListNode(cur.val);
+        headLCur = headLCur.next;
+      }
+      else {
+        headGeCur.next = new ListNode(cur.val);
+        headGeCur = headGeCur.next;
+      }
+      cur = cur.next;
+    }
+    headLCur.next = headGe.next;
+    return headL.next;
   }
 
 }
+
+
