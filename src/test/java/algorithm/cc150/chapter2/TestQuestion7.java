@@ -8,7 +8,7 @@ import java.util.Random;
 import org.junit.Test;
 
 import algorithm.TestBase;
-import algorithm.cc150.chapter2.Question7.Node;
+import algorithm.common.ListNode;
 
 /**
  * Implement a function to check if a linked list is a palindrome.
@@ -27,39 +27,39 @@ public class TestQuestion7 extends TestBase {
   @Test
   public void testPosCase() {
     // test empty
-    Node<Integer> empty = null;
+    ListNode empty = null;
     assertTrue(question.isPalindrome(empty));
 
     // with only one element
     Random rnd = new Random();
-    Node<Integer> one = new Node<Integer>(rnd.nextInt());
+    ListNode one = new ListNode(rnd.nextInt());
     assertTrue(question.isPalindrome(one));
 
     // palindrome with even elements
-    Node<Integer> headEven = null;
-    Node<Integer> cur = headEven;
+    ListNode headEven = null;
+    ListNode cur = headEven;
     for (int i = 0; i < 10; ++i) {
-      cur = new Node<Integer>(i);
+      cur = new ListNode(i);
       cur = cur.next;
     }
 
     for (int i = 0; i < 10; ++i) {
-      cur = new Node<Integer>(10 - i - 1);
+      cur = new ListNode(10 - i - 1);
       cur = cur.next;
     }
     assertTrue(question.isPalindrome(headEven));
 
     // palindrome with odd elements
-    Node<Integer> headOdd = null;
+    ListNode headOdd = null;
     cur = headOdd;
     for (int i = 0; i < 10; ++i) {
-      cur = new Node<Integer>(i);
+      cur = new ListNode(i);
       cur = cur.next;
     }
-    cur = new Node<Integer>(rnd.nextInt());
+    cur = new ListNode(rnd.nextInt());
     cur = cur.next;
     for (int i = 0; i < 10; ++i) {
-      cur = new Node<Integer>(10 - i - 1);
+      cur = new ListNode(10 - i - 1);
       cur = cur.next;
     }
     assertTrue(question.isPalindrome(headOdd));
@@ -68,10 +68,10 @@ public class TestQuestion7 extends TestBase {
   @Override
   @Test
   public void testNegCase() {
-    Node<Integer> head = null;
-    Node<Integer> cur = head;
-    for (int i = 0; i < 10; ++i) {
-      cur = new Node<Integer>(i);
+    ListNode head = new ListNode(0);
+    ListNode cur = head;
+    for (int i = 1; i < 10; ++i) {
+      cur.next = new ListNode(i);
       cur = cur.next;
     }
     assertFalse(question.isPalindrome(head));
