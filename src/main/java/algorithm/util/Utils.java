@@ -30,6 +30,10 @@ public class Utils {
   }
 
   public static void printListNode(ListNode head) {
+    System.out.printf(String.format("%s\n", listNodeToString(head)));
+  }
+  
+  public static String listNodeToString(ListNode head) {
     ListNode cur = head;
     StringBuffer sb = new StringBuffer();
     sb.append('[');
@@ -38,8 +42,8 @@ public class Utils {
       sb.append(' ');
       cur = cur.next;
     }
-    sb.append("]\n");
-    System.out.println(sb.toString());
+    sb.append("]");
+    return sb.toString();
   }
   
 }

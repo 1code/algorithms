@@ -1,13 +1,15 @@
 package algorithm.cc150.chapter2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.Random;
 
 import org.junit.Test;
 
 import algorithm.TestBase;
-import algorithm.cc150.chapter2.Question6.Node;
+import algorithm.common.ListNode;
+import algorithm.util.Utils;
 
 /**
  * Given a circular linked list, implement an algorithm which returns the node
@@ -33,25 +35,33 @@ public class TestQuestion6 extends TestBase {
   @Test
   public void testPosCase() {
     // test empty list
-    Node<Integer> headEmpty = null;
-    question.findLoop(headEmpty);
-
-    Random rnd = new Random();
-    // test circular list
-    Node<Integer> head = new Node<Integer>(0);
-    Node<Integer> cur = head;
-    int loopNodeIdx = rnd.nextInt(10);
-    Node<Integer> loopNode = null;
-    for (int i = 1; i < 10; ++i) {
-      cur.next = new Node<Integer>(i);
-      cur = cur.next;
-      if (i == loopNodeIdx) {
-        loopNode = new Node<Integer>(loopNodeIdx);
+    ListNode headEmpty = null;
+    assertNull(question.findLoop(headEmpty));
+    
+    // test one-element list
+    ListNode oneElemList = new ListNode(1);
+    assertNull(question.findLoop(oneElemList));
+    
+    // test 10 random generated circular list
+    for (int c = 0; c < 10; ++c) {
+      Random rnd = new Random();
+      // test circular list
+      int loopNodeIdx = rnd.nextInt(10);
+      
+      ListNode head = new ListNode(0);
+      ListNode loopNode = head;
+      ListNode cur = head;
+      for (int i = 1; i < 10; ++i) {
+        cur.next = new ListNode(i);
+        if (i == loopNodeIdx) {
+          loopNode = cur.next;
+        }
+        cur = cur.next;
       }
+      cur.next = loopNode; // at the circular at the end
+      ListNode identifiedLoop = question.findLoop(head);
+      assertEquals(loopNode.val, identifiedLoop.val);
     }
-    cur.next = loopNode;
-    Node<Integer> identifiedLoop = question.findLoop(head);
-    assertEquals(loopNode.elem.intValue(), identifiedLoop.elem.intValue());
   }
 
   @Override
