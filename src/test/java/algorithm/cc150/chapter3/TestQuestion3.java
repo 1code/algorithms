@@ -37,21 +37,25 @@ public class TestQuestion3 extends TestBase {
     question.push("d");
     question.push("e");
     question.push("f");
-    question.push("g");
-    assertEquals("g", question.pop()); // [[a b c] <- top [d e f] <- top [g] <-
-                                       // top] <- top
-    assertEquals("c", question.popAt(0)); // [[a b d] <- top [e f g] <- top] <-
+    question.push("g"); // [[a b c] <- top [d e f] <- top [g] <- top] <- top
+    assertEquals("g", question.pop()); // [[a b c] <- top [d e f] <- top] <- top
+    assertEquals("c", question.popAt(0)); // [[a b d] <- top [e f] <- top] <-
                                           // top
-    assertEquals("d", question.popAt(0)); // [[a b e] <- top [f g] <- top] <-
+    assertEquals("d", question.popAt(0)); // [[a b e] <- top [f] <- top] <-
                                           // top
-    assertEquals("g", question.pop()); // [[a b e] <- top [f] <- top] <- top
-    question.push("h"); // [[a b e] <- top [f h] <- top] <- top
-    question.push("i"); // [[a b e] <- top [f h i] <- top] <- top
-    question.push("j"); // [[a b e] <- top [f h i] <- top [j] <- top] <- top
-    question.push("k"); // [[a b e] <- top [f h i] <- top [j k] <- top] <- top
-    assertEquals("i", question.popAt(1)); // [[a b e] <- top [f h j] <- top [k]
-                                          // <- top] <- top
-    assertEquals("k", question.pop());
+    assertEquals("f", question.pop()); // [[a b e] <- top] <- top
+    question.push("h"); // [[a b e] <- top [h] <- top] <- top
+    question.push("i"); // [[a b e] <- top [h i] <- top] <- top
+    question.push("j"); // [[a b e] <- top [h i j] <- top ] <- top
+    question.push("k"); // [[a b e] <- top [h i j] <- top [k] <- top] <- top
+    assertEquals("j", question.popAt(1)); // [[a b e] <- top [h i k] <- top] <- top
+    assertEquals("k", question.pop());  // [[a b e] <- top [h i] <- top] <- top
+    question.push("l"); // [[a b e] <- top [h i l] <- top] <- top
+    question.push("m"); // [[a b e] <- top [h i l] <- top [m] <- top] <- top
+    question.push("n"); // [[a b e] <- top [h i l] <- top [m n] <- top] <- top
+    assertEquals("e", question.popAt(0));  // [[a b h] <- top [i l m] <- top [n] <- top] <- top
+    assertEquals("h", question.popAt(0));  // [[a b i] <- top [l m n] <- top ] <- top
+    assertEquals("n", question.pop());  // [[a b i] <- top [l m] <- top ] <- top
   }
 
   @Override
