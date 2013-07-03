@@ -8,7 +8,9 @@ import java.util.List;
  */
 public class Question1 {
 
-  private List<Integer> singleArray;
+  private static final int BUFFER_SIZE = 100;
+  private int[] buffer;
+  
 
   public void push(int stackIdx, int elem) {
 

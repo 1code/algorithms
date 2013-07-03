@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter3;
 
+import java.util.Stack;
+
 /**
  * How would you design a stack which, in addition to push and pop, also has a
  * function min which returns the minimum elements? Push, pop and min should all
@@ -8,15 +10,33 @@ package algorithm.cc150.chapter3;
  */
 public class Question2 {
 
-  public void push(int elem) {
+  private Stack<Integer> stack;
+  private Stack<Integer> mins;
 
+  public Question2() {
+    stack = new Stack<Integer>();
+    mins = new Stack<Integer>();
+  }  
+
+  public void push(int val) {
+    if (val <= min()) {
+      mins.push(val);
+    }
+    stack.push(val);
   }
 
   public int min() {
-    return 0;
+    if (mins.isEmpty()) {
+      return Integer.MAX_VALUE;
+    }
+    return mins.peek();
   }
 
   public int pop() {
-    return 0;
+    int val = stack.pop();
+    if (val == mins.peek()) {
+      mins.pop();
+    }
+    return val;
   }
 }
