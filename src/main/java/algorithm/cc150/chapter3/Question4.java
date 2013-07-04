@@ -15,6 +15,7 @@ import java.util.List;
  * 
  * Note: the disks are numbered as 1, 2, and 3.
  */
+//  O(2^n) space, O(2^n) time
 public class Question4 {
 
   // put the action sequence into this array list.
@@ -22,17 +23,18 @@ public class Question4 {
 
   public List<Action> hanoi(int numDisks) {
     // Write the implementation here.
-    hanoiHelp(numDisks, 1, 2, 3);
+    move(1, 2, 3, numDisks);
     return actions;
   }
 
-  private void hanoiHelp(int numDisks, int from, int via, int to) {
+  private void move(int from, int via, int to, int numDisks) {
     if (numDisks == 1) {
       actions.add(new Action(from, to));
-    } else {
-      hanoiHelp(numDisks - 1, from, to, via);
+    }
+    else {
+      move(from, to, via, numDisks - 1);
       actions.add(new Action(from, to));
-      hanoiHelp(numDisks - 1, via, from, to);
+      move(via, from, to, numDisks - 1);
     }
   }
 
@@ -70,3 +72,5 @@ public class Question4 {
   }
 
 }
+
+
