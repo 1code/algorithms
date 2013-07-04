@@ -26,6 +26,19 @@ public class TestQuestion5 extends TestBase {
   @Test
   public void testPosCase() {
     assertTrue(question.empty());
+    
+    int[] seq = {1, 2, 3, 4, 5};
+    for (int i = 0; i < seq.length; ++i) {
+      question.enqueue(seq[i]);
+      assertEquals(i + 1, question.size());
+    }
+    
+    while (question.size() != 0) {
+      question.dequeue();
+    }
+    
+    assertEquals(0, question.size());
+    
     int[] randomSequence = new int[10];
     Random rnd = new Random();
     for (int i = 0; i < randomSequence.length; ++i) {
