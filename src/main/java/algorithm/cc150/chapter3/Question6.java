@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter3;
 
+import java.util.Stack;
+
 /**
  * Write a program to sort a stack in ascending order (with biggest items on
  * top). You may use additional stacks to hold items, but you may not copy the
@@ -9,27 +11,43 @@ package algorithm.cc150.chapter3;
  */
 public class Question6 {
 
+  private Stack<Integer> stack = new Stack<Integer>();
+  
   public void push(int elem) {
-    // write implementation here
+    stack.push(elem);
   }
 
   public int pop() {
-    // write implementation here
-    return 0;
+    return stack.pop();
   }
 
   public int peek() {
-    // write implementation here
-    return 0;
+    return stack.peek();
   }
 
   public boolean isEmpty() {
-    // write implementation here
-    return true;
+    return stack.isEmpty();
   }
 
   public void sort() {
     // write implementation here
+    Stack<Integer> sortedStack = new Stack<Integer>();
+    while (!stack.isEmpty()) {
+      // put 1 element from stack to sortedStack each time
+      int len = 0;
+      int top = stack.pop();
+      //  pop all elem larger than top
+      while (!sortedStack.isEmpty() && sortedStack.peek() > top) {
+        stack.push(sortedStack.pop());
+        ++len;
+      }
+      sortedStack.push(top);
+      for (int i = 0; i < len; ++i) {
+        sortedStack.push(stack.pop());
+      }
+    }
+    stack = sortedStack;
   }
 
 }
+

@@ -30,28 +30,15 @@ public class TestQuestion6 extends TestBase {
   @Test
   public void testPosCase() {
     // test basic operation of stack
-    assertTrue(question.isEmpty());
-    question.push(1);
-    assertFalse(question.isEmpty());
-    question.push(2);
-    question.push(3);
-    assertEquals(3, question.peek());
-    assertEquals(3, question.pop());
-    while (!question.isEmpty()) {
-      question.pop();
-    }
-
-    // test the sort function
     Random rnd = new Random();
-    int size = 100;
-    for (int i = 0; i < size; ++i) {
-      question.push(rnd.nextInt());
+    for (int i = 0; i < 10; ++i) {
+      question.push(rnd.nextInt(100));
     }
     question.sort();
-    int last = question.pop();
-    for (int i = 0; i < size - 1; ++i) {
-      assertTrue(last > question.peek());
-      last = question.pop();
+    int prev = question.pop();
+    while (!question.isEmpty()) {
+      assertTrue(prev >= question.peek());
+      prev = question.pop();
     }
   }
 
