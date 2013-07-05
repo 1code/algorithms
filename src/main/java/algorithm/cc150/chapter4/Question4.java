@@ -1,5 +1,8 @@
 package algorithm.cc150.chapter4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Given a binary search tree, design an algorithm which creates a linked list
  * of all the nodes at each depth (e.g., if you have a tree with depth D, you'll
@@ -7,56 +10,59 @@ package algorithm.cc150.chapter4;
  * 
  */
 public class Question4 {
-
-  // this question is available at leetcode, question Populating Next Right
-  // Pointers in Each Node I and II
-  public class TreeLinkNode {
-    int val;
-    TreeLinkNode left, right, next;
-
-    TreeLinkNode(int x) {
-      val = x;
+  
+  public static class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    
+    public TreeNode(int val) {
+      this.val = val;
     }
   }
 
-  public void connect(TreeLinkNode root) {
-    // Start typing your Java solution below
-    // DO NOT write main() function
-    populate(root);
+  public List<List<TreeNode>> createLists(TreeNode root) {
+    //  write implementation here
+    List<List<TreeNode>> lists = new ArrayList<List<TreeNode>>();
+    createListsIterative(root, lists);
+    return lists;
   }
-
-  private void populate(TreeLinkNode node) {
+  
+  private void createListsRecursive(TreeNode node, List<List<TreeNode>> lists, int level) {
     if (node == null) {
       return;
     }
-    TreeLinkNode needNext = null;
-    if (node.left != null) {
-      needNext = node.left;
-      if (node.right != null) {
-        node.left.next = node.right;
+    if (lists.size() == level) {
+      List<TreeNode> list = new ArrayList<TreeNode>();
+      lists.add(list);
+    }
+    List<TreeNode> list = lists.get(level);
+    list.add(node);
+    createListsRecursive(node.left, lists, level + 1);
+    createListsRecursive(node.right, lists, level + 1);
+  }
+  
+  private void createListsIterative(TreeNode root, List<List<TreeNode>> lists) {
+    if (root == null) {
+      return;
+    }
+    List<TreeNode> list = new ArrayList<TreeNode>();
+    list.add(root);
+    
+    while (list.size() > 0) {
+      List<TreeNode> parents = list;
+      lists.add(parents);
+      list = new ArrayList<TreeNode>();
+      for (int i = 0; i < parents.size(); ++i) {
+        TreeNode parent = parents.get(i);
+        if (parent.left != null) {
+          list.add(parent.left);
+        }
+        if (parent.right != null) {
+          list.add(parent.right);
+        }
       }
     }
-
-    if (node.right != null) {
-      needNext = node.right;
-    }
-
-    if (needNext != null && node.next != null) {
-      TreeLinkNode nextParent = node.next;
-      while (nextParent != null) {
-        if (nextParent.left != null) {
-          needNext.next = nextParent.left;
-          break;
-        }
-        if (nextParent.right != null) {
-          needNext.next = nextParent.right;
-          break;
-        }
-        nextParent = nextParent.next;
-      }
-    }
-    populate(node.right);
-    populate(node.left);
   }
   
 }
