@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter3;
 
+import java.util.LinkedList;
+
 /**
  * An animal shelter holds only dogs and cats, and operates on a strictly
  * "first in, first out" basis. People must adopt either the "oldest" (based on
@@ -12,6 +14,8 @@ package algorithm.cc150.chapter3;
  * 
  */
 public class Question7 {
+
+  private LinkedList<Animal> animals = new LinkedList<Animal>();
 
   public static abstract class Animal {
     public int id;
@@ -35,21 +39,54 @@ public class Question7 {
 
   public void enqueue(Animal animal) {
     // write implementation here
+    animals.add(animal);
   }
 
   public Animal dequeueDog() {
     // write implementation here
-    return null;
+    if (animals.size() == 0) {
+      return null;
+    }
+    Animal selected = null;
+    int index = -1;
+    for (int i = 0; i < animals.size(); ++i) {
+      if (animals.get(i) instanceof Dog) {
+        index = i;
+        selected = animals.get(i);
+        break;
+      }
+    }
+    animals.remove(index);
+    return selected;
   }
 
   public Animal dequeueCat() {
     // write implementation here
-    return null;
+    if (animals.size() == 0) {
+      return null;
+    }
+    Animal selected = null;
+    int index = -1;
+    for (int i = 0; i < animals.size(); ++i) {
+      if (animals.get(i) instanceof Cat) {
+        index = i;
+        selected = animals.get(i);
+        break;
+      }
+    }
+    animals.remove(index);
+    return selected;
   }
 
   public Animal dequeueAny() {
     // write implementation here
+    if (animals.size() != 0) {
+      Animal selected = animals.get(0);
+      animals.remove(0);
+      return selected;
+    }
     return null;
   }
 
 }
+
