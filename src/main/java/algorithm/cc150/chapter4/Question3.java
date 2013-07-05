@@ -5,6 +5,7 @@ package algorithm.cc150.chapter4;
  * binary search tree with minimal height.
  * 
  */
+// O(n) space, O(n) time
 public class Question3 {
 
   // this question is available at leetcode, question Convert Sorted Array to

@@ -5,6 +5,7 @@ import java.util.Stack;
 /**
  * Implement a class which implements a queue using two stacks.
  */
+// O(n) space, O(n) time
 public class Question5 {
 
   private Stack<Integer> backupStack;

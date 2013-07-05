@@ -17,6 +17,8 @@ import java.util.Stack;
  * FOLLOW UP Implement a function popAt(int index) which performs a pop
  * operation on a specific sub-stack.
  */
+// space: push O(1), pop O(1)
+// time: push O(1), pop O(n)
 public class Question3 {
 
   private int capacity = 3;

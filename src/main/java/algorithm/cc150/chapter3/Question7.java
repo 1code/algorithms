@@ -13,6 +13,8 @@ import java.util.LinkedList;
  * LinkedList data structure.
  * 
  */
+// space: all O(1)
+// time: enqueue O(1), dequeue O(1), dequeueCat O(n), dequeueDog O(n)
 public class Question7 {
 
   private LinkedList<Animal> animals = new LinkedList<Animal>();

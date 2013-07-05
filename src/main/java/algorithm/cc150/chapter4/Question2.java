@@ -10,6 +10,7 @@ import java.util.Stack;
  * route between two nodes.
  * 
  */
+// O(1) Space, O(V + E) time
 public class Question2 {
 
   public static class DirectedGraph {

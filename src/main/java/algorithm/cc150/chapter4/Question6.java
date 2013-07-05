@@ -6,6 +6,7 @@ package algorithm.cc150.chapter4;
  * to its parent.
  * 
  */
+// O(1) space, O(n) time
 public class Question6 {
 
   // this question is available at leetcode, question Populating Next Right

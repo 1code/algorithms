@@ -9,6 +9,7 @@ import java.util.Stack;
  * the following operations: push, pop, peek, and isEmpty.
  * 
  */
+// O(n) space, O(n^2) time
 public class Question6 {
 
   private Stack<Integer> stack = new Stack<Integer>();

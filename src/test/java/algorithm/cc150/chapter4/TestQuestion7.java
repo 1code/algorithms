@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import algorithm.TestBase;
-import algorithm.cc150.chapter4.Question7.Node;
+import algorithm.cc150.chapter4.Question7.TreeNode;
 
 /**
  * Design an algorithm and write code to find the first common ancestor of two
@@ -29,43 +29,43 @@ public class TestQuestion7 extends TestBase {
     assertEquals(null, question.lca(null, null, null));
 
     // all the same node
-    Node<Integer> root = new Node<Integer>(1);
-    assertEquals(root.elem, question.lca(root, root, root).elem);
+    TreeNode root = new TreeNode(1);
+    assertEquals(root.val, question.lca(root, root, root).val);
 
     // lca is first
-    Node<Integer> root2 = new Node<Integer>(1);
-    Node<Integer> left2 = new Node<Integer>(2);
+    TreeNode root2 = new TreeNode(1);
+    TreeNode left2 = new TreeNode(2);
     root2.left = left2;
-    assertEquals(root2.elem, question.lca(root2, root2, left2).elem);
-    assertEquals(root2.elem, question.lca(root2, left2, root2).elem);
+    assertEquals(root2.val, question.lca(root2, root2, left2).val);
+    assertEquals(root2.val, question.lca(root2, left2, root2).val);
 
     // lca is root
-    Node<Integer> root3 = new Node<Integer>(1);
-    Node<Integer> left3 = new Node<Integer>(2);
-    Node<Integer> right3 = new Node<Integer>(3);
+    TreeNode root3 = new TreeNode(1);
+    TreeNode left3 = new TreeNode(2);
+    TreeNode right3 = new TreeNode(3);
     root3.left = left3;
     root3.right = right3;
-    assertEquals(root3.elem, question.lca(root3, left3, right3).elem);
+    assertEquals(root3.val, question.lca(root3, left3, right3).val);
 
     // more complex example
-    Node<Integer> root4 = new Node<Integer>(1);
-    Node<Integer> level2l = new Node<Integer>(2);
-    Node<Integer> level2r = new Node<Integer>(3);
+    TreeNode root4 = new TreeNode(1);
+    TreeNode level2l = new TreeNode(2);
+    TreeNode level2r = new TreeNode(3);
     root4.left = level2l;
     root4.right = level2r;
-    Node<Integer> level3rl = new Node<Integer>(4);
-    Node<Integer> level3rr = new Node<Integer>(5);
+    TreeNode level3rl = new TreeNode(4);
+    TreeNode level3rr = new TreeNode(5);
     level2r.left = level3rl;
     level2r.right = level3rr;
-    Node<Integer> level4rll = new Node<Integer>(6);
-    Node<Integer> level4rrl = new Node<Integer>(7);
-    Node<Integer> level4rrr = new Node<Integer>(8);
+    TreeNode level4rll = new TreeNode(6);
+    TreeNode level4rrl = new TreeNode(7);
+    TreeNode level4rrr = new TreeNode(8);
     level3rl.left = level4rll;
     level3rr.left = level4rrl;
     level3rr.right = level4rrr;
-    assertEquals(root4.elem, question.lca(root, level2l, level4rrr).elem);
-    assertEquals(level2r.elem, question.lca(root, level3rl, level3rr));
-    assertEquals(level2r.elem, question.lca(root, level3rl, level4rrr));
+    assertEquals(root4.val, question.lca(root, level2l, level4rrr).val);
+    assertEquals(level2r.val, question.lca(root, level3rl, level3rr));
+    assertEquals(level2r.val, question.lca(root, level3rl, level4rrr));
 
   }
 

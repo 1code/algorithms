@@ -6,6 +6,7 @@ package algorithm.cc150.chapter4;
  * heights of the two subtrees of any node never differ by more than one.
  * 
  */
+// O(1) space, O(n) time
 public class Question1 {
 
   // this question is available at leetcode, question Balanced Binary Tree

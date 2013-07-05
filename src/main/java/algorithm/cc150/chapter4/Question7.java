@@ -8,17 +8,17 @@ package algorithm.cc150.chapter4;
  */
 public class Question7 {
 
-  public static class Node<T> {
-    public T elem;
-    public Node<T> left;
-    public Node<T> right;
+  public static class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
-    public Node(T elem) {
-      this.elem = elem;
+    public TreeNode(int val) {
+      this.val = val;
     }
   }
 
-  public <T> Node<T> lca(Node<T> root, Node<T> first, Node<T> second) {
+  public TreeNode lca(TreeNode root, TreeNode first, TreeNode second) {
     // write implementation here
 
     return null;

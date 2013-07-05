@@ -9,6 +9,7 @@ import java.util.List;
  * have D linked lists).
  * 
  */
+// O(n) space, O(1) time
 public class Question4 {
   
   public static class TreeNode {
