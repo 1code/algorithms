@@ -17,11 +17,62 @@ public class Question7 {
       this.val = val;
     }
   }
-
+  
   public TreeNode lca(TreeNode root, TreeNode first, TreeNode second) {
-    // write implementation here
+    return lcaBottomUp(root, first, second);
+  }  
 
-    return null;
+  // top-down: O(n^2) time, O(1) space
+  public TreeNode lcaTopDown(TreeNode root, TreeNode first, TreeNode second) {
+    // write implementation here
+    if (root == null || first == null || second == null) {
+      return null;
+    }
+    if (root == first || root == second) {
+      return root;
+    }
+    int matches = countMatch(root.left, first, second);
+    if (matches == 0) { // all on the right
+      return lcaTopDown(root.right, first, second);
+    }
+    else if (matches == 1) {
+      return root;
+    }
+    else { // on the right
+      return lcaTopDown(root.left, first, second);
+    }
+  }
+
+  private int countMatch(TreeNode node, TreeNode first, TreeNode second) {
+    if (node == null) {
+      return 0;
+    }
+    int matches = countMatch(node.left, first, second) + countMatch(node.right, first, second);
+    if (node == first || node == second) {
+      return 1 + matches;
+    }
+    else {
+      return matches;
+    }
+  }
+
+  public TreeNode lcaBottomUp(TreeNode root, TreeNode first, TreeNode second) {
+    if (root == null) {
+      return null;
+    }
+    if (root == first || root == second) {
+      return root;
+    }
+    TreeNode leftLca = lcaBottomUp(root.left, first, second);
+    TreeNode rightLca = lcaBottomUp(root.right, first, second);
+    if (leftLca != null && rightLca != null) {
+      return root;
+    }
+    return leftLca != null? leftLca : rightLca;
   }
 
 }
+
+
+
+

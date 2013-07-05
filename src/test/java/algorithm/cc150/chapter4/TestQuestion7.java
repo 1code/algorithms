@@ -48,24 +48,35 @@ public class TestQuestion7 extends TestBase {
     assertEquals(root3.val, question.lca(root3, left3, right3).val);
 
     // more complex example
-    TreeNode root4 = new TreeNode(1);
-    TreeNode level2l = new TreeNode(2);
-    TreeNode level2r = new TreeNode(3);
-    root4.left = level2l;
-    root4.right = level2r;
-    TreeNode level3rl = new TreeNode(4);
-    TreeNode level3rr = new TreeNode(5);
-    level2r.left = level3rl;
-    level2r.right = level3rr;
-    TreeNode level4rll = new TreeNode(6);
-    TreeNode level4rrl = new TreeNode(7);
-    TreeNode level4rrr = new TreeNode(8);
-    level3rl.left = level4rll;
-    level3rr.left = level4rrl;
-    level3rr.right = level4rrr;
-    assertEquals(root4.val, question.lca(root, level2l, level4rrr).val);
-    assertEquals(level2r.val, question.lca(root, level3rl, level3rr));
-    assertEquals(level2r.val, question.lca(root, level3rl, level4rrr));
+    /*
+     *                    1
+     *                  /   \
+     *                2       3
+     *                      /   \
+     *                    4       5
+     *                   /      /   \
+     *                  6      7     8
+     */
+    TreeNode one = new TreeNode(1);
+    TreeNode two = new TreeNode(2);
+    TreeNode three = new TreeNode(3);
+    one.left = two;
+    one.right = three;
+    TreeNode four = new TreeNode(4);
+    TreeNode five = new TreeNode(5);
+    three.left = four;
+    three.right = five;
+    TreeNode six = new TreeNode(6);
+    TreeNode seven = new TreeNode(7);
+    TreeNode eight = new TreeNode(8);
+    four.left = six;
+    five.left = seven;
+    five.right = eight;
+    assertEquals(one.val, question.lca(one, two, eight).val);
+    assertEquals(three.val, question.lca(one, four, five).val);
+    assertEquals(three.val, question.lca(one, four, eight).val);
+    assertEquals(three.val, question.lca(one, three, three).val);
+    assertEquals(five.val, question.lca(one, seven, eight).val);
 
   }
 
