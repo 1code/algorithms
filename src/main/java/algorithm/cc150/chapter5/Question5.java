@@ -9,11 +9,11 @@ public class Question5 {
 
   public int convertSteps(int A, int B) {
     // write implementation here.
-    int res = A ^ B;
+    int dif = A ^ B;
     int numOf1 = 0;
-    while (res > 0) {
+    while (dif > 0) {
       ++numOf1;
-      res &= res - 1;
+      dif &= dif - 1;
     }
     return numOf1;
   }

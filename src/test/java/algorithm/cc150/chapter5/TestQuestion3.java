@@ -23,10 +23,12 @@ public class TestQuestion3 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    assertEquals(7, question.nextSmallest(11));
-    assertEquals(13, question.nextLargest(11));
-    assertEquals(11, question.nextSmallest(13));
-    assertEquals(11, question.nextLargest(7));
+    assertEquals(7, question.prev(11));
+    assertEquals(13, question.next(11));
+    assertEquals(11, question.prev(13));
+    assertEquals(11, question.next(7));
+    assertEquals(2, question.next(1));
+    assertEquals(1, question.prev(2));
   }
 
   @Override
