@@ -63,12 +63,13 @@ public class Question7 {
     if (root == first || root == second) {
       return root;
     }
-    TreeNode leftLca = lcaBottomUp(root.left, first, second);
-    TreeNode rightLca = lcaBottomUp(root.right, first, second);
-    if (leftLca != null && rightLca != null) {
+    TreeNode lcaLeft = lca(root.left, first, second);
+    TreeNode lcaRight = lca(root.right, first, second);
+    // each side has one match
+    if (lcaLeft != null && lcaRight != null) {
       return root;
     }
-    return leftLca != null? leftLca : rightLca;
+    return lcaLeft != null? lcaLeft : lcaRight;
   }
 
 }
