@@ -10,11 +10,9 @@ public class Question6 {
 
   public int numInstructions(int num) {
     // write implementation here.
-    int oddBits = num & 0x55555555; // keep the odd bits
     int evenBits = num & 0xaaaaaaaa; // keep the even bits
-    int oddRemoveHighestBit = oddBits & 0x8fffffff; // remove the highest digit
-    return evenBits >> 1 | (oddRemoveHighestBit) << 1; // swap even and odd
-                                                       // digits
+    int oddBits = num & 0x55555555; // keep the odd bits
+    return evenBits >> 1 | oddBits << 1;
   }
 
 }
