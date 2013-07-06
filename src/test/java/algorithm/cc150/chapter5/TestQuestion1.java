@@ -31,15 +31,30 @@ public class TestQuestion1 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    BitSet b1 = BitSet.valueOf(new long[] { Long.parseLong("10000000000") });
-    BitSet b2 = BitSet.valueOf(new long[] { Long.parseLong("10011") });
-    BitSet r1 = BitSet.valueOf(new long[] { Long.parseLong("10001001100") });
+    int b1 = 0b10000000000;
+    int b2 = 0b000010011;
+    int r1 = 0b10001001100;
     assertEquals(r1, question.insert(b1, b2, 2, 6));
-
-    BitSet b3 = BitSet.valueOf(new long[] { Long.parseLong("100000000000") });
-    BitSet b4 = BitSet.valueOf(new long[] { Long.parseLong("100110") });
-    BitSet r2 = BitSet.valueOf(new long[] { Long.parseLong("100010011000") });
-    assertEquals(r1, question.insert(b1, b2, 2, 7));
+    
+    int b3 = 0b100000000000;
+    int b4 = 0b0000100110;
+    int r2 = 0b100010011000;
+    assertEquals(r2, question.insert(b3, b4, 2, 7));
+    
+    int b5 = 0b0000110001;
+    int b6 = 0b0000000101;
+    int r3 = 0b0000101001;
+    assertEquals(r3, question.insert(b5, b6, 3, 5));
+    
+    int b7 = 0b1010101010;
+    int b8 = 0b0101010101;
+    int r4 = 0b0101010101;
+    assertEquals(r4, question.insert(b7, b8, 0, 9));
+    
+    int b9 =  0b1111100000;
+    int b10 = 0b0000001100;
+    int r5 =  0b1111110000;
+    assertEquals(r5, question.insert(b9, b10, 2, 5));
   }
 
   @Override

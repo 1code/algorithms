@@ -1,6 +1,5 @@
 package algorithm.cc150.chapter5;
 
-import java.util.BitSet;
 
 /**
  * You are given two 32-bit numbers, N and M, and wo bit operations, i and j.
@@ -13,12 +12,19 @@ import java.util.BitSet;
  * EXAMPLE Input: N = 10000000000, M = 10011, i = 2, j = 6 Output: N =
  * 1001001100
  */
+// O(n) space, O(1) time
 public class Question1 {
-
-  public BitSet insert(BitSet N, BitSet M, int i, int j) {
-    // insert code here
-
-    return null;
+  
+  public int insert(int N, int M, int i, int j) {
+    int mask = ~0;
+    // clear bits
+    for (int b = i; b <= j; ++b) {
+      N &= ~(1 << b);
+    }
+    // set bits
+    N &= mask;
+    N |= M << i;
+    return N;
   }
 
 }

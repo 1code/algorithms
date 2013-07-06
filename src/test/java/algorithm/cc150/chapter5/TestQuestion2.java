@@ -24,10 +24,19 @@ public class TestQuestion2 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    // these test cases have some problems
-    assertEquals("00111111001110000101000111101100", question.binary(0.72));
-    assertEquals("00111110101000111101011100001010", question.binary(0.32));
-    assertEquals("00111111011001100110011001100110", question.binary(0.90));
+    assertEquals("ERROR", question.binary(0.72));
+    assertEquals("0.1", question.binary(0.5));
+    assertEquals("0.11", question.binary(0.75));
+    assertEquals("0.101", question.binary(0.625));
+    assertEquals("0.001", question.binary(0.125));
+    assertEquals("0.0001", question.binary(0.0625));
+    assertEquals("0.1001", question.binary(0.5625));
+    assertEquals("0.00001", question.binary(0.03125));
+    assertEquals("0.10101", question.binary(0.65625));
+    assertEquals("0.000001", question.binary(0.015625));
+    assertEquals("0.0000001", question.binary(0.0078125));
+    assertEquals("0.00000001", question.binary(0.00390625));
+    assertEquals("0.10101001", question.binary(0.66015625));
   }
 
   @Override
