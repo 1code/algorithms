@@ -10,9 +10,7 @@ public class Question6 {
 
   public int numInstructions(int num) {
     // write implementation here.
-    int evenBits = num & 0xaaaaaaaa; // keep the even bits
-    int oddBits = num & 0x55555555; // keep the odd bits
-    return evenBits >> 1 | oddBits << 1;
+    return num & 0xaaaaaaaa >> 1 | num & 0x55555555 << 1;
   }
 
 }
