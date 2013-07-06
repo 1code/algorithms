@@ -6,6 +6,7 @@ package algorithm.cc150.chapter5;
  * accurately in binary with less than 32 characters, print "ERROR".
  * 
  */
+// O(n) space, O(n) time
 public class Question2 {
 
   public String binary(double num) {
