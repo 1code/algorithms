@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter7;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import algorithm.TestBase;
@@ -24,14 +26,18 @@ public class TestQuestion2 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-
+    int n1 = 3;
+    assertEquals(0.75, question.probability(n1), 0.000001);
+    int n2 = 4;
+    assertEquals(0.875, question.probability(n2), 0.000001);
+    int n3 = 5;
+    assertEquals(0.9375, question.probability(n3), 0.000001);
   }
 
   @Override
   @Test
   public void testNegCase() {
-    // TODO Auto-generated method stub
-
+    //  no negative case
   }
 
 }

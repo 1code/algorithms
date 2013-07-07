@@ -11,7 +11,10 @@ package algorithm.cc150.chapter7;
 public class Question2 {
 
   public double probability(int nVertices) {
-    return 0.0;
+    // write implementation here
+    return 1 - 2 / Math.pow(2, nVertices);
   }
 
 }
+
+
