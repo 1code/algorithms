@@ -14,8 +14,10 @@ public class Question1 {
    * @param p The probability.
    * @return Which game is preferred 1 or 2.
    */
-  public int chooceGame(double p) {
+  public int chooseGame(double p) {
     // write the implementation here
-    return 0;
+    double g1 = p;
+    double g2 = p * p + p * (1 - p) * p + (1 - p) * p * p;
+    return g1 >= g2? 1 : 2;
   }
 }
