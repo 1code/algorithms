@@ -11,8 +11,28 @@ package algorithm.cc150.chapter5;
  */
 public class Question7 {
 
+  /**
+   * Fetch the jth bit of ith integer from arr.
+   * @param arr
+   * @param i
+   * @param j
+   * @return
+   */
+  private int fetch(int[] arr, int i, int j) {
+    return (arr[i] >> j) & 1;
+  }
+  
   public int findMissing(int[] arr, int n) {
-    return 0;
+    int sum = n * (n + 1) / 2;
+    for (int i = 0; i < arr.length; ++i) {
+      int factor = 1;
+      for (int j = 0; j < 32; ++j) {
+        sum -= fetch(arr, i, j) * factor;
+        factor <<= 1;
+      }
+    }
+    return sum;
   }
 
 }
+

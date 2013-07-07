@@ -27,14 +27,23 @@ public class TestQuestion7 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
+    int[] arr0 = {1, 2};
+    assertEquals(0, question.findMissing(arr0, 2));
+    
     int[] arr1 = { 1, 2, 3, 4, 5 };
     assertEquals(0, question.findMissing(arr1, 5));
 
     int[] arr2 = { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10 };
-    assertEquals(0, question.findMissing(arr2, 10));
+    assertEquals(4, question.findMissing(arr2, 10));
 
     int[] arr3 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     assertEquals(10, question.findMissing(arr3, 10));
+    
+    int[] arr4 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16};
+    assertEquals(11, question.findMissing(arr4, 16));
+    
+    int[] arr5 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+    assertEquals(16, question.findMissing(arr5, 16));
   }
 
   @Override
