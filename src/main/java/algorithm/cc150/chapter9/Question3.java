@@ -9,7 +9,6 @@ package algorithm.cc150.chapter9;
  * 
  */
 public class Question3 {
-
   /**
    * Return the index of the array that is the magic index. If there are
    * multiple, return the first one. If there is none, return -1.
@@ -19,14 +18,27 @@ public class Question3 {
    */
   public int findMagicIndex(int[] array) {
     // write implement here
+    return findMagicIndex(array, 0, array.length - 1);
+  }
 
-    for (int i = 0; i < array.length; ++i) {
-      if (array[i] == i) {
-        return i;
-      }
+  private int findMagicIndex(int[] array, int low, int high) {
+    if (low > high || low < 0 || high >= array.length) {
+      return -1;
     }
-
-    return -1;
+    
+    int mid = (low + high) / 2;
+    if (array[mid] == mid) {
+      return mid;
+    }
+    
+    int left = Math.min(mid - 1, array[mid]);
+    int leftRes = findMagicIndex(array, low, left);
+    if (leftRes >= 0) {
+      return leftRes;
+    }
+    
+    int right = Math.max(mid + 1, array[mid]);
+    return findMagicIndex(array, right, high);
   }
 
 }
