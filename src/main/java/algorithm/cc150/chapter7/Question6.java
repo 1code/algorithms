@@ -1,6 +1,5 @@
 package algorithm.cc150.chapter7;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,8 +10,8 @@ import java.util.List;
 public class Question6 {
 
   public static class Point {
-    public int x;
-    public int y;
+    public double x;
+    public double y;
 
     public Point(int x, int y) {
       this.x = x;
@@ -20,17 +19,38 @@ public class Question6 {
     }
   }
 
+  public static class Line {
+    public enum Type {NORMAL, VERTICAL, HORIZONTAL};
+    public Type type;
+    public double a;
+    public double b;
+    public Line(Type type) {
+      this.type = type;
+    }
+    public boolean equals(Object other) {
+      if (other instanceof Line) {
+        
+      }
+      return false;
+    }
+  }
+
   /**
    * 
    * @param points The points in the graph.
-   * @return An array list containing four integer, including the x coordinate
-   *         of the start point of the line, the y coordinate of the start point
-   *         of the line, the x coordinate of the end point of the line, and the
-   *         y coordinate of the end point of the line.
+   * @return An array list containing two integers, the slope and the intercept of the line. 
+   *                if line is vertical (x = c) and horizontal (y = c), return the constant only, 
+   *                if two square coincides, return the x, y of the points.
    */
-  public List<Integer> findLine(List<Point> points) {
+  public double[] findLine(List<Point> points) {
     // write implementation here
-    return new ArrayList<Integer>();
+    double[] arr = null;
+    
+    return arr;
   }
 
 }
+
+
+
+
