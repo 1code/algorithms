@@ -6,6 +6,7 @@ package algorithm.cc150.chapter9;
  * ways the child can run up the stairs.
  * 
  */
+// O(n) space, O(n) time
 public class Question1 {
   public long numOfWays(int numOfStairs) {
     // write the implement here

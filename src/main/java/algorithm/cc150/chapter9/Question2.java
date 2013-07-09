@@ -9,6 +9,7 @@ package algorithm.cc150.chapter9;
  * step on them.
  * 
  */
+// O(nm) space, O(nm) time
 public class Question2 {
 
   // available at leetcode.com online judge, question Unique Path and Unique
@@ -43,3 +44,4 @@ public class Question2 {
   }
 
 }
+

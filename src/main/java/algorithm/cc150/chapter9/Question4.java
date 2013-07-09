@@ -10,10 +10,11 @@ import java.util.Arrays;
 public class Question4 {
 
   // available at leetcode.com online judge, question Subsets
+  // O(2^n) space, O(2^n) time
   public class Solution {
     public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+      // Start typing your Java solution below
+      // DO NOT write main() function
       Arrays.sort(S);
       ArrayList<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
       ArrayList<Integer> curList = new ArrayList<Integer>();
@@ -21,14 +22,15 @@ public class Question4 {
       subsets(S, curList, lists, 0);
       return lists;
     }
-    
-    private void subsets(int[] S, ArrayList<Integer> curList, ArrayList<ArrayList<Integer>> lists, int index) {
+
+    private void subsets(int[] S, ArrayList<Integer> curList,
+        ArrayList<ArrayList<Integer>> lists, int index) {
       if (index == S.length) {
         return;
       }
       // not contain cur
       subsets(S, curList, lists, index + 1);
-      
+
       // contain cur
       ArrayList<Integer> copyList = new ArrayList<Integer>(curList);
       copyList.add(S[index]);
@@ -36,4 +38,5 @@ public class Question4 {
       subsets(S, copyList, lists, index + 1);
     }
   }
+
 }
