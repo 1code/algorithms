@@ -27,17 +27,17 @@ public class TestQuestion1 extends TestBase {
     assertEquals(0, question.numOfWays(0));
     assertEquals(1, question.numOfWays(1));
     assertEquals(2, question.numOfWays(2));
-    assertEquals(3, question.numOfWays(3));
-    assertEquals(6, question.numOfWays(4));
-    assertEquals(11, question.numOfWays(5));
-    assertEquals(20, question.numOfWays(6));
-    assertEquals(37, question.numOfWays(7));
-    assertEquals(68, question.numOfWays(8));
-    assertEquals(125, question.numOfWays(9));
+    assertEquals(4, question.numOfWays(3));
+    assertEquals(7, question.numOfWays(4));
+    assertEquals(13, question.numOfWays(5));
+    assertEquals(24, question.numOfWays(6));
+    assertEquals(44, question.numOfWays(7));
+    assertEquals(81, question.numOfWays(8));
+    assertEquals(149, question.numOfWays(9));
 
-    assertEquals(421132538567l, question.numOfWays(45));
-    assertEquals(4819661885417l, question.numOfWays(49));
-    assertEquals(3927900252338210l, question.numOfWays(60));
+    assertEquals(501774317241l, question.numOfWays(45));
+    assertEquals(5742568741225l, question.numOfWays(49));
+    assertEquals(4680045560037375l, question.numOfWays(60));
   }
 
   @Override
