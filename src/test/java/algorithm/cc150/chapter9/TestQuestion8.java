@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter9;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import algorithm.TestBase;
@@ -22,8 +24,18 @@ public class TestQuestion8 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    // TODO Auto-generated method stub
-
+    int n0 = 0;
+    assertEquals(1, question.numberOfWays(n0));
+    int n1 = 5;
+    assertEquals(2, question.numberOfWays(n1));
+    int n2 = 6;
+    assertEquals(2, question.numberOfWays(n2));
+    int n3 = 10;
+    assertEquals(4, question.numberOfWays(n3));
+    int n4 = 20;
+    assertEquals(9, question.numberOfWays(n4));
+    int n5 = 25;
+    assertEquals(13, question.numberOfWays(n5));
   }
 
   @Override
