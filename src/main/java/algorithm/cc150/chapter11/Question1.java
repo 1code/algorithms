@@ -8,6 +8,7 @@ package algorithm.cc150.chapter11;
 public class Question1 {
 
   // this question is available at leetcode, question Merge Sorted Array
+  // O(n) space, O(n) time
   public class Solution {
     public void merge(int A[], int m, int B[], int n) {
           // Start typing your Java solution below
