@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter11;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import algorithm.TestBase;
@@ -26,15 +28,18 @@ public class TestQuestion8 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
-    // TODO Auto-generated method stub
-
+    int[] stream = {1, 2, 3, 4, 6, 1, 2, 7, 4, 2, 3, 2, 1, 5,  6,  7,  9, 10};
+    int[] ranks =  {0, 1, 2, 3, 4, 1, 3, 7, 6, 4, 6, 5, 2, 11, 13, 15, 16, 17};
+    for (int i = 0; i < stream.length; ++i) {
+      question.track(stream[i]);
+      assertEquals(ranks[i], question.getRankOfNumber(stream[i]));
+    }
   }
 
   @Override
   @Test
   public void testNegCase() {
-    // TODO Auto-generated method stub
-
+    //  no negative case
   }
 
 }
