@@ -7,6 +7,7 @@ package algorithm.cc150.chapter17;
  * '-' denotes the slot that is occupied by player 2.
  * 
  */
+// O(1) space, O(n) time
 public class Question2 {
 
   public boolean won(char[][] board) {

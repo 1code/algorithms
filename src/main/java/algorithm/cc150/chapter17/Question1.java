@@ -5,6 +5,7 @@ package algorithm.cc150.chapter17;
  * variables).
  * 
  */
+// O(n) space, O(1) time
 public class Question1 {
 
   /**
