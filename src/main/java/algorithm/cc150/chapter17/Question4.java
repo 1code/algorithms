@@ -5,6 +5,7 @@ package algorithm.cc150.chapter17;
  * if-else or any other comparison operator.
  * 
  */
+// O(1) space, O(1) time
 public class Question4 {
   
   public int max(int a, int b) {
