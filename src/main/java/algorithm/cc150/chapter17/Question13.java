@@ -13,7 +13,7 @@ package algorithm.cc150.chapter17;
  */
 public class Question13 {
 
-  public class BiNode {
+  public static class BiNode {
     int val;
     BiNode first;
     BiNode second;
