@@ -14,13 +14,13 @@ import algorithm.TestBase;
  * Input: 1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19
  * Result: 3, 9
  */
-public class TestQuestion5 extends TestBase {
+public class TestQuestion6 extends TestBase {
 
-  private Question5 question;
+  private Question6 question;
   
   @Override
   protected void initInstance() {
-    question = new Question5();
+    question = new Question6();
   }
 
   @Override

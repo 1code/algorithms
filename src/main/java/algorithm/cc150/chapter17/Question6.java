@@ -10,7 +10,7 @@ package algorithm.cc150.chapter17;
  * Result: 3, 9
  */
 // O(1) space, O(n) time
-public class Question5 {
+public class Question6 {
   
   public int[] findIndices(int[] arr) {
     //  write implementation here

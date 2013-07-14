@@ -6,7 +6,7 @@ package algorithm.cc150.chapter17;
  * -8, 3, -2, 4, -10 Output: 5
  * 
  */
-public class Question7 {
+public class Question8 {
   
   public int largestContinuousSum(int[] arr) {
     int max = arr[0];

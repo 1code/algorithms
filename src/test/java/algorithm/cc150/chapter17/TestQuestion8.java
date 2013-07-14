@@ -11,13 +11,13 @@ import algorithm.TestBase;
  * -8, 3, -2, 4, -10 Output: 5
  * 
  */
-public class TestQuestion7 extends TestBase {
+public class TestQuestion8 extends TestBase {
 
-  private Question7 question;
+  private Question8 question;
 
   @Override
   protected void initInstance() {
-    question = new Question7();
+    question = new Question8();
   }
 
   @Override
