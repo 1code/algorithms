@@ -32,6 +32,7 @@ public class Question13 {
     BiNode head2 = flatten(root.second);
     
     if (head1 != null) {
+      head1.first = null;
       BiNode tail1 = getTail(head1);
       tail1.second = root;
       root.first = tail1;

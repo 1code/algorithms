@@ -30,7 +30,13 @@ public class TestQuestion13 extends TestBase {
   @Test
   public void testPosCase() {
     /*
-     * 5 / \ 2 9 / \ \ 1 3 16
+     *          5 
+     *         / \ 
+     *       2    9 
+     *      / \    \ 
+     *     1   3    16
+     *             /
+     *            12
      */
     BiNode five = new BiNode(5);
     BiNode two = new BiNode(2);
@@ -38,11 +44,13 @@ public class TestQuestion13 extends TestBase {
     BiNode one = new BiNode(1);
     BiNode three = new BiNode(3);
     BiNode sixteen = new BiNode(16);
+    BiNode twelve = new BiNode(12);
     five.first = two;
     five.second = nine;
     two.first = one;
     two.second = three;
     nine.second = sixteen;
+    sixteen.first = twelve;
 
     BiNode newRoot = question.flatten(five);
     assertEquals(1, newRoot.val);
@@ -50,7 +58,8 @@ public class TestQuestion13 extends TestBase {
     assertEquals(3, newRoot.second.second.val);
     assertEquals(5, newRoot.second.second.second.val);
     assertEquals(9, newRoot.second.second.second.second.val);
-    assertEquals(16, newRoot.second.second.second.second.second.val);
+    assertEquals(12, newRoot.second.second.second.second.second.val);
+    assertEquals(16, newRoot.second.second.second.second.second.second.val);
   }
 
   @Override
