@@ -31,8 +31,8 @@ public class TestQuestion7 extends TestBase {
     String[] words2 = {"a", "b", "c", "d", "ab", "ad", "ac", "bd", "bdc", "bcd", "abcd"};
     assertEquals("abcd", question.longestWord(Arrays.asList(words2)));
     
-    String[] words3 = {"1", "2", "3", "4", "5", "6", "7", "8", "12345678", "123456789"};
-    assertEquals("12345678", question.longestWord(Arrays.asList(words3)));
+    String[] words3 = {"1", "2", "3", "4", "5", "6", "7", "123456", "123456789"};
+    assertEquals("123456", question.longestWord(Arrays.asList(words3)));
     
     String[] words4 = {"abddse", "bdews", "dfadsfre", "adsfasdesdik", "zzdfsiww"};
     assertEquals("", question.longestWord(Arrays.asList(words4)));

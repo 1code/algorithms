@@ -24,9 +24,48 @@ public class Question7 {
   
   public String longestWord(List<String> words) {
     // write implementation here
-    Map<String, Boolean> map = new HashMap<String, Boolean>();
     Collections.sort(words, new LenComparator());
+    // key: word, value: 0, not visited, 1, can be build, 2, cannot
+    Map<String, Integer> map = new HashMap<String, Integer>();
+    for (String word : words) {
+      map.put(word, 0);
+    }
+    
+    for (String word: words) {
+      if (canBeBuilt(word, map, true)) {
+        return word;
+      }
+    }
+    
     return "";
+  }
+  
+  private boolean canBeBuilt(String word, Map<String, Integer> map, boolean fromStart) {
+    Integer result = map.get(word);
+    if (!fromStart && result != null && result != 2) {
+      return true;
+    }
+    if (result != null && result == 2) {
+      return false;
+    }
+    
+    boolean canBeBuilt = false;
+    for (int i = 1; i < word.length(); ++i) {
+      String firstPart = word.substring(0, i);
+      String secondPart = word.substring(i);
+      if (canBeBuilt(firstPart, map, false) && canBeBuilt(secondPart, map, false)) {
+        canBeBuilt = true;
+        break;
+      }
+    }
+    //  update status
+    if (canBeBuilt) {
+      map.put(word, 1);
+    }
+    else {
+      map.put(word, 2);
+    }
+    return canBeBuilt;
   }
 
 }

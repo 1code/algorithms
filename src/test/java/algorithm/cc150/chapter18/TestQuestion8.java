@@ -24,6 +24,11 @@ public class TestQuestion8 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
+    String str0 = "banana";
+    String[] T0 = {"banana", "an", "nana"};
+    int[] indices0 = {0, 1, 2};
+    assertArrayEquals(indices0, question.searchAll(str0, T0));
+    
     String str1 = "a not long string";
     String[] T1 = {"not", "a", "string"};
     int[] indices1 = {2, 0, 11};
