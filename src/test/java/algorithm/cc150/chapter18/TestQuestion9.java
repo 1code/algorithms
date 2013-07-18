@@ -31,15 +31,17 @@ public class TestQuestion9 extends TestBase {
     
     Random rnd = new Random();
     List<Integer> stream = new ArrayList<Integer>();
-    int len = rnd.nextInt(1000);
+    int len = rnd.nextInt(10);
     for (int i = 0; i < len; ++i) {
       int newData = rnd.nextInt();
+      stream.add(newData);
       Collections.sort(stream);
       int realMedian = stream.get(stream.size() / 2);
       if (stream.size() % 2 == 0) {
         realMedian = (realMedian + stream.get(stream.size() / 2 + 1)) / 2;
       }
-      assertEquals(realMedian, question.median(newData));
+      question.add(newData);
+      assertEquals(realMedian, question.median());
     }
     
   }
