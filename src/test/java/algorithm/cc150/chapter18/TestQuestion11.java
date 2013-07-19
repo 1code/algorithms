@@ -1,5 +1,7 @@
 package algorithm.cc150.chapter18;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
@@ -49,7 +51,7 @@ public class TestQuestion11 extends TestBase {
       "wwwwwwww"
     };
     
-    int[] results2 = {0, 3, 0, 3};
+    int[] results2 = {3, 0, 3, 0};
     assertArrayEquals(results2, question.maximumSubSquare(mat2));
     
     String[] mat3 = {
