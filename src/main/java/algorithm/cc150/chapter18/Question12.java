@@ -28,7 +28,6 @@ public class Question12 {
         }
         max = Math.max(max, maxArea(arr));
       }
-      Arrays.fill(arr, 0);
     }
     return max;
   }
