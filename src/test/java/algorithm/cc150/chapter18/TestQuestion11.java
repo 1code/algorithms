@@ -53,17 +53,17 @@ public class TestQuestion11 extends TestBase {
     assertArrayEquals(results2, question.maximumSubSquare(mat2));
     
     String[] mat3 = {
-        "bwwwwwbw",
-        "wwwwwwww",
-        "wwwbwwww",
-        "bwwwwwbw",
+        "bwwbbbbw",
+        "wwwbwwbw",
+        "wwwbwwbw",
+        "bwwbbbbw",
         "wwwwwwbw",
         "wwwwwwww",
         "wwwwwwww",
         "wwwwwwww"
       };
     
-    int[] results3 = {0, 0, 6, 3};
+    int[] results3 = {0, 3, 3, 6};
     assertArrayEquals(results3, question.maximumSubSquare(mat3));
   }
 

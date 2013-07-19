@@ -1,6 +1,7 @@
 package algorithm.cc150.chapter18;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -23,6 +24,14 @@ public class TestQuestion12 extends TestBase {
   @Override
   @Test
   public void testPosCase() {
+    int[][] mat0 = {
+        {1, 1, 1},
+        {1, 1, 1},
+        {1, 1, 1}
+    };
+    int result0 = 9;
+    assertEquals(result0, question.maxSubMatrix(mat0));
+    
     int[][] mat1 = {
         {1, 1, 1, 1, 1, 1},
         {1, 1, 1, 1, 1, 1},
@@ -31,8 +40,8 @@ public class TestQuestion12 extends TestBase {
         {1, 1, 1, 1, 1, 1},
         {1, 1, 1, 1, 1, 1}
     };
-    int[] results1 = {0, 0, 5, 5};
-    assertArrayEquals(results1, question.maxSubMatrix(mat1));
+    int result1 = 36;
+    assertEquals(result1, question.maxSubMatrix(mat1));
     
     int[][] mat2 = {
         {2,  2,  2,  2,  2, 2},
@@ -42,8 +51,8 @@ public class TestQuestion12 extends TestBase {
         {2, -1, -1, -1, -1, 2},
         {2,  2,  2,  2,  2, 2}
     };
-    int[] results2 = {0, 0, 5, 5};
-    assertArrayEquals(results2, question.maxSubMatrix(mat2));
+    int results2 = 32;
+    assertEquals(results2, question.maxSubMatrix(mat2));
     
     int[][] mat3 = {
         {-1,  2, 2, 2, -1},
@@ -52,8 +61,8 @@ public class TestQuestion12 extends TestBase {
         {-2,  1, 1, 1,  1},
         {-2,  1, 1, 1, -1},
     };
-    int[] results3 = {0, 1, 4, 3};
-    assertArrayEquals(results3, question.maxSubMatrix(mat3));
+    int results3 = 16;
+    assertEquals(results3, question.maxSubMatrix(mat3));
     
   }
 
