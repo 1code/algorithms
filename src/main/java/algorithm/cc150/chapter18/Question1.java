@@ -4,6 +4,7 @@ package algorithm.cc150.chapter18;
  * Write a function to add two number without add operation.
  * 
  */
+// O(1) space, O(d) time, where d is the length of bits
 public class Question1 {
 
   public int add(int a, int b) {

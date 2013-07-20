@@ -8,6 +8,7 @@ import java.util.PriorityQueue;
  * numbers. Assume that the computer memory CANNOT hold all one billion numbers.
  * 
  */
+// O(n) space, O(lgn) time
 public class Question6 {
 
   public int[] firstK(int arr[], int k) {

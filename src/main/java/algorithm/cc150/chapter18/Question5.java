@@ -9,6 +9,7 @@ import java.util.List;
  * complexity for your solution?
  * 
  */
+// O(1) space, O(n) time
 public class Question5 {
 
   // one time search

@@ -6,6 +6,7 @@ package algorithm.cc150.chapter18;
  * borders are filled with black pixels.
  * 
  */
+// O(1) space, O(n^4) time
 public class Question11 {
 
   /**

@@ -6,6 +6,7 @@ import java.util.Random;
  * Implement the perfect random shuffle of the (52) cards. 
  *
  */
+// O(n) space, O(n) time
 public class Question2 {
 
   public void perfectShuffle(int[] cards) {

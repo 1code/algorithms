@@ -12,6 +12,7 @@ import java.util.Set;
  * DAMP, LIKE Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
  * 
  */
+// O(n) space, O(n) time
 public class Question10 {
 
   // this problem is available at leetcode, problem Word Ladder I and II

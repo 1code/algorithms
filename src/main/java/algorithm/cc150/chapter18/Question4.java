@@ -4,6 +4,7 @@ package algorithm.cc150.chapter18;
  * Count the number of digit '2' within range of 0 to n.
  * 
  */
+// O(1) space, O(d) time, where d is the length of number
 public class Question4 {
 
   public int numOf2(int n) {

@@ -7,6 +7,7 @@ import java.util.Arrays;
  * submatrix with the largest possible sum.
  * 
  */
+// O(n) space, O(n^3) time
 public class Question12 {
 
   /**

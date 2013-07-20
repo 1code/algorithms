@@ -11,6 +11,7 @@ import java.util.Map;
  * words in the list.
  * 
  */
+// O(1) space, O(2^(d/2)) time, where d is the length of the word.
 public class Question7 {
 
   public static class LenComparator implements Comparator<String> {

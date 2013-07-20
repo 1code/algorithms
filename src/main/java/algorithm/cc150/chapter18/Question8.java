@@ -11,6 +11,7 @@ import java.util.Map;
  * s for each small string in T.
  * 
  */
+// O(n) space, O(logn) time
 public class Question8 {
 
   /**

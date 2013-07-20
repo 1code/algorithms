@@ -8,6 +8,7 @@ import java.util.PriorityQueue;
  * find and maintain the median value as new values are generated.
  * 
  */
+// O(n) space, O(logn) time
 public class Question9 {
 
   public static class MaxHeapComparator implements Comparator<Integer> {

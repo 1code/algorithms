@@ -7,6 +7,7 @@ import java.util.Random;
  * n. Each element must have equal probability of being chosen.
  * 
  */
+// O(m) space, O(1) time
 public class Question3 {
 
   public void randomGenerate(int[] arr, int m) {
