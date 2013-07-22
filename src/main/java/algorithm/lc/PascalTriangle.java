@@ -16,6 +16,7 @@ Return
  [1,4,6,4,1]
 ]
  */
+// O(n^2) space, O(n) time
 public class PascalTriangle {
   
   public class Solution {
