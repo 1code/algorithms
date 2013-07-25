@@ -16,6 +16,7 @@ import java.util.List;
  * For the purpose of this problem, we define empty string as valid palindrome.
  * 
  */
+// O(1) space, O(n) time
 public class ValidPalindrom {
 
   public class Solution {
