@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Given a collection of numbers, return all possible permutations.
+ * Given a collection of numbers that might contain duplicates, return all
+ * possible unique permutations.
  * 
- * For example, [1,2,3] have the following permutations: [1,2,3], [1,3,2],
- * [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
+ * For example, [1,1,2] have the following unique permutations: [1,1,2],
+ * [1,2,1], and [2,1,1].
  * 
  */
-// O(n!) space, O(n!) time, where n is the length of array
-public class Permutations {
+public class PermutationsII {
 
-  public static class Solution {
-    public static ArrayList<ArrayList<Integer>> permute(int[] num) {
+  public class Solution {
+    public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
       // Start typing your Java solution below
       // DO NOT write main() function
       ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
@@ -29,11 +29,11 @@ public class Permutations {
       return res;
     }
 
-    private static boolean nextPermutation(ArrayList<Integer> list) {
+    private boolean nextPermutation(ArrayList<Integer> list) {
       int lastSmaller = -1;
       // find the last elem that is less than its next elem
       for (int i = list.size() - 2; i >= 0; --i) {
-        if (list.get(i) <= list.get(i + 1)) {
+        if (list.get(i) < list.get(i + 1)) {
           lastSmaller = i;
           break;
         }
@@ -67,9 +67,4 @@ public class Permutations {
     }
   }
   
-  public static void main(String[] args) {
-    int[] arr = {1, 0};
-    Solution.permute(arr);
-  }
-
 }
