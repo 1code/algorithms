@@ -12,6 +12,7 @@ import java.util.Map;
  * Note: All inputs will be in lower-case.
  * 
  */
+// O(n) space, O(ndlgd) time, where d is the length of string.
 public class Anagrams {
 
   public class Solution {
