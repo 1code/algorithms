@@ -1,19 +1,23 @@
+package algorithm.lc;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
- * Given a binary tree, return the level order traversal of its nodes' values.
- * (ie, from left to right, level by level).
+ * Given a binary tree, return the bottom-up level order traversal of its nodes'
+ * values. (ie, from left to right, level by level from leaf to root).
  * 
  * For example: Given binary tree {3,9,20,#,#,15,7},
  * 
- * 3 / \ 9 20 / \ 15 7 return its level order traversal as:
+ * 3 / \ 9 20 / \ 15 7 return its bottom-up level order traversal as:
  * 
- * [ [3], [9,20], [15,7] ]
+ * [ [15,7] [9,20], [3], ]
  * 
  */
-public class BinaryTreeLevelOrderTraversal {
+// O(n) space, O(n) time
+public class BinaryTreeLevelOrderTraversalII {
 
   public class TreeNode {
     int val;
@@ -26,10 +30,11 @@ public class BinaryTreeLevelOrderTraversal {
   }
 
   public class Solution {
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    // use a stack to store the level top-down
+    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+      Stack<ArrayList<Integer>> stack = new Stack<ArrayList<Integer>>();
 
       Queue<TreeNode> queue = new LinkedList<TreeNode>();
       if (root != null) {
@@ -50,12 +55,16 @@ public class BinaryTreeLevelOrderTraversal {
             nextLevel.add(node.right);
           }
         }
-        res.add(curLevel);
+        stack.push(curLevel);
         curLevel = new ArrayList<Integer>();
         queue.addAll(nextLevel);
         nextLevel.clear();
       }
 
+      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+      while (!stack.isEmpty()) {
+        res.add(stack.pop());
+      }
       return res;
     }
   }
