@@ -19,22 +19,17 @@ public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] A) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      if (A == null) {
-        return 0;
-      }
-      if (A.length < 2) {
+      if(A.length < 2) {
         return A.length;
       }
-      int i = 1;
-      int j = 1;
-      while (i < A.length) {
-        if (A[i - 1] == A[i]) {
-          ++i;
-        } else {
-          A[j++] = A[i++];
+      int len = 1;
+      for(int i = 1; i < A.length; ++i) {
+        if(A[i] != A[i - 1]) {  // A[i] is duplicate
+          A[len++] = A[i];
         }
       }
-      return j;
+
+      return len;
     }
   }
 
