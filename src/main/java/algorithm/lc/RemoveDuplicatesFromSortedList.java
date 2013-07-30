@@ -8,7 +8,7 @@ package algorithm.lc;
  * 
  */
 // O(1) space, O(n) time
-public class RemoveDuplicateFromSortedList {
+public class RemoveDuplicatesFromSortedList {
 
   public class ListNode {
     int val;
