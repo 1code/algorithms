@@ -21,9 +21,9 @@ import java.util.Map;
 // O(4^n) space, O(4^n) time
 public class LetterCombinationsOfAPhoneNumber {
 
-  public static class Solution {
+  public class Solution {
 
-    public static ArrayList<String> letterCombinations(String number) {
+    public ArrayList<String> letterCombinations(String number) {
       // Start typing your Java solution below
       // DO NOT write main() function
 
@@ -48,7 +48,7 @@ public class LetterCombinationsOfAPhoneNumber {
       return res;
     }
 
-    private static ArrayList<String> expand(ArrayList<String> res,
+    private ArrayList<String> expand(ArrayList<String> res,
         char curLetter, Map<Character, String[]> table) {
       ArrayList<String> newRes = new ArrayList<String>();
 
@@ -59,13 +59,6 @@ public class LetterCombinationsOfAPhoneNumber {
       }
 
       return newRes;
-    }
-  }
-
-  public static void main(String[] args) {
-    String str = "23";
-    for (String res : Solution.letterCombinations(str)) {
-      System.out.println(res);
     }
   }
 }
