@@ -12,37 +12,31 @@ package algorithm.lc;
 public class SearchInSortedArrayII {
 
   public class Solution {
+    // O(1) space, O(n) time, O(lgn) in average
     public boolean search(int[] A, int target) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      int left = 0, right = A.length - 1;
+      int start = 0;
+      int end = A.length - 1;
 
-      while (left <= right) {
-        int mid = (left + right) / 2;
-        if (A[mid] == target) {
+      while (start <= end) {
+        int mid = (start + end) / 2;
+        if (A[mid] == target)
           return true;
+        else if (A[start] == A[mid])
+          start++;
+        else if (A[start] < A[mid]) { // left sorted
+          if (A[start] <= target && target < A[mid]) // in range of left
+            end = mid - 1;
+          else
+            start = mid + 1;
+        } else { // right sorted
+          if (A[mid] < target && target <= A[end]) // in range of right
+            start = mid + 1;
+          else
+            end = mid - 1;
         }
-
-        if (A[mid] < target) {
-          if (A[right] < A[mid] || target <= A[right]) {
-            left = mid + 1;
-          } else if (A[mid] < A[right] && A[right] < target) {
-            right = mid - 1;
-          } else {
-            --right;
-          }
-        } else {
-          if (A[mid] < A[right] || A[right] < target) {
-            right = mid - 1;
-          } else if (A[right] < A[mid] && target <= A[right]) {
-            left = mid + 1;
-          } else {
-            --right;
-          }
-        }
-
       }
-
       return false;
     }
   }
