@@ -7,7 +7,7 @@ package algorithm.lc;
  * 
  */
 // O(1) space, O(n^2) time
-public class LongestPalindromSubstring {
+public class LongestPalindromeSubstring {
 
   public class Solution {
     // expand from each of the 2N - 1 centers
