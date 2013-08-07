@@ -14,6 +14,7 @@ package algorithm.lc;
  * A = [3,2,1,0,4], return false.
  * 
  */
+// O(1) space, O(n) time
 public class JumpGame {
 
   public class Solution {
