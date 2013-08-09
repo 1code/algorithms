@@ -15,8 +15,8 @@ import java.util.ArrayList;
 // O(1) space, O(nm) time
 public class SpiralMatrix {
   
-  public static class Solution {
-    public static ArrayList<Integer> spiralOrder(int[][] matrix) {
+  public class Solution {
+    public ArrayList<Integer> spiralOrder(int[][] matrix) {
           // Start typing your Java solution below
           // DO NOT write main() function
       ArrayList<Integer> res = new ArrayList<Integer>();
@@ -51,11 +51,6 @@ public class SpiralMatrix {
       }
       return res;
     }
-  }
-  
-  public static void main(String[] args) {
-    int[][] matrix = {{2, 5, 8}, {4, 0, -1}};
-    ArrayList<Integer> res = Solution.spiralOrder(matrix);
   }
 
 }
