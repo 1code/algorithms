@@ -44,7 +44,7 @@ public class RemoveDuplicatesFromSortedListII {
             cur = cur.next;
             next = next.next;
           } while (next != null && cur.val == val);
-          if (cur.val == val) { // remove the last one
+          if (cur.val == val) { // prev is the last one
             prev.next = null;
             break;
           } else {
@@ -60,5 +60,7 @@ public class RemoveDuplicatesFromSortedListII {
       return fakeHead.next;
     }
   }
+  
+  
 
 }

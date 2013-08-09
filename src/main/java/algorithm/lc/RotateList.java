@@ -20,10 +20,10 @@ public class RotateList {
     }
   }
 
-  public static class Solution {
+  public class Solution {
     // use two pointer to find the kth node to the end, use it as the new head,
     // and add the old head as its next
-    public static ListNode rotateRight(ListNode head, int n) {
+    public ListNode rotateRight(ListNode head, int n) {
       // Start typing your Java solution below
       // DO NOT write main() function
       if (head == null) {
@@ -60,25 +60,12 @@ public class RotateList {
         slow = slow.next;
       }
 
-      ListNode fakeHead = new ListNode(0);
+      ListNode newHead = slow.next;
 
-      fakeHead.next = slow.next; // create new head
       slow.next = null;
       oldTail.next = head;
 
-      return fakeHead.next;
-    }
-  }
-
-  public static void main(String[] args) {
-    ListNode head = new ListNode(1);
-    ListNode next = new ListNode(2);
-    head.next = next;
-    int n = 1;
-    ListNode res = Solution.rotateRight(head, n);
-    while (res != null) {
-      System.out.println(res.val);
-      res = res.next;
+      return newHead;
     }
   }
 
