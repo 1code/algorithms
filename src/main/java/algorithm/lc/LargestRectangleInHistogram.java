@@ -15,7 +15,7 @@ package algorithm.lc;
  * 
  */
 // O(n) space, O(n) time
-public class MaximumRectangleHistogram {
+public class LargestRectangleInHistogram {
   
   public class Solution {
     // for each bin, find the distance to left boundary and distance to right boundary
