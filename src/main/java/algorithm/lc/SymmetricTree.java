@@ -1,5 +1,8 @@
 package algorithm.lc;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric
  * around its center).
@@ -53,6 +56,52 @@ public class SymmetricTree {
       }
       return left == null && right == null;
     }
+  }
+  
+  /**
+   * Definition for binary tree
+   * public class TreeNode {
+   *     int val;
+   *     TreeNode left;
+   *     TreeNode right;
+   *     TreeNode(int x) { val = x; }
+   * }
+   */
+  public class SolutionRecursive {
+    public boolean isSymmetric(TreeNode root) {
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      
+      Queue<TreeNode> left = new LinkedList<TreeNode>();
+      Queue<TreeNode> right = new LinkedList<TreeNode>();
+      left.offer(root);
+      right.offer(root);
+      // match two sub-tree by level
+      while (left.peek() != null || right.peek() != null) {
+        if (left.peek() == null || right.peek() == null) {
+          return false;
+        }
+        TreeNode l = left.poll();
+        TreeNode r = right.poll();
+        if (l.val != r.val 
+          || (l.left == null) != (r.right == null) 
+          || (l.right == null) != (r.left == null)) {
+          return false;
+        }
+        else {
+          if (l.left != null) {
+            left.offer(l.left);
+            right.offer(r.right);
+          }
+          if (l.right != null) {
+            left.offer(l.right);
+            right.offer(r.left);
+          }
+        }
+      }
+      return true;
+    }
+    
   }
 
 }
