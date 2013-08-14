@@ -6,6 +6,7 @@ package algorithm.lc;
  * Note: You may assume that duplicates do not exist in the tree.
  * 
  */
+// O(n) space, O(n) time
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
   public static class TreeNode {
