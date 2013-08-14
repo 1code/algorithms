@@ -27,6 +27,8 @@ public class RecoverBinarySearchTree {
 
   // O(n) space, O(nlgn) time
   public class Solution {
+    // inorder traversal and record all the values, then sort the values and
+    // fill all the values to the nodes in order
     public void recoverTree(TreeNode root) {
       // Start typing your Java solution below
       // DO NOT write main() function
@@ -51,25 +53,27 @@ public class RecoverBinarySearchTree {
       inorder(node.right, nodeList, valList);
     }
   }
-  
+
   // O(1) space, O(n) time
-  // extend the inorder traversal, use two pointers to track the nodes that needs to be swaped
+  // extend the inorder traversal, use two pointers to track the nodes that
+  // needs to be swaped
   public class SolutionConstantSpace {
     public void recoverTree(TreeNode root) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+      // Start typing your Java solution below
+      // DO NOT write main() function
       Wrapper first = new Wrapper(null);
       Wrapper second = new Wrapper(null);
       Wrapper pre = new Wrapper(null);
-      
+
       inorder(root, first, second, pre);
       // swap two nodes
       int val = first.node.val;
       first.node.val = second.node.val;
       second.node.val = val;
     }
-    
-    private void inorder(TreeNode node, Wrapper first, Wrapper second, Wrapper pre) {
+
+    private void inorder(TreeNode node, Wrapper first, Wrapper second,
+        Wrapper pre) {
       if (node == null) {
         return;
       }
@@ -83,7 +87,7 @@ public class RecoverBinarySearchTree {
       pre.node = node;
       inorder(node.right, first, second, pre);
     }
-    
+
     public class Wrapper {
       TreeNode node;
       public Wrapper(TreeNode node) {

@@ -9,7 +9,7 @@ package algorithm.lc;
 // O(n) space, O(n) time
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
-  public static class TreeNode {
+  public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -21,13 +21,13 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
   // use postorder to find the root, and use root in inorder to get left and
   // right subtree
-  public static class Solution {
-    public static TreeNode buildTree(int[] inorder, int[] postorder) {
+  public class Solution {
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
       return buildTree(inorder, 0, inorder.length - 1, postorder, 0,
           postorder.length - 1);
     }
 
-    public static TreeNode buildTree(int[] inorder, int inFrom, int inTo,
+    public TreeNode buildTree(int[] inorder, int inFrom, int inTo,
         int[] postorder, int postFrom, int postTo) {
       if (postFrom > postTo) { // no available root
         return null;
@@ -49,12 +49,6 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
       
       return root;
     }
-  }
-  
-  public static void main(String[] args) {
-    int[] inorder = {2, 1};
-    int[] postorder = {2, 1};
-    Solution.buildTree(inorder, postorder);
   }
 
 }
