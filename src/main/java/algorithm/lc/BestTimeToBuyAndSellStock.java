@@ -9,6 +9,7 @@ package algorithm.lc;
  * profit.
  * 
  */
+// O(1) space, O(n) time
 public class BestTimeToBuyAndSellStock {
 
   // keep track the min price so far, and record the max profit
