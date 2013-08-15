@@ -48,13 +48,13 @@ public class Question10 {
               continue;
             }
             curChars[i] = c;
-            String str = new String(curChars);
-            if (str.equals(end)) {
+            String newStr = new String(curChars);
+            if (newStr.equals(end)) {
               return dist + 1;
             }
-            if (!visited.contains(str) && dict.contains(str)) {
-              queue.add(new Pair(str, dist + 1));
-              visited.add(str);
+            if (!visited.contains(newStr) && dict.contains(newStr)) {
+              queue.add(new Pair(newStr, dist + 1));
+              visited.add(newStr);
             }
           } 
           curChars[i] = tmp;
