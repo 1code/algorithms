@@ -1,8 +1,6 @@
 package algorithm.cc150.chapter9;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * You have a stack of n boxes, with widths w_i, heights h_i and depths d_i. The

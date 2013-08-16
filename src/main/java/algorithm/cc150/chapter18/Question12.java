@@ -1,6 +1,5 @@
 package algorithm.cc150.chapter18;
 
-import java.util.Arrays;
 
 /**
  * Given an NxN matrix of positive and negative integers, write code to find the
