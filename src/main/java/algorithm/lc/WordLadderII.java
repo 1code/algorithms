@@ -24,7 +24,7 @@ import java.util.List;
  * 
  */
 // This solution is copied from http://standalone.iteye.com/blog/1847367.
-// it is too hard to pass the large case
+// it is too hard to pass the large case for java
 public class WordLadderII {
 
   public static class Solution {
