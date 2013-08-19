@@ -34,17 +34,10 @@ public class ValidateBinarySearchTree {
       if (node == null) {
         return true;
       }
-      boolean isValid = true;
-      if (node.left != null) {
-        isValid = min < node.left.val && node.left.val < node.val && validate(node.left, min, node.val);
-      }
-      if (!isValid) {
+      if (node.val <= min || node.val >= max) {
         return false;
       }
-      if (node.right != null) {
-        isValid = node.val < node.right.val && node.right.val < max && validate(node.right, node.val, max);
-      }
-      return isValid;
+      return validate(node.left, min, node.val) && validate(node.right, node.val, max);
     }
   }
 
