@@ -6,14 +6,15 @@ package algorithm.lc;
  */
 public class Pow {
 
-  //O(1) space, O(logn) time, if length of number is fixed, it is constant running time
+  // O(1) space, O(logn) time, if length of number is fixed, it is constant
+  // running time
   public class Solution {
     public double pow(double x, int n) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+      // Start typing your Java solution below
+      // DO NOT write main() function
       boolean isPositive = n > 0;
       n = Math.abs(n);
-      // right shift index each time 
+      // right shift index each time
       double res = 1;
       double tmp = x;
       while (n > 0) {
@@ -23,28 +24,24 @@ public class Pow {
         tmp *= tmp;
         n >>= 1;
       }
-      return isPositive? 1.0 / res : res;
+      return isPositive ? 1.0 / res : res;
     }
   }
-  
+
   // O(1) space, O(logn) time
   public class Solution2 {
+    // recursive x^n = x^(n / 2) * x^(n / 2) * x^(n % 2)
     public double pow(double x, int n) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      boolean isPositive = n > 0;
-      n = Math.abs(n);
-      double res = getPow(x, n);
-      return isPositive? res : 1.0 / res;
-    }
-    
-    private double getPow(double x, int n) {
+      // Start typing your Java solution below
+      // DO NOT write main() function
       if (n == 0) {
         return 1;
       }
-      double half = getPow(x, n / 2);
-      double res = half * half * (n % 2 == 0? 1 : x);
-      return res;
+      boolean isPositive = n > 0;
+      n = Math.abs(n);
+      double res = pow(x, n / 2);
+      res *= res * (n % 2 == 0 ? 1 : x);
+      return isPositive ? res : 1.0 / res;
     }
   }
 }
