@@ -11,11 +11,8 @@ public class Pow {
     public double pow(double x, int n) {
           // Start typing your Java solution below
           // DO NOT write main() function
-      int sign = 1;
-      if (n < 0) {
-        sign = -1;
-        n = -n;
-      }
+      boolean isPositive = n > 0;
+      n = Math.abs(n);
       // right shift index each time 
       double res = 1;
       double tmp = x;
@@ -26,8 +23,7 @@ public class Pow {
         tmp *= tmp;
         n >>= 1;
       }
-      
-      return sign == -1? 1.0 / res : res;
+      return isPositive? 1.0 / res : res;
     }
   }
 }
