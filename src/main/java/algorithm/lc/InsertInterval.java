@@ -37,6 +37,7 @@ public class InsertInterval {
     }
   }
 
+  // insert into lists and then use the same method of merge interval.
   public class Solution {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals,
         Interval newInterval) {
@@ -84,6 +85,41 @@ public class InsertInterval {
         int cmp = i1.start - i2.start;
         return cmp == 0 ? i1.end - i2.end : cmp;
       }
+    }
+  }
+
+  // only one scan
+  public class Solution2 {
+    public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      ArrayList<Interval> res = new ArrayList<Interval>();
+      int start = newInterval.start;
+      int end = newInterval.end;
+      boolean finished = false;
+      for (int i = 0; i < intervals.size(); ++i) {
+        Interval interval = intervals.get(i);
+        if (interval.end < start) {
+          res.add(interval);
+        }
+        else if (interval.start > end) { // after merged
+          if (finished == false) {
+            res.add(new Interval(start, end));
+            finished = true;
+          }
+          res.add(interval);
+        }
+        else {
+          start = Math.min(interval.start, start);
+          end = Math.max(interval.end, end);
+        }
+      }
+      
+      if (finished == false) {
+        res.add(new Interval(start, end));
+      }
+      
+      return res;
     }
   }
 

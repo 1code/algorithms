@@ -21,46 +21,41 @@ public class ThreeSum {
   public class Solution {
     // two pointers,
     public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+      // Start typing your Java solution below
+      // DO NOT write main() function
       Arrays.sort(num);
-      int i = 0;
-      while (i < num.length - 1) {
+      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+      for (int i = 0; i < num.length - 2; ++i) {
         int j = i + 1;
         int k = num.length - 1;
         while (j < k) {
-          int value = num[i] + num[k] + num[j];
-          if (value < 0) {
-            ++j;
-          }
-          else if (value > 0) {
-            --k;
-          }
-          else {
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            list.add(num[i]);
-            list.add(num[j]);
-            list.add(num[k]);
-            results.add(list);
+          int sum = num[i] + num[j] + num[k];
+          if (sum == 0) {
+            ArrayList<Integer> solution = new ArrayList<Integer>();
+            solution.add(num[i]);
+            solution.add(num[j]);
+            solution.add(num[k]);
+            res.add(solution);
             ++j;
             --k;
-            while (j < k && num[j] == num[j - 1]) {
+            while (j < k && num[j - 1] == num[j]) {
               ++j;
             }
-            while (j < k && num[k] == num[k + 1]) {
+            while (j < k && num[k + 1] == num[k]) {
               --k;
             }
+          } else if (sum < 0) {
+            ++j;
+          } else if (sum > 0) {
+            --k;
           }
         }
-        ++i;
-        while (i < k && num[i] == num[i - 1]) {
+        while (i < k && num[i] == num[i + 1]) {
           ++i;
         }
       }
-      
-      return results;
+      return res;
     }
   }
-  
+
 }

@@ -54,7 +54,6 @@ public class MergeIntervals {
       }
 
       res.add(new Interval(start, end));
-
       return res;
     }
 
