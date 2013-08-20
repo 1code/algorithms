@@ -8,28 +8,23 @@ package algorithm.lc;
  */
 public class Sqrt {
 
+  // Netwon method
   public class Solution {
-    // use Newton method
     public int sqrt(int x) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      return x == 0 ? 0 : sqrtD(x);
-    }
-
-    private int sqrtD(double x) {
-      double a = 1;
-      while (!isCloseEnough(x, a)) {
-        a = (x / a + a) / 2;
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      double guess = 1;
+      while (!closeEnough(guess, x)) {
+        guess = (x / guess + guess) / 2;
       }
-      return (int) a;
+      return (int)guess;
     }
-
-    private boolean isCloseEnough(double x, double a) {
-      if (Math.abs(x - a * a) < 1) {
+    
+    private boolean closeEnough(double guess, int x) {
+      if (Math.abs(guess * guess - x) < 0.1) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     }
   }
 
