@@ -1,6 +1,5 @@
 package algorithm.cc150.chapter2;
 
-import algorithm.lc.ReverseList2.ListNode;
 
 /**
  * Implement an algorithm to find the kth to last element of a singly linked

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
@@ -37,13 +38,13 @@ public class Question6 {
     }
 
     private Collection<String> generate(String seed) {
-      Set<String> set = new HashSet<String>();
-      for (int i = 0; i <= seed.length(); ++i) {
+      List<String> list = new ArrayList<String>();
+      for (int i = 0; i <= seed.length() / 2; ++i) {
         StringBuilder sb = new StringBuilder(seed);
         sb.insert(i, "()");
-        set.add(sb.toString());
+        list.add(sb.toString());
       }
-      return set;
+      return list;
     }      
   }
 }

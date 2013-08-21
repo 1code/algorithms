@@ -1,6 +1,5 @@
 package algorithm.cc150.chapter3;
 
-import java.util.List;
 
 /**
  * Describe how you could use a single array to implement three stacks.
