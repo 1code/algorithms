@@ -50,22 +50,21 @@ public class Combinations {
           // Start typing your Java solution below
           // DO NOT write main() function
       ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-      ArrayList<Integer> cur = new ArrayList<Integer>();
-      Pair pair = new Pair(0, cur);
+      Pair pair = new Pair(0, new ArrayList<Integer>());
       Stack<Pair> stack = new Stack<Pair>();
       stack.push(pair);
-      
       while (!stack.isEmpty()) {
-        Pair top = stack.pop();
-        int nextIdx = top.nextIdx;
-        ArrayList<Integer> list = top.list;
+        Pair cur = stack.pop();
+        ArrayList<Integer> list = cur.list;
         if (list.size() == k) {
           res.add(list);
         }
-        else if (nextIdx < n) {
-          stack.push(new Pair(nextIdx + 1, new ArrayList<Integer>(list)));
-          list.add(nextIdx + 1);
-          stack.push(new Pair(nextIdx + 1, new ArrayList<Integer>(list)));
+        else if (cur.curIdx < n) {
+          ArrayList<Integer> listWithout = new ArrayList<Integer>(list);
+          stack.push(new Pair(cur.curIdx + 1, listWithout));
+          ArrayList<Integer> listWith = new ArrayList<Integer>(list);
+          listWith.add(cur.curIdx + 1);
+          stack.push(new Pair(cur.curIdx + 1, listWith));
         }
       }
       
@@ -73,10 +72,10 @@ public class Combinations {
     }
     
     public class Pair {
-      public int nextIdx;
-      public ArrayList<Integer> list;
-      public Pair(int nextIdx, ArrayList<Integer> list) {
-        this.nextIdx = nextIdx;
+      int curIdx;
+      ArrayList<Integer> list;
+      public Pair(int curIdx, ArrayList<Integer> list) {
+        this.curIdx = curIdx;
         this.list = list;
       }
     }
