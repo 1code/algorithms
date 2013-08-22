@@ -30,7 +30,7 @@ public class DecodeWays {
       for (int i = 1; i <= s.length(); ++i) {
         int cur = s.charAt(i - 1) - '0';
         int value = prev * 10 + cur;
-        if (cur == 0 && (prev > 2 || prev == 0)) {
+        if (cur == 0 && (value != 10 && value != 20)) {
           return 0; // invalid code
         }
         if (value == 20 || value == 10) {
