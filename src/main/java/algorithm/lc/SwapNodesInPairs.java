@@ -9,7 +9,6 @@ package algorithm.lc;
  * in the list, only nodes itself can be changed.
  * 
  */
-// O(1) space, O(n) time
 public class SwapNodesInPairs {
 
   public class ListNode {
@@ -22,6 +21,7 @@ public class SwapNodesInPairs {
     }
   }
 
+  // O(1) space, O(n) time
   public class Solution {
     // use three pointer to traverse the list
     public ListNode swapPairs(ListNode head) {
@@ -43,6 +43,37 @@ public class SwapNodesInPairs {
         cur = cur.next;
       }
 
+      return fakeHead.next;
+    }
+  }
+
+  // O(1) space, O(n) time
+  public class Solution2 {
+    public ListNode swapPairs(ListNode head) {
+      // Start typing your Java solution below
+      // DO NOT write main() function
+      ListNode fakeHead = new ListNode(0);
+      fakeHead.next = head;
+      ListNode cur = fakeHead;
+      ListNode slow;
+      ListNode fast;
+      while (true) {
+        slow = cur;
+        slow = slow.next;
+        if (slow != null) {
+          fast = slow.next;
+        } else {
+          break;
+        }
+        if (fast != null) {
+          slow.next = fast.next;
+          fast.next = slow;
+          cur.next = fast;
+        } else {
+          break;
+        }
+        cur = slow;
+      }
       return fakeHead.next;
     }
   }
