@@ -12,7 +12,7 @@ import java.util.Arrays;
  * The replacement must be in-place, do not allocate extra memory.
  * 
  * Here are some examples. Inputs are in the left-hand column and its
- * corresponding outputs are in the right-hand column. 
+ * corresponding outputs are in the right-hand column.
  * 
  * 1,2,3 → 1,3,2
  * 
@@ -24,54 +24,52 @@ import java.util.Arrays;
 // O(1) space, O(n) time, n is the length of array
 public class NextPermutation {
 
-  public class Solution {
+  public static class Solution {
     // Conduct in 4 steps:
     // 1. find the last elem that is smaller than its next elem.
     // 2. find the last elem that is bigger than preivously found elem
     // 3. swap these two elems
     // 4. reverse the elems that appear after the elem found in 1.
     public void nextPermutation(int[] num) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      int lastSmaller = -1;
-      // find the last elem that is smaller than its next elem
-      for (int i = num.length - 2; i >= 0; --i) {
-        if (num[i] < num[i + 1]) {
-          lastSmaller = i;
-          break;
-        }
-      }
-      
-      if (lastSmaller == -1) {
-        Arrays.sort(num);
+      // Start typing your Java solution below
+      // DO NOT write main() function
+      if (num.length == 1) {
         return;
       }
-      
-      // find the last elem that is bigger than num[lastSmaller]
-      int lastBigger = num.length - 1;
-      for (; lastBigger > 0; --lastBigger) {
-        if (num[lastBigger] > num[lastSmaller]) {
-          break;
+      int lastSmaller = num.length - 2;
+      while (num[lastSmaller] >= num[lastSmaller + 1]) {
+        --lastSmaller;
+        if (lastSmaller < 0) {
+          Arrays.sort(num);
+          return;
         }
       }
-      
-      // swap
-      int tmp = num[lastBigger];
-      num[lastBigger] = num[lastSmaller];
-      num[lastSmaller] = tmp;
-      ++lastSmaller;
-      
-      // reverse all the elements from lastSmaller to the end
+      int lastBigger = num.length - 1;
+      while (num[lastBigger] <= num[lastSmaller]) {
+        --lastBigger;
+      }
+      swap(num, lastBigger, lastSmaller++);
+
       int last = num.length - 1;
       while (lastSmaller < last) {
-        tmp = num[last];
-        num[last] = num[lastSmaller];
-        num[lastSmaller] = tmp;
-        ++lastSmaller;
-        --last;
+        swap(num, lastSmaller++, last--);
       }
-
     }
+
+    private void swap(int[] num, int first, int second) {
+      int tmp = num[first];
+      num[first] = num[second];
+      num[second] = tmp;
+    }
+  }
+  
+  public static void main(String[] args) {
+    int[] num = {2, 3, 1, 1, 1};
+    Solution s = new Solution();
+    s.nextPermutation(num);
+    System.out.println(Arrays.toString(num));
+    s.nextPermutation(num);
+    System.out.println(Arrays.toString(num));
   }
 
 }

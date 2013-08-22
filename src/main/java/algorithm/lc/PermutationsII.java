@@ -2,6 +2,7 @@ package algorithm.lc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Given a collection of numbers that might contain duplicates, return all
@@ -15,55 +16,52 @@ public class PermutationsII {
 
   public class Solution {
     public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-      ArrayList<Integer> cur = new ArrayList<Integer>();
+          // Start typing your Java solution below
+          // DO NOT write main() function
       Arrays.sort(num);
+      ArrayList<Integer> cur = new ArrayList<Integer>();
       for (int i : num) {
         cur.add(i);
       }
-      do {
-        res.add(cur);
-      } while (nextPermutation(cur));
+      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+      res.add(new ArrayList<Integer>(cur));
+      if (cur.size() <= 1) {
+        return res;
+      }
+      while (next(cur)) {
+        res.add(new ArrayList<Integer>(cur));
+      }
       return res;
     }
-
-    private boolean nextPermutation(ArrayList<Integer> list) {
-      int lastSmaller = -1;
-      // find the last elem that is less than its next elem
-      for (int i = list.size() - 2; i >= 0; --i) {
-        if (list.get(i) < list.get(i + 1)) {
-          lastSmaller = i;
-          break;
+    
+    private boolean next(ArrayList<Integer> cur) {
+      int lastSmaller = cur.size() - 2;
+      while (cur.get(lastSmaller) >= cur.get(lastSmaller + 1)) {
+        --lastSmaller;
+        if (lastSmaller < 0) {
+          return false;
         }
       }
-      if (lastSmaller == -1) {
-        return false; // already the last permutation
+      
+      int firstBigger = cur.size() - 1;
+      while (cur.get(firstBigger) <= cur.get(lastSmaller)) {
+        -- firstBigger;
       }
-
-      int lastBigger = list.size() - 1;
-      // find the last elem that is bigger than list.get(lastSmaller)
-      for (; lastBigger >= 1; --lastBigger) {
-        if (list.get(lastBigger) > list.get(lastSmaller)) {
-          break;
-        }
-      }
-      // swap
-      int tmp = list.get(lastBigger);
-      list.set(lastBigger, list.get(lastSmaller));
-      list.set(lastSmaller, tmp);
+      swap(cur, lastSmaller, firstBigger);
       ++lastSmaller;
-      // reverse
-      int last = list.size() - 1;
+      int last = cur.size() - 1;
       while (lastSmaller < last) {
-        tmp = list.get(lastSmaller);
-        list.set(lastSmaller, list.get(last));
-        list.set(last, tmp);
+        swap(cur, lastSmaller, last);
         ++lastSmaller;
         --last;
       }
       return true;
+    }
+    
+    private void swap(List<Integer> list, int first, int second) {
+      int tmp = list.get(first);
+      list.set(first, list.get(second));
+      list.set(second, tmp);
     }
   }
   

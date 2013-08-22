@@ -25,6 +25,9 @@ public class Permutations {
       }
       ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
       res.add(new ArrayList<Integer>(cur));
+      if (cur.size() <= 1) {
+        return res;
+      }
       while (next(cur)) {
         res.add(new ArrayList<Integer>(cur));
       }
@@ -33,14 +36,15 @@ public class Permutations {
     
     private boolean next(ArrayList<Integer> cur) {
       int lastSmaller = cur.size() - 2;
-      while (lastSmaller >= 0 && cur.get(lastSmaller) > cur.get(lastSmaller + 1)) {
+      while (cur.get(lastSmaller) >= cur.get(lastSmaller + 1)) {
         --lastSmaller;
+        if (lastSmaller < 0) {
+          return false;
+        }
       }
-      if (lastSmaller == -1) {
-        return false;
-      }
+      
       int firstBigger = cur.size() - 1;
-      while (cur.get(firstBigger) < cur.get(lastSmaller)) {
+      while (cur.get(firstBigger) <= cur.get(lastSmaller)) {
         -- firstBigger;
       }
       swap(cur, lastSmaller, firstBigger);
