@@ -15,54 +15,45 @@ package algorithm.lc;
  */
 public class WordSearch {
   
-  public class Solution {
-
+  public static class Solution {
     public boolean exist(char[][] board, String word) {
-      if(word.length() == 0) {
-        return true;
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      if (board.length == 0 || board[0].length == 0) {
+        return false;
       }
-      int[][] used = new int[board.length][board[0].length];
-      
-      for(int i = 0; i < board.length; ++i) {
-        for(int j = 0; j < board[0].length; ++j) {
-          int cur = 0;
-          if(word.charAt(cur) == board[i][j]) {
-            if(find(board, word, i, j, cur, used)) {
-              return true;
-            }
+      boolean[][] visited = new boolean[board.length][board[0].length];
+      for (int i = 0; i < board.length; ++i) {
+        for (int j = 0; j < board[0].length; ++j) {
+          if (search(board, word, 0, i, j, visited)) {
+            return true;
           }
         }
       }
       return false;
     }
-
-    private boolean find(char[][] board, String word, int i, int j, int cur, int[][] used) {
-      
-      if(used[i][j] == 1 || board[i][j] != word.charAt(cur)) {
+    
+    private boolean search(char[][] board, String word, int idx, int i, int j, boolean[][] visited) {
+      char ch = word.charAt(idx);
+      if (board[i][j] != ch) {
         return false;
       }
-      used[i][j] = 1;
-      if(cur + 1 == word.length()) {
+      visited[i][j] = true;
+      if (i - 1 >= 0 && !visited[i - 1][j] && search(board, word, idx + 1, i - 1, j, visited)) {
         return true;
       }
-      // search up, right, down, and left
-      if(i - 1 >= 0 && used[i - 1][j] == 0 && find(board, word, i - 1, j, cur + 1, used)) {
+      if (i + 1 < board.length && !visited[i + 1][j] && search(board, word, idx + 1, i + 1, j, visited)) {
         return true;
       }
-      if(j + 1 < board[0].length && used[i][j + 1] == 0 && find(board, word, i, j + 1, cur+1, used)) {
+      if (j - 1 >= 0 && !visited[i][j - 1] && search(board, word, idx + 1, i, j - 1, visited)) {
         return true;
       }
-      if(i + 1 < board.length && used[i + 1][j] == 0 && find(board, word, i + 1, j, cur + 1, used)) {
-        return true;
-      }
-      if(j - 1 >= 0 && used[i][j - 1] == 0 && find(board, word, i, j - 1, cur + 1, used)) {
+      if (j + 1 < board[0].length && !visited[i][j + 1] && search(board, word, idx + 1, i, j + 1, visited)) {
         return true;
       }
 
-      used[i][j] = 0;
+      visited[i][j] = false;
       return false;
     }
-
   }
-
 }
