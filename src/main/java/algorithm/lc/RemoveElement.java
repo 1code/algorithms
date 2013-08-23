@@ -10,27 +10,25 @@ package algorithm.lc;
  */
 public class RemoveElement {
 
+  // O(1) space, O(n) time
   public class Solution {
     // use two pointer to record the current check position and the last
     // available slot
     public int removeElement(int[] A, int elem) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      int i = 0;
       int last = A.length - 1;
-      int len = 0;
+      int i = 0;
       while (i <= last) {
         if (A[i] == elem) {
-          int tmp = A[last];
-          A[last] = A[i];
-          A[i] = tmp;
-          --last;
+          int tmp = A[i];
+          A[i] = A[last];
+          A[last--] = tmp;
         } else {
           ++i;
-          ++len;
         }
       }
-      return len;
+      return last + 1;
     }
   }
 
