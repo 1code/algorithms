@@ -12,7 +12,7 @@ package algorithm.lc;
  * 
  */
 public class EditDistance {
-
+  // O(mn) space, O(mn) time
   public class Solution {
     // 2D DP
     public int minDistance(String word1, String word2) {
@@ -21,9 +21,7 @@ public class EditDistance {
       int[][] dist = new int[word1.length() + 1][word2.length() + 1];
       for (int i = 0; i < dist.length; ++i) {
         for (int j = 0; j < dist[i].length; ++j) {
-          if (i == 0 && j == 0) {
-            dist[i][j] = 0;
-          } else if (i == 0 || j == 0) {
+          if (i == 0 || j == 0) {
             dist[i][j] = i != 0 ? i : j;
           } else {
             int plus = word1.charAt(i - 1) == word2.charAt(j - 1) ? 0 : 1;
