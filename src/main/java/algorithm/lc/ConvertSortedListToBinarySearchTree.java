@@ -5,7 +5,6 @@ package algorithm.lc;
  * convert it to a height balanced BST.
  * 
  */
-// O(1) space, O(n) time. 
 public class ConvertSortedListToBinarySearchTree {
 
   public class ListNode {
@@ -28,6 +27,7 @@ public class ConvertSortedListToBinarySearchTree {
     }
   }
 
+  // O(1) space, O(n) time.
   // Convert left subtree, current node to root, and then convert right subtree
   public class Solution {
     public TreeNode sortedListToBST(ListNode head) {
