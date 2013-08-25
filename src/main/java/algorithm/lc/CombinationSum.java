@@ -23,42 +23,35 @@ import java.util.Set;
 public class CombinationSum {
 
   public class Solution {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates,
-        int target) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
+    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+          // Start typing your Java solution below
+          // DO NOT write main() function
       Set<ArrayList<Integer>> res = new HashSet<ArrayList<Integer>>();
+      int curIdx = 0;
+      ArrayList<Integer> cur = new ArrayList<Integer>();
+      int sum = 0;
       Arrays.sort(candidates);
-      search(new ArrayList<Integer>(), 0, 0, res, target, candidates);
+      generate(candidates, target, res, curIdx, cur, sum);
       return new ArrayList<ArrayList<Integer>>(res);
     }
-
-    private void search(ArrayList<Integer> curRes, int curIdx, int curSum,
-        Set<ArrayList<Integer>> res, int target, int[] candidates) {
-      if (curSum == target) {
-        res.add(curRes);
-      }
+    
+    private void generate(int[] candidates, int target, Set<ArrayList<Integer>> res, int curIdx, ArrayList<Integer> cur, int sum) {
       if (curIdx == candidates.length) {
-        return;
-      } else {
-        int cur = candidates[curIdx];
-        if (curSum + cur > target) {
-          return; // prune
-        } else {
-          // include repeated elem
-          ArrayList<Integer> copyRepeat = new ArrayList<Integer>(curRes);
-          copyRepeat.add(cur);
-          search(copyRepeat, curIdx, curSum + cur, res, target, candidates);
-
-          // not include and move to next elem
-          search(curRes, curIdx + 1, curSum, res, target, candidates);
-
-          // include cur elem and move to next elem
-          ArrayList<Integer> copyNext = new ArrayList<Integer>(curRes);
-          copyNext.add(cur);
-          search(copyNext, curIdx + 1, curSum + cur, res, target, candidates);
+        if (sum == target) {
+          res.add(cur);
         }
+        return;
       }
+      int curVal = candidates[curIdx];
+      if (sum + curVal <= target) {
+        ArrayList<Integer> stay = new ArrayList<Integer>(cur);
+        stay.add(curVal);
+        generate(candidates, target, res, curIdx, stay, sum + curVal);
+        ArrayList<Integer> next = new ArrayList<Integer>(cur);
+        next.add(curVal);
+        generate(candidates, target, res, curIdx + 1, next, sum + curVal);
+      }
+      generate(candidates, target, res, curIdx + 1, cur, sum);
     }
   }
 
