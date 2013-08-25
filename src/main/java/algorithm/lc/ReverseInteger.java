@@ -22,20 +22,31 @@ package algorithm.lc;
 // O(n) space, O(n) time, where n is the length of digit.
 public class ReverseInteger {
 
-  public class Solution {
+  public class Solution1 {
     public int reverse(int x) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      int sign = x >> 31 == 0 ? 1 : x >> 31; // get the sign
-      x = sign * x; // remove the sign
-      int y = 0;
-      while (x > 0) {
-        y = y * 10 + x % 10;
-        x /= 10;
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      int sign = (x > 0? 1 : -1);
+      if (x == Integer.MIN_VALUE) {
+        return x;
       }
-
-      return sign * y;
+      
+      int res = 0;
+      x = Math.abs(x);
+      while (x > 0) {
+        int digit = x % 10;
+        x /= 10;
+        if (sign == 1 && (Integer.MIN_VALUE + digit) / 10 > res) {
+          return x; // underflow
+        }
+        else if (sign == -1 && (Integer.MAX_VALUE - digit) / 10 < res) {
+          return x; // overflow
+        }
+        res = res * 10 + sign * digit; 
+      }
+      
+      return res;
     }
   }
-
+  
 }
