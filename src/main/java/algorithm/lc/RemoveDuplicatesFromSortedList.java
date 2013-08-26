@@ -31,13 +31,12 @@ public class RemoveDuplicatesFromSortedList {
       ListNode pre = head;
       ListNode cur = head.next;
       while (cur != null) {
-        ListNode next = cur.next;
         if (cur.val == pre.val) {
-          pre.next = next;
-          cur = next;
+          pre.next = cur.next;
+          cur = cur.next;
         } else {
           pre = cur;
-          cur = next;
+          cur = cur.next;
         }
       }
       return head;
