@@ -28,39 +28,28 @@ public class RemoveDuplicatesFromSortedListII {
     public ListNode deleteDuplicates(ListNode head) {
       // Start typing your Java solution below
       // DO NOT write main() function
-
-      ListNode fakeHead = new ListNode(0);
-      ListNode prev = fakeHead;
+      ListNode newHead = new ListNode(0);
+      ListNode prev = newHead;
       ListNode cur = head;
 
       while (cur != null) {
-        ListNode next = cur.next;
-        if (next == null) {
+        boolean hasDuplicate = false;
+        int val = cur.val;
+        while (cur.next != null && cur.next.val == val) { // skip duplicate
+          cur = cur.next;
+          hasDuplicate = true;
+        }
+        if (hasDuplicate) {
+          cur = cur.next;
+        } else { // grow
           prev.next = cur;
-          break;
-        } else if (cur.val == next.val) {
-          int val = cur.val;
-          do {
-            cur = cur.next;
-            next = next.next;
-          } while (next != null && cur.val == val);
-          if (cur.val == val) { // prev is the last one
-            prev.next = null;
-            break;
-          } else {
-            prev.next = cur;
-          }
-        } else if (cur.val != next.val) {
-          prev.next = cur;
-          prev = cur;
-          cur = next;
+          prev = prev.next;
+          cur = cur.next;
+          prev.next = null;
         }
       }
-
-      return fakeHead.next;
+      return newHead.next;
     }
   }
-  
-  
 
 }
