@@ -24,30 +24,30 @@ public class PartitionList {
 
   public class Solution {
     public ListNode partition(ListNode head, int x) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      ListNode lHead = new ListNode(0);
-      ListNode geHead = new ListNode(0);
-      ListNode lCur = lHead;
-      ListNode geCur = geHead;
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      ListNode lessList = new ListNode(0);
+      ListNode greaterEqualList = new ListNode(0);
+      ListNode curLessList = lessList;
+      ListNode curGreaterEqualList = greaterEqualList;
+      
       ListNode cur = head;
-
+      ListNode next;
       while (cur != null) {
+        next = cur.next;
+        cur.next = null;
         if (cur.val < x) {
-          lCur.next = cur;
-          lCur = lCur.next;
-          cur = cur.next;
-          lCur.next = null;
-        } else {
-          geCur.next = cur;
-          geCur = geCur.next;
-          cur = cur.next;
-          geCur.next = null;
+          curLessList.next = cur;
+          curLessList = curLessList.next;
         }
+        else {
+          curGreaterEqualList.next = cur;
+          curGreaterEqualList = curGreaterEqualList.next;
+        }
+        cur = next;
       }
-
-      lCur.next = geHead.next;
-      return lHead.next;
+      curLessList.next = greaterEqualList.next;
+      return lessList.next;
     }
   }
 
