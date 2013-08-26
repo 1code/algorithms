@@ -20,7 +20,7 @@ public class RestoreIPAddress {
       // Start typing your Java solution below
       // DO NOT write main() function
       ArrayList<String> res = new ArrayList<String>();
-      for (int first = 0; first < s.length(); ++first) {
+      for (int first = 1; first < s.length(); ++first) {
         if (!isValid(s, 0, first))
           break;
 
