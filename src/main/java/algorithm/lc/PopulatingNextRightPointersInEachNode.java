@@ -30,7 +30,7 @@ package algorithm.lc;
  *      4->5-> 6->7 -> NULL
  * 
  */
-public class PopulateNextRightPointersInEachNode {
+public class PopulatingNextRightPointersInEachNode {
 
   public class TreeLinkNode {
     int val;
