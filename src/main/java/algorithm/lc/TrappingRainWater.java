@@ -10,30 +10,31 @@ package algorithm.lc;
  * this case, 6 units of rain water (blue section) are being trapped.
  * 
  */
-// O(n) space, O(n) time
 public class TrappingRainWater {
-
+  // O(n) space, O(n) time
   public class Solution {
-    // for each position, record the highest bars on the left and right
+    // keep track of left highest and right highest respectively
     public int trap(int[] A) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      int[] leftBar = new int[A.length];
-      int[] rightBar = new int[A.length];
-
-      for (int i = 1; i < A.length; ++i) {
-        leftBar[i] = Math.max(leftBar[i - 1], A[i - 1]);
+      int[] leftMax = new int[A.length];
+      int leftHighest = 0;
+      for (int i = 0; i < A.length; ++i) {
+        leftMax[i] = (A[i] >= leftHighest ? 0 : leftHighest);
+        leftHighest = Math.max(leftHighest, A[i]);
       }
 
-      for (int i = A.length - 2; i >= 0; --i) {
-        rightBar[i] = Math.max(rightBar[i + 1], A[i + 1]);
+      int[] rightMax = new int[A.length];
+      int rightHighest = 0;
+      for (int i = A.length - 1; i >= 0; --i) {
+        rightMax[i] = (A[i] >= rightHighest ? 0 : rightHighest);
+        rightHighest = Math.max(rightHighest, A[i]);
       }
+
       int water = 0;
-      for (int i = 1; i < A.length - 1; ++i) {
-        int lowBar = Math.min(leftBar[i], rightBar[i]);
-        if (lowBar > A[i]) {
-          water += lowBar - A[i];
-        }
+      for (int i = 0; i < A.length; ++i) {
+        int h = Math.min(leftMax[i], rightMax[i]);
+        water += h > A[i] ? h - A[i] : 0;
       }
       return water;
     }
