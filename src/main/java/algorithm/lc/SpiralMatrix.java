@@ -33,8 +33,8 @@ public class SpiralMatrix {
           res.add(matrix[level][i]);
         }
         // add right 
-        for (int i = level + 1; i < rows - level; ++i) {
-          res.add(matrix[i][cols - level - 1]);
+        for (int c = level + 1; c < rows - level; ++c) {
+          res.add(matrix[c][cols - level - 1]);
         }
         // add bottom
         if (level < rows - level - 1) {
@@ -44,8 +44,8 @@ public class SpiralMatrix {
         }
         // add left
         if (level < cols - level - 1) {
-          for (int i = rows - level - 2; i > level; --i) {
-            res.add(matrix[i][level]);
+          for (int c = rows - level - 2; c > level; --c) {
+            res.add(matrix[c][level]);
           }
         }
       }
