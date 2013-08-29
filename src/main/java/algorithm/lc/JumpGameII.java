@@ -19,7 +19,10 @@ package algorithm.lc;
 public class JumpGameII {
 
   public class Solution {
-    // greedy algorithm, find the largest step each time from end to start
+    // an always hold coditio, if A[i] cannot be visited, then for all j > i,
+    // A[j] cannot be visited
+    // so we can safely use greedy algorithm, find the largest step each time
+    // from end to start
     public int jump(int[] A) {
       // Start typing your Java solution below
       // DO NOT write main() function
