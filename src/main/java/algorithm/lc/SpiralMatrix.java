@@ -29,23 +29,23 @@ public class SpiralMatrix {
       
       for (int level = 0; level < maxLevel; ++level) {
         // add top
-        for (int i = level; i < cols - level; ++i) {
-          res.add(matrix[level][i]);
+        for (int c = level; c < cols - level; ++c) {
+          res.add(matrix[level][c]);
         }
         // add right 
-        for (int c = level + 1; c < rows - level; ++c) {
-          res.add(matrix[c][cols - level - 1]);
+        for (int r = level + 1; r < rows - level; ++r) {
+          res.add(matrix[r][cols - level - 1]);
         }
         // add bottom
         if (level < rows - level - 1) {
-          for (int i = cols - level - 2; i >= level; --i) {
-            res.add(matrix[rows - level - 1][i]);
+          for (int c = cols - level - 2; c >= level; --c) {
+            res.add(matrix[rows - level - 1][c]);
           }
         }
         // add left
         if (level < cols - level - 1) {
-          for (int c = rows - level - 2; c > level; --c) {
-            res.add(matrix[c][level]);
+          for (int r = rows - level - 2; r > level; --r) {
+            res.add(matrix[r][level]);
           }
         }
       }
