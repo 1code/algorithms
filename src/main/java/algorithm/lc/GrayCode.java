@@ -67,7 +67,7 @@ public class GrayCode {
         String str = res.get(i).toString();
         int val = 0;
         int base = 1;
-        for (int d = 0; d < str.length(); ++d) {
+        for (int d = 0; d < str.length(); ++d) { // actually reverse the order is also a valid sequences
           val += base * (str.charAt(d) - '0');
           base <<= 1;
         }
@@ -77,10 +77,6 @@ public class GrayCode {
 
       return grayCodes;
     }
-  }
-
-  public static void main(String[] args) {
-    Solution.grayCode(3);
   }
 
 }
