@@ -18,40 +18,38 @@ package algorithm.lc;
 // O(1) space, O(n) time
 public class MinimumWindowSubstring {
   public class Solution {
-    // two pointers, move forward end and shrink start if possible
     public String minWindow(String S, String T) {
           // Start typing your Java solution below
           // DO NOT write main() function
       int[] has = new int[256];
       int[] needs = new int[256];
-      
       for (int i = 0; i < T.length(); ++i) {
         ++needs[(int)T.charAt(i)];
       }
       
-      int min = Integer.MAX_VALUE;
-      int acc = 0;
-      int minStart = -1;
-      int minEnd = -1;
+      int minLen = Integer.MAX_VALUE;
+      int bufSize = 0;
+      int minStart = -1, minEnd = -1; // record the start and end position of result
       for (int start = 0, end = 0; end < S.length(); ++end) {
         int cur = (int)S.charAt(end);
         if (needs[cur] == 0) {
-          continue; // skip useless character
+          continue; // skip useless char
         }
         ++has[cur];
         if (has[cur] <= needs[cur]) {
-          ++acc;
+          ++bufSize;
         }
-        if (acc == T.length()) { // shrink 
-          while (needs[(int)S.charAt(start)] == 0 || has[(int)S.charAt(start)] > needs[(int)S.charAt(start)]) {
-            if (has[(int)S.charAt(start)] > needs[(int)S.charAt(start)]) {
-              --has[(int)S.charAt(start)];
+        if (bufSize == T.length()) { // when 'has' contains enough chars, try shrink
+          while (needs[S.charAt(start)] == 0 || needs[S.charAt(start)] < has[S.charAt(start)]) {
+            if (has[S.charAt(start)] > needs[S.charAt(start)]) { // shrink excess chars
+              --has[S.charAt(start)]; // update buffer
             }
             ++start;
           }
+          
           int len = end - start + 1;
-          if (len < min) {
-            min = len;
+          if (minLen > len) { 
+            minLen = len;
             minStart = start;
             minEnd = end;
           }
@@ -61,7 +59,6 @@ public class MinimumWindowSubstring {
       if (minStart == -1) {
         return "";
       }
-      
       return S.substring(minStart, minEnd + 1);
     }
   }
