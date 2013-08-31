@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class RecoverBinarySearchTree {
 
-  public class TreeNode {
+  public static class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -61,9 +61,9 @@ public class RecoverBinarySearchTree {
     public void recoverTree(TreeNode root) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      Wrapper first = new Wrapper(null);
-      Wrapper second = new Wrapper(null);
-      Wrapper pre = new Wrapper(null);
+      Wrapper first = new Wrapper();
+      Wrapper second = new Wrapper();
+      Wrapper pre = new Wrapper();
 
       inorder(root, first, second, pre);
       // swap two nodes
@@ -79,10 +79,10 @@ public class RecoverBinarySearchTree {
       }
       inorder(node.left, first, second, pre);
       if (pre.node != null && node.val < pre.node.val) {
-        second.node = node;
         if (first.node == null) {
           first.node = pre.node;
         }
+        second.node = node;
       }
       pre.node = node;
       inorder(node.right, first, second, pre);
@@ -90,9 +90,6 @@ public class RecoverBinarySearchTree {
 
     public class Wrapper {
       TreeNode node;
-      public Wrapper(TreeNode node) {
-        this.node = node;
-      }
     }
   }
 
