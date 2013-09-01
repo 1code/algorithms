@@ -7,10 +7,8 @@ package algorithm.lc;
  * 
  * For example: Given the below binary tree,
  * 
- *       1 
- *      / \ 
- *     2   3 
- *     
+ * 1 / \ 2 3
+ * 
  * Return 6.
  */
 // O(1) space, O(n) time
@@ -42,8 +40,8 @@ public class BinaryTreeMaximumPathSum {
       }
       int l = pathSum(node.left, max);
       int r = pathSum(node.right, max);
-      max.val = Math.max(max.val, l + r + node.val); // update sub-solution
-                                                     // optimum
+      // update sub-solution optimum
+      max.val = Math.max(max.val, l + r + node.val);
       int extensiblePathSum = Math.max(l, r);
       return Math.max(extensiblePathSum + node.val, 0);
     }
