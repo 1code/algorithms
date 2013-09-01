@@ -1,7 +1,7 @@
 package algorithm.lc;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Given a string, find the length of the longest substring without repeating
@@ -18,19 +18,18 @@ public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
       // Start typing your Java solution below
       // DO NOT write main() function
+      Map<Character, Integer> map = new HashMap<Character, Integer>();
       int maxLen = 0;
-      int start = 0;
-      int end = 0;
-      Map<Character, Integer> index = new TreeMap<Character, Integer>();
+      int start = 0, end = 0;
       while (end < s.length()) {
         char ch = s.charAt(end);
-        Integer pos = index.get(ch);
+        Integer pos = map.get(ch);
         if (pos != null && pos >= start) { // duplicate
-          start = index.get(ch) + 1;
+          start = pos + 1;
         } else {
-          maxLen = Math.max(maxLen, end - start + 1); // update length
+          maxLen = Math.max(maxLen, end - start + 1);
         }
-        index.put(ch, end); // update index;
+        map.put(ch, end); // update map
         ++end;
       }
       return maxLen;
