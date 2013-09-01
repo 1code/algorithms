@@ -10,37 +10,34 @@ package algorithm.lc;
  * 
  */
 public class ContainerWithMostWater {
-  
-//O(1) space, O(n) time
-public class Solution {
- // continuously fill the water with height 1, 2, and so on
- public int maxArea(int[] height) {
-       // Start typing your Java solution below
-       // DO NOT write main() function
-   int maxArea = 0;
-   int maxHeight = 0;
-   for (int h : height) {
-     maxHeight = Math.max(maxHeight, h);
-   }
-   
-   int left = 0;
-   int right = height.length - 1;
-   int curHeight = 0;
-   
-   while (curHeight <= maxHeight && left < right) {
-     while (height[left] < curHeight && left < right) {
-       ++left;
-     }
-     while (height[right] < curHeight && left < right) {
-       --right;
-     }
-     int curArea = Math.min(height[left], height[right]) * (right - left);
-     maxArea = Math.max(maxArea, curArea);
-     ++curHeight;
-   }
-   
-   return maxArea;
- }
-}
+
+  // O(1) space, O(n) time
+  public class Solution {
+    // continuously fill the water with height 1, 2, and so on
+    public int maxArea(int[] height) {
+      // Start typing your Java solution below
+      // DO NOT write main() function
+      int highest = 0;
+      for (int h : height) {
+        highest = Math.max(highest, h);
+      }
+
+      int maxArea = 0;
+      int left = 0;
+      int right = height.length - 1;
+      for (int i = 1; i <= highest; ++i) {
+        while (height[left] < i && left < right) {
+          ++left;
+        }
+        while (height[right] < i && left < right) {
+          --right;
+        }
+        int width = right - left;
+        maxArea = Math.max(i * width, maxArea);
+      }
+
+      return maxArea;
+    }
+  }
 
 }
