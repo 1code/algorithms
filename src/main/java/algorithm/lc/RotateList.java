@@ -26,45 +26,39 @@ public class RotateList {
     public ListNode rotateRight(ListNode head, int n) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      if (head == null) {
-        return head;
-      }
-      int size = 1;
+      int size = 0;
       ListNode cur = head;
-      while (cur.next != null) {
+      while (cur != null) {
         ++size;
         cur = cur.next;
       }
-      ListNode oldTail = cur;
 
-      int k = n % size;
-      if (k == 0) {
+      if (size == 0) {
+        return null;
+      }
+
+      n = n % size;
+
+      if (n == 0) {
         return head;
       }
 
-      int count = 0;
       ListNode fast = head;
-      ListNode slow = head;
-      while (fast != null && count < k) {
+      int c = 0;
+      while (fast != null && c++ < n) {
         fast = fast.next;
-        ++count;
       }
 
-      if (fast == null) {
-        return head;
-      }
-
-      // when fast reaches to the end, slow is k from the end
+      ListNode pre = head;
       while (fast.next != null) {
+        pre = pre.next;
         fast = fast.next;
-        slow = slow.next;
       }
 
-      ListNode newHead = slow.next;
+      ListNode newHead = pre.next;
 
-      slow.next = null;
-      oldTail.next = head;
-
+      fast.next = head;
+      pre.next = null;
       return newHead;
     }
   }
