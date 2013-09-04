@@ -24,12 +24,11 @@ public class PalindromeNumber {
       }
 
       while (x >= 10) {
-        int low = x % 10;
-        int high = x / digit;
-        if (low != high) {
+        if (x / digit != x % 10) {
           return false;
         }
-        x = (x - high * digit) / 10;
+        x -= x % 10 * digit;
+        x /= 10;
         digit /= 100;
       }
       return true;
