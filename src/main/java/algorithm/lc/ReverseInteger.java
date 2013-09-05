@@ -22,7 +22,7 @@ package algorithm.lc;
 // O(n) space, O(n) time, where n is the length of digit.
 public class ReverseInteger {
 
-  public class Solution1 {
+  public class Solution {
     public int reverse(int x) {
           // Start typing your Java solution below
           // DO NOT write main() function

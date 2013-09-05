@@ -39,7 +39,7 @@ public class SymmetricTree {
     }
   }
 
-  public class Solution {
+  public class SolutionRecursive {
     public boolean isSymmetric(TreeNode root) {
       // Start typing your Java solution below
       // DO NOT write main() function
@@ -67,7 +67,7 @@ public class SymmetricTree {
    *     TreeNode(int x) { val = x; }
    * }
    */
-  public class SolutionRecursive {
+  public class SolutionIterative {
     public boolean isSymmetric(TreeNode root) {
           // Start typing your Java solution below
           // DO NOT write main() function
