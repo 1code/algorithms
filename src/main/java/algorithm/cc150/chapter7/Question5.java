@@ -1,7 +1,5 @@
 package algorithm.cc150.chapter7;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Given two squares on a two-dimensional plane, find a line that would cut

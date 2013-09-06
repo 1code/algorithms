@@ -31,7 +31,7 @@ public class LongestValidParenthesis {
           stack[++top] = i; // record candidate start
         } else { // meet ')'
           if (top == -1) { // all previous characters become invalid, start from scratch
-            start = Integer.MAX_VALUE;
+            start = i + 1;
           } else {
             start = Math.min(start, stack[top--]);
             int curLen = 0;
