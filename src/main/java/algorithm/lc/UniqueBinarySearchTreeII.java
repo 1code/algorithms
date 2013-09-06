@@ -45,9 +45,6 @@ public class UniqueBinarySearchTreeII {
       if (from > to) {
         trees.add(null);
         return trees;
-      } else if (from == to) {
-        trees.add(new TreeNode(from));
-        return trees;
       }
 
       for (int i = from; i <= to; ++i) {
