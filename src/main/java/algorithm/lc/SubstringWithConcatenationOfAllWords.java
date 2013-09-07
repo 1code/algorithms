@@ -28,42 +28,30 @@ public class SubstringWithConcatenationOfAllWords {
         return res;
       }
       Map<String, Integer> needs = new HashMap<String, Integer>();
-      for (String str : L) {
-        Integer count = needs.get(str);
-        if (count == null) {
-          count = 1;
-        }
-        else {
-          count += 1;
-        }
-        needs.put(str, count);
+      for (String word : L) {
+        Integer count = needs.get(word);
+        count = count == null? 1 : count + 1;
+        needs.put(word, count);
       }
-      Map<String, Integer> has = new HashMap<String, Integer>();
       
       int wordLen = L[0].length();
       int totalLen = wordLen * L.length;
       for (int i = 0; i <= S.length() - totalLen; ++i) {
+        Map<String, Integer> has = new HashMap<String, Integer>();
         int j = 0;
-        has.clear();
-        for (; j < L.length; ++j) {
-          String str = S.substring(i + j * wordLen, i + j * wordLen + wordLen);
-          Integer count = needs.get(str);
-          if (count == null) { // contain other word
+        for (j = 0; j < L.length; ++j) { // check the candidates one by one
+          String part = S.substring(i + j * wordLen, i + j * wordLen + wordLen);
+          Integer count = needs.get(part);
+          if (count == null) {  // needs dose not contain the word
             break;
           }
-          Integer hasCount = has.get(str); // update has
-          if (hasCount == null) {
-            hasCount = 1;
-          }
-          else {
-            hasCount += 1;
-          }
-          if (hasCount > count) { // contain more words
+          Integer hasCount = has.get(part);
+          hasCount = hasCount == null? 1 : hasCount + 1;
+          if (hasCount > count) {
             break;
           }
-          has.put(str, hasCount);
+          has.put(part, hasCount);
         }
-        // reach to the end 
         if (j == L.length) {
           res.add(i);
         }
