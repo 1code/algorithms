@@ -8,12 +8,7 @@ import java.util.ArrayList;
  * 
  * For example, given the following triangle
  * 
- *  [
- *    [2],
- *   [3,4],
- *  [6,5,7],
- * [4,1,8,3]
- * ]
+ * [ [2], [3,4], [6,5,7], [4,1,8,3] ]
  * 
  * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
  * 
@@ -21,10 +16,10 @@ import java.util.ArrayList;
  * where n is the total number of rows in the triangle.
  * 
  */
-// O(n) space, O(n^2) time
 public class Triangle {
 
-  public class Solution {
+  public class Solution2 {
+    // O(n) space, O(n^2) time
     // use rolling array to store the intermediate results
     public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
       // Start typing your Java solution below
@@ -48,6 +43,40 @@ public class Triangle {
         }
       }
       return mem[0][0];
+    }
+  }
+
+  // O(n) space, O(n^2) time
+  public class SolutionRecursive {
+    public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
+      // Start typing your Java solution below
+      // DO NOT write main() function
+      return min(triangle, 1);
+    }
+
+    private int min(ArrayList<ArrayList<Integer>> triangle, int level) {
+      if (level == triangle.size()) {
+        int min = Integer.MAX_VALUE;
+        for (int sum : triangle.get(level - 1)) {
+          min = Math.min(min, sum);
+        }
+        return min;
+      } else {
+        ArrayList<Integer> prevLayer = triangle.get(level - 1);
+        ArrayList<Integer> layer = triangle.get(level);
+        for (int i = 0; i < layer.size(); ++i) {
+          int cur = layer.get(i);
+          if (i == 0) {
+            layer.set(i, cur + prevLayer.get(i));
+          } else if (i == layer.size() - 1) {
+            layer.set(i, cur + prevLayer.get(i - 1));
+          } else {
+            layer
+                .set(i, Math.min(prevLayer.get(i), prevLayer.get(i - 1)) + cur);
+          }
+        }
+        return min(triangle, level + 1);
+      }
     }
   }
 

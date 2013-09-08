@@ -1,5 +1,7 @@
 package algorithm.lc;
 
+import java.util.Arrays;
+
 /**
  * Given inorder and postorder traversal of a tree, construct the binary tree.
  * 
@@ -9,7 +11,7 @@ package algorithm.lc;
 // O(n) space, O(n) time
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
-  public class TreeNode {
+  public static class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -50,5 +52,5 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
       return root;
     }
   }
-
+  
 }
