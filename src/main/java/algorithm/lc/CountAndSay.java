@@ -14,40 +14,29 @@ package algorithm.lc;
  */
 public class CountAndSay {
 
+  // O(nm) space, O(nm) time
   public class Solution {
     public String countAndSay(int n) {
           // Start typing your Java solution below
           // DO NOT write main() function
-      String str = "1";
-      for (int i = 1; i < n; ++i) {
-        str = say(str);  
-      }     
-      
-      return str;
-    }
-    
-    private String say(String str) {
       StringBuilder sb = new StringBuilder();
-      char last = ' ';
-      int count = 0;
-      for (int i = 0; i < str.length(); ++i) {
-        char ch = str.charAt(i);
-        if (ch != last) {
-          if (last != ' ') {
-            sb.append(count);
-            sb.append(last);
+      sb.append(1);
+      for (int i = 0; i < n - 1; ++i) {
+        StringBuilder newSb = new StringBuilder();
+        int c = 1;
+        for (int j = 0; j < sb.length() - 1; ++j) {
+          if (sb.charAt(j) == sb.charAt(j + 1)) {
+            ++c;
           }
-          count = 1;
-          last = ch;
+          else {
+            newSb.append(c);
+            newSb.append(sb.charAt(j));
+            c = 1;
+          }
         }
-        else {
-          ++count;
-        }
-      }
-      
-      if (count != 0) {
-        sb.append(count);
-        sb.append(last);
+        newSb.append(c);
+        newSb.append(sb.charAt(sb.length() - 1));
+        sb = newSb;
       }
       return sb.toString();
     }
