@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Sort.
+ * 排序，实现任意排序算法对数组进行排序.
  * 
  */
 class Solution {
@@ -90,10 +90,12 @@ public class Test {
 
   Test() { // 1) Initialization.
     DEBUG = true;
-    input_small = "3,1,5,-2,3,0,3|0,3,2,1,3,4,0,0,0|0,3,2,1,33,-19,2";
+    input_small = "3,1,5,-2,3,0,3|0,3,2,1,3,4,0,0,0|0,3,2,1,33,-19,2|1,1,1,1,1,1,1,1|9999999,9999999,9999999,9999999,9999999,9999999,9999999,9999999";
     StringBuilder sb = new StringBuilder(input_small);
     sb.append("|32,13,-231,32,3221,32,3,56,353,-3421,3568,523,5326,32456,23673,34532");
     sb.append("|32,15,329,5382,34,-322,1349532,23415,321,-342342,1345,432134,5323532,531,-2351235,232,-35");
+    sb.append("|99,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61");
+    sb.append("|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
     input_large = sb.toString();
   }
 
@@ -152,7 +154,6 @@ public class Test {
   //
   // Correct algorithm for the question. END.
   //
-
   public static void main(String[] args) {
     Test t = new Test();
     t.test_small();
