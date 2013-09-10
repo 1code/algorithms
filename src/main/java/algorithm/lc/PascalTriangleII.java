@@ -16,27 +16,27 @@ import java.util.Arrays;
 public class PascalTriangleII {
 
   // reuse the arraylist
-  public ArrayList<Integer> getRow(int rowIndex) {
-    // Start typing your Java solution below
-    // DO NOT write main() function
-    ArrayList<Integer> cur = new ArrayList<Integer>();
-    for (int i = 0; i < rowIndex + 1; ++i) {
-      cur.add(1);
-    }
-    if (rowIndex < 2) {
-      return cur;
-    }
-
-    for (int i = 2; i < rowIndex + 1; ++i) {
-      int upperLeft = cur.get(0);
-      int upperRight = cur.get(1);
-      for (int j = 1; j < i; ++j) {
-        cur.set(j, upperLeft + upperRight);
-        upperLeft = upperRight;
-        upperRight = cur.get(j + 1);
+  public class Solution {
+    public ArrayList<Integer> getRow(int rowIndex) {
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      ArrayList<Integer> res = new ArrayList<Integer>();
+      for (int i = 0; i < rowIndex; ++i) {
+        res.add(1);
       }
+      
+      for (int i = 2; i < rowIndex; ++i) {
+        int upperLeft = res.get(0);
+        int upperRight = res.get(1);
+        for (int j = 1; j < i; ++j) {
+          res.set(j, upperLeft + upperRight);
+          upperLeft = upperRight;
+          upperRight = res.get(j + 1);
+        }
+        System.out.println(res.toString());
+      }
+      return res;
     }
-    return cur;
   }
 
 }
