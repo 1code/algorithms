@@ -39,7 +39,7 @@ public class SumRootToLeafNumbers {
       // DO NOT write main() function
       int subTotal = 0;
       Wrapper sum = new Wrapper(0);
-      getNumbers(root, 0, sum);
+      getNumbers(root, subTotal, sum);
       return sum.sum;
     }
 
