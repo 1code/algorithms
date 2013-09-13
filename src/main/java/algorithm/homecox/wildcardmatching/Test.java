@@ -6,38 +6,35 @@ import java.util.Collections;
 
 class Solution {
   public boolean isMatch(String s, String p) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-    if (s == null || p == null) {
-      return false;
-    }
-    
-    int m = s.length(), n = p.length();
-    boolean[][] match = new boolean[m + 1][n + 1];
-    match[0][0] = true;
-    for (int i = 1; i < n + 1; ++i) {
-      if (p.charAt(i - 1) == '*') {
-        match[0][i] = match[0][i - 1];
+    int is = 0, ip = 0, is0 = 0, ip0 = 0;
+    int lens = s.length(), lenp = p.length();
+    boolean x = false;
+
+    while (true) {
+      if (is == lens) {
+        while (ip < lenp && p.charAt(ip) == '*') // 
+          ++ip;
+        return ip == lenp;
+      }
+      if (ip < lenp && (p.charAt(ip) == '?' || p.charAt(ip) == s.charAt(is))) {
+        ++ip;
+        ++is;
+      } else if (ip < lenp && p.charAt(ip) == '*') {
+        is0 = is;
+        ip0 = ip;
+        x = true;
+        ++ip;
+      } else {
+        if (x) {
+          ++is0;
+          is = is0;
+          ip = ip0;
+          ++ip;
+        } else {
+          return false;
+        }
       }
     }
-    
-    for (int i = 1; i < m + 1; ++i) {
-      for (int j = 1; j < n + 1; ++j) {
-        if (p.charAt(j - 1) == '*') {
-          match[i][j] = match[i][j - 1] // current * matches empty
-              || match[i - 1][j - 1] // current * matches current
-              || match[i - 1][j];
-        }
-        else if (p.charAt(j - 1) == '?') {
-          match[i][j] = match[i - 1][j - 1];
-        }
-        else {  // specific character
-          match[i][j] = match[i - 1][j - 1] && s.charAt(i - 1) == p.charAt(j - 1);
-        }
-      }
-    }
-    
-    return match[m][n];
   }
 }
 
