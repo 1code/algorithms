@@ -8,24 +8,25 @@ class Solution {
   public boolean isMatch(String s, String p) {
     int is = 0, ip = 0, is0 = 0, ip0 = 0;
     int lens = s.length(), lenp = p.length();
-    boolean x = false;
+    boolean metStar = false;
 
     while (true) {
       if (is == lens) {
-        while (ip < lenp && p.charAt(ip) == '*') // 
+        while (ip < lenp && p.charAt(ip) == '*') {// only * left in p
           ++ip;
+        }
         return ip == lenp;
       }
       if (ip < lenp && (p.charAt(ip) == '?' || p.charAt(ip) == s.charAt(is))) {
         ++ip;
         ++is;
-      } else if (ip < lenp && p.charAt(ip) == '*') {
+      } else if (ip < lenp && p.charAt(ip) == '*') { // attempt to use * to match empty
         is0 = is;
         ip0 = ip;
-        x = true;
+        metStar = true;
         ++ip;
       } else {
-        if (x) {
+        if (metStar) { // use star to match current character
           ++is0;
           is = is0;
           ip = ip0;
