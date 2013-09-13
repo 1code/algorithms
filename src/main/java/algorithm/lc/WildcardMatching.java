@@ -83,7 +83,10 @@ public class WildcardMatching {
         {"aaaaa", "a*a", "true"},
         {"aaaaaa", "a*a", "true"},
         {"aaaaaaaaabbbbbba", "a*a", "true"},
-        {"abdadtasddtasdtadfasdt", "*b*t*?s*", "true"}
+        {"abdadtasddtasdtadfasdt", "*b*t*?s*", "true"},
+        {"aaaaddddb", "?????????", "true"},
+        {"fasdflkjasd", "*", "true"},
+        {"asdflewlrjks", "***", "true"}
     };
     Solution sol = new Solution();
     for (String[] s : test) {
