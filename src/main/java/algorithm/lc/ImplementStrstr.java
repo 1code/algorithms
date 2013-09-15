@@ -14,6 +14,9 @@ public class ImplementStrstr {
     public String strStr(String haystack, String needle) {
       // Start typing your Java solution below
       // DO NOT write main() function
+      if (haystack.length() < needle.length()) {
+        return "";
+      }
       for (int i = 0; i < haystack.length() - needle.length() + 1; ++i) {
         int j = 0;
         for (; j < needle.length(); ++j) {
@@ -54,7 +57,7 @@ public class ImplementStrstr {
       int R = 256;
       int[][] dfa = new int[R][needle.length()];
       int S = 0;
-      dfa[needle.charAt(0)][0] = 1;
+      dfa[needle.charAt(0)][S] = 1;
       for (int i = 1; i < needle.length(); ++i) {
         for (int c = 0; c < R; ++c) {
           dfa[c][i] = dfa[c][S]; // mismatch transition
