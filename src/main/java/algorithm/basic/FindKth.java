@@ -16,7 +16,7 @@ public class FindKth {
   }
   
   private int findKth(int[] A, int k, int start, int end) {
-    int pivot = pivot(A, start, end);
+    int pivot = pivotHoare(A, start, end);
     
     if (pivot == k) {
       return A[pivot];
@@ -45,6 +45,37 @@ public class FindKth {
     A[bar + 1] = A[end];
     A[end] = tmp;
     return bar + 1;
+  }
+  
+  private int pivotHoare(int[] A, int start, int end) {
+    int i = start, j = end + 1;
+    int val = A[start];
+    while (true) {
+      while (A[++i] < val) {
+        if (i == end) {
+          break;
+        }
+      }
+      
+      while (val < A[--j]) {
+        if (j == start) {
+          break;
+        }
+      }
+      
+      if (i >= j) {
+        break;
+      }
+      
+      int tmp = A[i];
+      A[i] = A[j];
+      A[j] = tmp;
+    }
+    
+    int tmp = A[j];
+    A[j] = A[start];
+    A[start] = tmp;
+    return j;
   }
 
 }
