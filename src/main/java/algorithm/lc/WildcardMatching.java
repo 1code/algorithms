@@ -115,57 +115,49 @@ public class WildcardMatching {
     }
   }
 
-  public static class Solution {
-    public boolean isMatch(String s, String p) {
-      int is = 0, ip = 0, is0 = 0, ip0 = 0;
-      int lens = s.length(), lenp = p.length();
+  class Solution { 
+    public boolean isMatch(String s, String p) { 
+          // Start typing your Java solution below 
+          // DO NOT write main() function 
+      int ps = 0, pp = 0, oldPs = 0, oldPp = 0;
+      int slen = s.length(), plen = p.length();
       boolean metStar = false;
-
+      
       while (true) {
-        if (is == lens) {
-          while (ip < lenp && p.charAt(ip) == '*') {// only * left in p
-            ++ip;
+        if (ps == slen) { // string to the end
+          while (pp < plen) { // check if all star in remaining pattern
+            if (p.charAt(pp) != '*') {
+              return false;
+            }
+            ++pp;
           }
-          return ip == lenp;
+          return true;
         }
-        if (ip < lenp && (p.charAt(ip) == '?' || p.charAt(ip) == s.charAt(is))) {
-          ++ip;
-          ++is;
-        } else if (ip < lenp && p.charAt(ip) == '*') { // attempt to use * to match empty
-          is0 = is;
-          ip0 = ip;
+        
+        if (pp < plen && (s.charAt(ps) == p.charAt(pp) || p.charAt(pp) == '?')) { // pattern has more and match
+          ++pp;
+          ++ps;
+        }
+        else if (pp < plen && p.charAt(pp) == '*') { // pattern has more and attempt to use *
+          oldPs = ps;
+          oldPp = pp;
           metStar = true;
-          ++ip;
-        } else {
-          if (metStar) { // use star to match current character
-            ++is0;
-            is = is0;
-            ip = ip0;
-            ++ip;
-          } else {
+          ++pp;
+        }
+        else { // no more pattern
+          if (metStar) { // restore from previous 
+            ++oldPs; // use previous star to match
+            ps = oldPs;
+            pp = oldPp;
+            ++pp;
+          }
+          else {
             return false;
           }
         }
       }
-    }
-  }
-
-  public static void main(String[] args) {
-    String[][] test = { { "aba", "*b?", "true" }, { "a", "a*", "true" },
-        { "a", "?", "true" }, { "a", "*", "true" }, { "b", "a", "false" },
-        { "aa", "a*a*", "true" }, { "aaaa", "a*a", "true" },
-        { "aaaaa", "a*a", "true" }, { "aaaaaa", "a*a", "true" },
-        { "aaaaaaaaabbbbbba", "a*a", "true" },
-        { "abdadtasddtasdtadfasdt", "*b*t*?s*", "true" },
-        { "aaaaddddb", "?????????", "true" }, { "fasdflkjasd", "*", "true" },
-        { "asdflewlrjks", "***", "true" } };
-    Solution sol = new Solution();
-    for (int i = 0; i < test.length; ++i) {
-      String[] s = test[i];
-      if (Boolean.parseBoolean(s[2]) != sol.isMatch(s[0], s[1])) {
-        System.out.printf("%d\t%s\t%s: %s\n", i, s[0], s[1], s[2]);
-      }
-    }
-  }
+      
+    } 
+  };
 
 }
