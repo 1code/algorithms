@@ -65,11 +65,10 @@ public class Question7 {
     }
     TreeNode lcaLeft = lca(root.left, first, second);
     TreeNode lcaRight = lca(root.right, first, second);
-    // each side has one match
-    if (lcaLeft != null && lcaRight != null) {
+    if (lcaLeft != null && lcaRight != null) { // each side finds one node
       return root;
     }
-    return lcaLeft != null? lcaLeft : lcaRight;
+    return lcaLeft != null? lcaLeft : lcaRight; // only one side finds both
   }
 
 }
