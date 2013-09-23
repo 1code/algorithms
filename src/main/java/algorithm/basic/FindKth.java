@@ -17,10 +17,7 @@ public class FindKth {
     int pivot = -1;
     while (pivot != k) {
       pivot = pivotHoare(A, start, end);
-      if (pivot == k) {
-        return A[k];
-      }
-      else if (pivot < k) {
+      if (pivot < k) {
         start = pivot + 1;
       }
       else {
