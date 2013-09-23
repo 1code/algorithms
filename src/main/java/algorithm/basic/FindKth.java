@@ -12,7 +12,23 @@ public class FindKth {
     if (k < 0 || k >= A.length) {
       throw new IllegalArgumentException(String.format("k should be in range [0, %d]\n.", A.length));
     }
-    return findKth(A, k, 0, A.length - 1);
+    int start = 0, end = A.length - 1;
+    
+    int pivot = -1;
+    while (pivot != k) {
+      pivot = pivotHoare(A, start, end);
+      if (pivot == k) {
+        return A[k];
+      }
+      else if (pivot < k) {
+        start = pivot + 1;
+      }
+      else {
+        end = pivot - 1;
+      }
+    }
+    
+    return A[pivot];
   }
   
   private int findKth(int[] A, int k, int start, int end) {
