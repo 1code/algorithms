@@ -49,5 +49,34 @@ public class GenerateParenthesis {
       return set;
     }
   }
+  
+  public class Solution2 {
+    public ArrayList<String> generateParenthesis(int n) {
+          // Start typing your Java solution below
+          // DO NOT write main() function
+      ArrayList<String> res = new ArrayList<String>();
+      StringBuilder sb = new StringBuilder();
+      int leftParen = n;
+      int rightParen = n;
+      generate(leftParen, rightParen, sb, res);
+      return res;
+    }
+    
+    private void generate(int leftParen, int rightParen, StringBuilder sb, ArrayList<String> res) {
+      if (leftParen == 0 && rightParen == 0) {  // used up parenthesis
+        res.add(sb.toString());
+      }   
+      if (leftParen > 0) {
+        sb.append("(");
+        generate(leftParen - 1, rightParen, sb, res);
+        sb.deleteCharAt(sb.length() - 1);
+      }
+      if (rightParen > leftParen) {
+        sb.append(")");
+        generate(leftParen, rightParen -1, sb, res);
+        sb.deleteCharAt(sb.length() - 1);
+      }
+    }
+  }
 
 }
