@@ -32,7 +32,7 @@ public class DistinctSubsequences {
       for (int i = 0; i <= S.length(); ++i) {
         res[0][i] = 1;
       }
-      for (int i = 0; i <= T.length(); ++i) {
+      for (int i = 1; i <= T.length(); ++i) {
         res[i][0] = 0;
       }
       
