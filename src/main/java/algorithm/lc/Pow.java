@@ -24,7 +24,7 @@ public class Pow {
         tmp *= tmp;
         n >>= 1;
       }
-      return isPositive ? 1.0 / res : res;
+      return isPositive ? res : 1.0 / res;
     }
   }
 
