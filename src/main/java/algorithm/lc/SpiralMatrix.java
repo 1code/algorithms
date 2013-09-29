@@ -37,13 +37,13 @@ public class SpiralMatrix {
           res.add(matrix[r][cols - level - 1]);
         }
         // add bottom
-        if (level < rows - level - 1) {
+        if (2 * level < rows - 1) {
           for (int c = cols - level - 2; c >= level; --c) {
             res.add(matrix[rows - level - 1][c]);
           }
         }
         // add left
-        if (level < cols - level - 1) {
+        if (2 * level < cols - 1) {
           for (int r = rows - level - 2; r > level; --r) {
             res.add(matrix[r][level]);
           }
