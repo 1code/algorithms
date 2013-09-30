@@ -43,7 +43,7 @@ public class RemoveDuplicatesFromSortedListII {
           cur = cur.next;
         } else { // grow
           prev.next = cur;
-          prev = prev.next;
+          prev = cur;
           cur = cur.next;
           prev.next = null;
         }

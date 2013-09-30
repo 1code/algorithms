@@ -48,6 +48,7 @@ public class UnionFind {
   public int find(int p) {
     int compId = p;
     while (compId != id[compId]) {
+      id[compId] = id[id[compId]];
       compId = id[compId];
     }
     return compId;
