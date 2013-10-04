@@ -52,5 +52,5 @@ public class RemoveNthNodeFromEndofList {
       return head;
     }
   }
-
+  
 }
