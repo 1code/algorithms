@@ -2,8 +2,6 @@ package algorithm.lc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Given an array S of n integers, are there elements a, b, c, and d in S such

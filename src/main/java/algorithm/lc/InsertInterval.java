@@ -3,8 +3,6 @@ package algorithm.lc;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-import algorithm.lc.MergeIntervals.Interval;
-
 /**
  * Given a set of non-overlapping intervals, insert a new interval into the
  * intervals (merge if necessary).

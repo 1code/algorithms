@@ -1,6 +1,5 @@
 package algorithm.lc;
 
-import java.util.Arrays;
 
 /**
  * Given inorder and postorder traversal of a tree, construct the binary tree.

@@ -1,7 +1,6 @@
 package algorithm.lc;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
  Given an index k, return the kth row of the Pascal's triangle.
