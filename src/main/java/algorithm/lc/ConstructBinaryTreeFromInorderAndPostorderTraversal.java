@@ -42,11 +42,11 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
           rootInorderIdx = x;
           break;
         }
-
+      int postLeftEnd = postFrom + (rootInorderIdx - inFrom - 1);
       root.left = buildTree(inorder, inFrom, rootInorderIdx - 1, postorder,
-          postFrom, postFrom + (rootInorderIdx - inFrom - 1));
+          postFrom, postLeftEnd);
       root.right = buildTree(inorder, rootInorderIdx + 1, inTo, postorder,
-          postFrom + (rootInorderIdx - inFrom), postTo - 1);
+          postLeftEnd + 1, postTo - 1);
       
       return root;
     }

@@ -42,10 +42,9 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
       }
 
       TreeNode root = new TreeNode(preorder[preFrom]);
-      root.left = build(preorder, preFrom + 1, preFrom
-          + (rootInorderIdx - inFrom), inorder, inFrom, rootInorderIdx - 1);
-      root.right = build(preorder, preFrom + (rootInorderIdx - inFrom + 1),
-          preTo, inorder, rootInorderIdx + 1, inTo);
+      int preLeftEnd = preFrom + 1 + (rootInorderIdx - inFrom - 1);
+      root.left = build(preorder, preFrom + 1, preLeftEnd, inorder, inFrom, rootInorderIdx - 1);
+      root.right = build(preorder, preLeftEnd + 1, preTo, inorder, rootInorderIdx + 1, inTo);
       return root;
     }
   }
