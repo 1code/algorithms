@@ -36,7 +36,7 @@ public class DivideTwoIntegers {
         res += pow;
         dividend -= product;
       }
-      return sign > 0? res : -res;
+      return sign * res;
     }
   }
 
