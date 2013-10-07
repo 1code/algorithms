@@ -38,6 +38,9 @@ public class WordSearch {
       if (board[i][j] != ch) {
         return false;
       }
+      if (idx == word.length() - 1) {
+        return true;
+      }
       visited[i][j] = true;
       if (i - 1 >= 0 && !visited[i - 1][j] && search(board, word, idx + 1, i - 1, j, visited)) {
         return true;
