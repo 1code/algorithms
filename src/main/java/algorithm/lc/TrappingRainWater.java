@@ -20,21 +20,21 @@ public class TrappingRainWater {
       int[] leftMax = new int[A.length];
       int leftHighest = 0;
       for (int i = 0; i < A.length; ++i) {
-        leftMax[i] = (A[i] >= leftHighest ? 0 : leftHighest);
+        leftMax[i] = (A[i] >= leftHighest ? A[i] : leftHighest);
         leftHighest = Math.max(leftHighest, A[i]);
       }
 
       int[] rightMax = new int[A.length];
       int rightHighest = 0;
       for (int i = A.length - 1; i >= 0; --i) {
-        rightMax[i] = (A[i] >= rightHighest ? 0 : rightHighest);
+        rightMax[i] = (A[i] >= rightHighest ? A[i] : rightHighest);
         rightHighest = Math.max(rightHighest, A[i]);
       }
 
       int water = 0;
       for (int i = 0; i < A.length; ++i) {
         int h = Math.min(leftMax[i], rightMax[i]);
-        water += h > A[i] ? h - A[i] : 0;
+        water += h - A[i];
       }
       return water;
     }
