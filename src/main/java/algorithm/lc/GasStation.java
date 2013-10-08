@@ -16,37 +16,22 @@ package algorithm.lc;
  */
 public class GasStation {
 
-  // O(1) space, O(n^2) time
+  // O(1) space, O(n) time
   public class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
       // Note: The Solution object is instantiated only once and is reused by
       // each test case.
-      int start = -1;
+      int start = 0, total = 0, remain = 0;
 
       for (int i = 0; i < gas.length; ++i) {
-        start = solve(i, gas, cost);
-        if (start != -1) {
-          break;
+        remain = gas[i] - cost[i];
+        total = gas[i] - cost[i];
+        if (remain < 0) {
+          start = i + 1; // i cannot reach to i + 1
+          remain = 0;
         }
       }
-      return start;
-    }
-
-    private int solve(int i, int[] gas, int[] cost) {
-      int remain = gas[i]; // add initial gas
-      int curIdx = i;
-      do {
-        remain -= cost[curIdx]; // use gas
-        if (remain < 0) {
-          return -1;
-        }
-        ++curIdx;
-        if (curIdx == gas.length) {
-          curIdx = 0;
-        }
-        remain += gas[curIdx];
-      } while (curIdx != i);
-      return i;
+      return total < 0? -1 : start;
     }
   }
 
