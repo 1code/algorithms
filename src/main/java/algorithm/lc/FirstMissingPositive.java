@@ -35,10 +35,31 @@ public class FirstMissingPositive {
     }
   }
   
-  public static void main(String[] args) {
-    Solution s = new Solution();
-    int[] A = {1};
-    System.out.println(s.firstMissingPositive(A));
+  // O(1) space, O(n) time
+  // switch each val to appropriate position A[val - 1]
+  public class Solution2 {
+    public int firstMissingPositive(int[] A) {
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      int i = 0;
+      while (i < A.length) {
+        if (A[i] != i + 1 && A[i] > 0 && A[i] <= A.length && A[A[i] - 1] != A[i]) { // move A[i] to appropriate position
+          int tmp = A[i];
+          int idx = A[i] - 1;
+          A[i] = A[idx];
+          A[idx] = tmp;
+        }
+        else {
+          ++i; // skip number not in range
+        }
+      }
+      
+      for (i = 0; i < A.length; ++i) {
+        if (A[i] != i + 1) {
+          break;
+        }
+      }
+      return i + 1;
+    }
   }
 
 }
