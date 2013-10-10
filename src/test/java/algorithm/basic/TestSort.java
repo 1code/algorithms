@@ -11,11 +11,12 @@ public class TestSort {
   
   @Test
   public void testSort() {
-    testSorter(new BubbleSort());
-    testSorter(new InsertionSort());
-    testSorter(new SelectionSort());
-    testSorter(new QuickSortRecursive());
-    testSorter(new QuickSortIterative());
+//    testSorter(new BubbleSort());
+//    testSorter(new InsertionSort());
+//    testSorter(new SelectionSort());
+//    testSorter(new QuickSortRecursive());
+//    testSorter(new QuickSortIterative());
+    testSorter(new CountingSort());
   }
   
   public void testSorter(Sort sorter) {
