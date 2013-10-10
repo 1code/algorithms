@@ -3,7 +3,7 @@ package algorithm.basic;
 public class SelectionSort extends Sort {
   
   // O(1) space, O(n^2) time
-  // every time the first part of the array is sorted
+  // every time the part before the current element of the array is sorted
   public void sort(int[] A) {
     for (int i = 0; i < A.length; ++i) {
       int min = i;

@@ -24,23 +24,20 @@ public class PathSum {
   // O(1) space, O(n) time
   public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      if (root == null) {
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      return hasPath(root, sum, 0);      
+    }
+    
+    private boolean hasPath(TreeNode node, int sum, int curSum) {
+      if (node == null) {
         return false;
       }
-      return hasPath(root, sum);
-    }
-
-    private boolean hasPath(TreeNode node, int sum) {
-      sum -= node.val;
+      
       if (node.left == null && node.right == null) {
-        return 0 == sum;
+        return curSum + node.val == sum;
+      } else {
+        return hasPath(node.left, sum, curSum + node.val) || hasPath(node.right, sum, curSum + node.val);
       }
-      if (node.left != null && hasPath(node.left, sum)) {
-        return true;
-      }
-      return node.right != null && hasPath(node.right, sum);
     }
   }
 
