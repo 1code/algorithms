@@ -21,33 +21,29 @@ public class MergeKSortedLists {
 
   public class Solution {
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      ListNode head = new ListNode(0);
-      ListNode cur = head;
-
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      ListNode fakeHead = new ListNode(0);
+      ListNode cur = fakeHead;
+      
       while (true) {
+        int index = -1;
         int min = Integer.MAX_VALUE;
-        int minListIdx = -1;
-
-        for (int i = 0; i < lists.size(); ++i) {
-          ListNode node = lists.get(i);
-          if (node != null) {
-            if (node.val <= min) {
-              min = node.val;
-              minListIdx = i;
-            }
+        for (int i = 0; i < lists.size(); ++i) { // find the minimum
+          if (lists.get(i) != null && lists.get(i).val < min) {
+            min = lists.get(i).val;
+            index = i;
           }
         }
-        if (minListIdx != -1) {
-          cur.next = lists.get(minListIdx);
-          lists.set(minListIdx, lists.get(minListIdx).next);
-          cur = cur.next;
-        } else {
-          break;
+        
+        if (index == -1) {
+          return fakeHead.next;
         }
+        // update pointers
+        cur.next = lists.get(index);
+        cur = cur.next;
+        lists.set(index, lists.get(index).next);
       }
-      return head.next;
+      
     }
   }
 
