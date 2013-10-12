@@ -28,21 +28,21 @@ public class SortColors {
       // DO NOT write main() function
       int redPos = 0;
       int bluePos = A.length - 1;
-      int i = 0;
-      while (i <= bluePos) {
-        if (A[i] == 0) {
+      int cur = 0;
+      while (cur <= bluePos) {
+        if (A[cur] == 0) {
           int tmp = A[redPos];
-          A[redPos] = A[i];
-          A[i] = tmp;
+          A[redPos] = A[cur];
+          A[cur] = tmp;
           ++redPos;
-          ++i;
-        } else if (A[i] == 2) {
+          ++cur;
+        } else if (A[cur] == 2) {
           int tmp = A[bluePos];
-          A[bluePos] = A[i];
-          A[i] = tmp;
+          A[bluePos] = A[cur];
+          A[cur] = tmp;
           --bluePos;
         } else {
-          ++i;
+          ++cur;
         }
       }
     }
