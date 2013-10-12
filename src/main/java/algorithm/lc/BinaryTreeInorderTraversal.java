@@ -30,40 +30,29 @@ public class BinaryTreeInorderTraversal {
       val = x;
     }
   }
+  
+  // O(n) space, O(n) time
   public class Solution {
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      Stack<Pair> stack = new Stack<Pair>();
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      TreeNode cur = root;
+      Stack<TreeNode> stack = new Stack<TreeNode>();
       ArrayList<Integer> res = new ArrayList<Integer>();
-      if (root != null) {
-        stack.push(new Pair(root, false));
-      }
-      while (!stack.isEmpty()) {
-        Pair pair = stack.pop();
-        if (pair.node.left == null || pair.leftAdded) {
-          if (pair.node.right != null) {
-            stack.add(new Pair(pair.node.right, false));
-          }
-          res.add(pair.node.val);
+      
+      while (cur != null || !stack.isEmpty()) {
+        // push all left 
+        while (cur != null) {
+          stack.push(cur);
+          cur = cur.left;
         }
-        else {
-          pair.leftAdded = true;
-          stack.push(pair); // put back current node
-          stack.push(new Pair(pair.node.left, false)); // put left on top
-        }
+        
+        TreeNode next = stack.pop();
+        // push right
+        cur = next.right;
+        res.add(next.val);
       }
       
       return res;
-    }
-    
-    public class Pair {
-      public TreeNode node;
-      public boolean leftAdded;
-      public Pair(TreeNode node, boolean leftAdded) {
-        this.node = node;
-        this.leftAdded = leftAdded;
-      }
     }
   }
 
