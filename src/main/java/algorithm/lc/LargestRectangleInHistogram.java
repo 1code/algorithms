@@ -24,7 +24,7 @@ public class LargestRectangleInHistogram {
           // Start typing your Java solution below
           // DO NOT write main() function
       int[] toLeftBoundary = new int[height.length];
-      Stack<Integer> stack = new Stack<Integer>();
+      Stack<Integer> stack = new Stack<Integer>(); // store the index
       for (int i = 0; i < height.length; ++i) {
         while (!stack.isEmpty() && height[stack.peek()] >= height[i]) {
           stack.pop();

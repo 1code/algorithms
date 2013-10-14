@@ -16,8 +16,7 @@ public class PalindromePartitionII {
   // also the palindrome isPalindrome is used to keep track that whether s[i..j] is palindrome
   public class Solution {  
     public int minCut(String s) {  
-      // Start typing your C/C++ solution below  
-      // DO NOT write int main() function  
+      // Note: The Solution object is instantiated only once and is reused by each test case. 
       int n = s.length();  
       int[] res = new int[n + 1]; // keep min number of partitions from in range s[i..n]
       for(int i = 0 ; i < res.length; ++i) {  

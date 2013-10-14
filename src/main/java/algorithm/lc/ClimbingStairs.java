@@ -34,24 +34,21 @@ public class ClimbingStairs {
   // O(1) space, O(n) time
   public class Solution2 {
     public int climbStairs(int n) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+            // Start typing your Java solution below
+            // DO NOT write main() function
       if (n == 0) {
-        return 0;
+        return 1;
       }
       else if (n == 1) {
         return 1;
       }
-      else if (n == 2) {
-        return 2;
-      }
       int[] ways = new int[2];
       ways[0] = 1;
-      ways[1] = 2;
-      for (int i = 3; i < n + 1; ++i) {
-        ways[(i - 3) % 2] = ways[((i - 3) % 2 + 1) % 2] + ways[(i - 3) % 2];
+      ways[1] = 1;
+      for (int i = 2; i < n + 1; ++i) {
+        ways[(i - 2) % 2] = ways[((i - 2) % 2 + 1) % 2] + ways[(i - 2) % 2];
       }
-      return ways[(n - 3) % 2];
+      return ways[(n - 2) % 2];
     }
   }
 

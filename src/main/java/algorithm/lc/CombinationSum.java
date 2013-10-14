@@ -14,8 +14,8 @@ import java.util.Set;
  * Note:
  * 
  * All numbers (including target) will be positive integers. Elements in a
- * combination (a1, a2, � , ak) must be in non-descending order. (ie, a1 ? a2 ?
- * � ? ak). The solution set must not contain duplicate combinations. For
+ * combination (a1, a2, ... , ak) must be in non-descending order. (ie, a1 <= a2
+ * <= ... ? ak). The solution set must not contain duplicate combinations. For
  * example, given candidate set 2,3,6,7 and target 7, A solution set is: [7] [2,
  * 2, 3]
  * 
@@ -23,9 +23,10 @@ import java.util.Set;
 public class CombinationSum {
 
   public class Solution {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates,
+        int target) {
+      // Start typing your Java solution below
+      // DO NOT write main() function
       Set<ArrayList<Integer>> res = new HashSet<ArrayList<Integer>>();
       int curIdx = 0;
       ArrayList<Integer> cur = new ArrayList<Integer>();
@@ -34,8 +35,9 @@ public class CombinationSum {
       generate(candidates, target, res, curIdx, cur, sum);
       return new ArrayList<ArrayList<Integer>>(res);
     }
-    
-    private void generate(int[] candidates, int target, Set<ArrayList<Integer>> res, int curIdx, ArrayList<Integer> cur, int sum) {
+
+    private void generate(int[] candidates, int target,
+        Set<ArrayList<Integer>> res, int curIdx, ArrayList<Integer> cur, int sum) {
       if (curIdx == candidates.length) {
         if (sum == target) {
           res.add(cur);

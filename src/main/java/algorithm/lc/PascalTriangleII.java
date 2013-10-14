@@ -1,6 +1,7 @@
 package algorithm.lc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  Given an index k, return the kth row of the Pascal's triangle.
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class PascalTriangleII {
 
   // reuse the arraylist
-  public class Solution {
+  public static class Solution {
     public ArrayList<Integer> getRow(int rowIndex) {
           // Start typing your Java solution below
           // DO NOT write main() function

@@ -1,5 +1,7 @@
 package algorithm.lc;
 
+import java.util.Stack;
+
 /**
  * Given a string containing just the characters '(' and ')', find the length of
  * the longest valid (well-formed) parentheses substring.
@@ -23,22 +25,21 @@ public class LongestValidParenthesis {
       // DO NOT write main() function
       int start = Integer.MAX_VALUE;
       int maxLen = 0;
-      int top = -1;
-      int[] stack = new int[s.length()];
+      Stack<Integer> stack = new Stack<Integer>();
       for (int i = 0; i < s.length(); ++i) {
         char ch = s.charAt(i);
         if (ch == '(') {
-          stack[++top] = i; // record candidate start
+          stack.push(i); // record candidate start
         } else { // meet ')'
-          if (top == -1) { // all previous characters become invalid, start from scratch
-            start = i + 1;
+          if (stack.isEmpty()) { 
+            start = i + 1;  // all previous characters become invalid, start from scratch
           } else {
-            start = Math.min(start, stack[top--]);
+            start = Math.min(start, stack.pop());
             int curLen = 0;
-            if (top == -1) {
+            if (stack.isEmpty()) {
               curLen = i - start + 1;
             } else {
-              curLen = i - stack[top];
+              curLen = i - stack.peek();
             }
             maxLen = Math.max(maxLen, curLen);
           }

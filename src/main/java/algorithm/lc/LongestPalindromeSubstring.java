@@ -16,11 +16,11 @@ public class LongestPalindromeSubstring {
           // DO NOT write main() function
       String res = "";
       for (int i = 0; i < s.length(); ++i) {
-        String sub1 = expand(s, i, i);
-        res = res.length() >= sub1.length()? res : sub1;
+        String palindrome1 = expand(s, i, i); // center is in the middle of two characters
+        res = res.length() >= palindrome1.length()? res : palindrome1;
         if (i < s.length() - 1) {
-          String sub2 = expand(s, i, i + 1);
-          res = res.length() >= sub2.length()? res : sub2;
+          String palindrome2 = expand(s, i, i + 1); // center is the middle two characters
+          res = res.length() >= palindrome2.length()? res : palindrome2;
         }
       }
       return res;

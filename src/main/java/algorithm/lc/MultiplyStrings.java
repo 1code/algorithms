@@ -18,12 +18,11 @@ public class MultiplyStrings {
           // Start typing your Java solution below
           // DO NOT write main() function
       int[] res = new int[num1.length() + num2.length()];
-      Arrays.fill(res, 0);
       
       for (int i = num2.length() - 1; i >= 0; --i) {
-        int carry = 0, tmp;
+        int carry = 0;
         for (int j = num1.length() - 1; j >=0; --j) {
-          tmp = carry + res[i + j + 1] + (num1.charAt(j) - '0') * (num2.charAt(i) - '0');
+          int tmp = carry + res[i + j + 1] + (num1.charAt(j) - '0') * (num2.charAt(i) - '0');
           res[i + j + 1] = tmp % 10;
           carry = tmp / 10;
         }

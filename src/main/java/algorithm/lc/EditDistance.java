@@ -26,7 +26,7 @@ public class EditDistance {
           } else {
             int plus = word1.charAt(i - 1) == word2.charAt(j - 1) ? 0 : 1;
             dist[i][j] = Math.min(dist[i - 1][j - 1] + plus,
-                Math.min(dist[i - 1][j] + 1, dist[i][j - 1] + 1));
+                Math.min(dist[i - 1][j], dist[i][j - 1]) + 1);
           }
         }
       }

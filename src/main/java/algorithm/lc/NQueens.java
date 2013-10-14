@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * The n-queens puzzle is the problem of placing n queens on an n�n chessboard
+ * The n-queens puzzle is the problem of placing n queens on an n*n chessboard
  * such that no two queens attack each other.
  * 
  * Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -44,7 +44,7 @@ public class NQueens {
           boolean canPut = true;
           for (int r = 0; r < curRow; ++r) {
             if (history[r] == c || c - curRow == history[r] - r // diagonal
-                || c + curRow == history[r] + r) {
+                || c + curRow == history[r] + r) { // anti-diagonal
               canPut = false;
               break;
             }

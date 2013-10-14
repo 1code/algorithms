@@ -34,6 +34,7 @@ public class CountAndSay {
             c = 1;
           }
         }
+        // add the last one
         newSb.append(c);
         newSb.append(sb.charAt(sb.length() - 1));
         sb = newSb;

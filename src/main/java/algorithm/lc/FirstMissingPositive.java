@@ -9,9 +9,9 @@ package algorithm.lc;
  * Your algorithm should run in O(n) time and uses constant space.
  * 
  */
-// O(1) space, O(n) time
 public class FirstMissingPositive {
 
+  //O(1) space, O(n) time
   public static class Solution {
     // if size of A is n, create an boolean array with size n + 1,
     // the nth elements indicate whether the number n + 1 appears
@@ -42,7 +42,8 @@ public class FirstMissingPositive {
           // Note: The Solution object is instantiated only once and is reused by each test case.
       int i = 0;
       while (i < A.length) {
-        if (A[i] != i + 1 && A[i] > 0 && A[i] <= A.length && A[A[i] - 1] != A[i]) { // move A[i] to appropriate position
+        // move A[i] to appropriate position
+        if (A[i] != i + 1 && A[i] > 0 && A[i] <= A.length && A[A[i] - 1] != A[i]) { 
           int tmp = A[i];
           int idx = A[i] - 1;
           A[i] = A[idx];

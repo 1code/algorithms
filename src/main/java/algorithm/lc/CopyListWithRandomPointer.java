@@ -24,6 +24,7 @@ public class CopyListWithRandomPointer {
       RandomListNode curNode = fakeHead;
       RandomListNode curCopy = newFakeHead;
       
+      // copy list without random pointers
       while (curNode.next != null) {
         curCopy.next = new RandomListNode(curNode.next.label);
         map.put(curNode.next.label, curCopy.next);
@@ -33,7 +34,7 @@ public class CopyListWithRandomPointer {
       
       curNode = fakeHead.next;
       curCopy = newFakeHead.next;
-      // add random
+      // add random pointers to each node
       while (curNode != null) {
         if (curNode.random != null) {
           curCopy.random = map.get(curNode.random.label);

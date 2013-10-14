@@ -36,10 +36,10 @@ public class InterleavingString {
       for (i = 1; i < s1.length() + 1; ++i) {
         for (j = 1; j < s2.length() + 1; ++j) {
           char c = s3.charAt(i + j - 1);
-          if (c == s1.charAt(i - 1)) {
-            match[i][j] = match[i - 1][j];
+          if (c == s1.charAt(i - 1)) { // s1[i] can be used
+            match[i][j] |= match[i - 1][j];
           }
-          if (c == s2.charAt(j - 1)) {
+          if (c == s2.charAt(j - 1)) { // s2[j] can be used
             match[i][j] |= match[i][j - 1];
           }
         }

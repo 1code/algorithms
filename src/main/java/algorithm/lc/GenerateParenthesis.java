@@ -55,26 +55,26 @@ public class GenerateParenthesis {
           // Start typing your Java solution below
           // DO NOT write main() function
       ArrayList<String> res = new ArrayList<String>();
-      StringBuilder sb = new StringBuilder();
+      StringBuilder cur = new StringBuilder();
       int leftParen = n;
       int rightParen = n;
-      generate(leftParen, rightParen, sb, res);
+      generate(leftParen, rightParen, cur, res);
       return res;
     }
     
-    private void generate(int leftParen, int rightParen, StringBuilder sb, ArrayList<String> res) {
+    private void generate(int leftParen, int rightParen, StringBuilder cur, ArrayList<String> res) {
       if (leftParen == 0 && rightParen == 0) {  // used up parenthesis
-        res.add(sb.toString());
+        res.add(cur.toString());
       }   
       if (leftParen > 0) {
-        sb.append("(");
-        generate(leftParen - 1, rightParen, sb, res);
-        sb.deleteCharAt(sb.length() - 1);
+        cur.append("(");
+        generate(leftParen - 1, rightParen, cur, res);
+        cur.deleteCharAt(cur.length() - 1);
       }
       if (rightParen > leftParen) {
-        sb.append(")");
-        generate(leftParen, rightParen -1, sb, res);
-        sb.deleteCharAt(sb.length() - 1);
+        cur.append(")");
+        generate(leftParen, rightParen -1, cur, res);
+        cur.deleteCharAt(cur.length() - 1);
       }
     }
   }

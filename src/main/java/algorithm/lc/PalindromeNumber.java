@@ -27,8 +27,8 @@ public class PalindromeNumber {
         if (x / digit != x % 10) {
           return false;
         }
-        x -= x % 10 * digit;
-        x /= 10;
+        x -= x % 10 * digit; // remove highest digit
+        x /= 10; // remove lowest digit
         digit /= 100;
       }
       return true;

@@ -37,7 +37,7 @@ public class DecodeWays {
           ways[i] = ways[i - 2];
         } else if (10 < value && value <= 26) {
           ways[i] = ways[i - 1] + ways[i - 2];
-        } else {
+        } else { // value > 26, can only decode current character
           ways[i] = ways[i - 1];
         }
         prev = cur;

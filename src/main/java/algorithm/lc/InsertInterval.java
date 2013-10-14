@@ -100,8 +100,8 @@ public class InsertInterval {
         if (interval.end < start) {
           res.add(interval);
         }
-        else if (interval.start > end) { // after merged
-          if (finished == false) {
+        else if (interval.start > end) { 
+          if (finished == false) { // new interval has not been added
             res.add(new Interval(start, end));
             finished = true;
           }

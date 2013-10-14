@@ -29,6 +29,7 @@ public class LengthOfLastWord {
           --last;
         }
       }
+      // find the last word
       s = s.substring(0, last);
       for (int i = s.length() - 1; i >= 0; --i) {
         if (s.charAt(i) == ' ') {
