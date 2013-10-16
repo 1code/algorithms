@@ -32,9 +32,11 @@ public class ReverseList2 {
       for (int i = 0; i < m - 1; ++i) {
         prev = prev.next;
       }
+      
       ListNode before = prev;
       ListNode reverseHead = prev.next;
       ListNode cur = reverseHead;
+      
       int count = 0;
       while (count++ <= len) {
         ListNode next = cur.next;

@@ -31,10 +31,10 @@ public class ReverseNodesInKGroup {
     }
   }
 
-  public static class Solution {
+  public class Solution {
     // reverse list in each local group, maintain the connection between
     // previous group to current group
-    public static ListNode reverseKGroup(ListNode head, int k) {
+    public ListNode reverseKGroup(ListNode head, int k) {
       // Start typing your Java solution below
       // DO NOT write main() function
       ListNode fakeHead = new ListNode(0);
@@ -67,18 +67,8 @@ public class ReverseNodesInKGroup {
         prevGroupTail.next = groupTail;
         prevGroupTail = groupHead;
       }
+      
       return fakeHead.next;
-    }
-  }
-  
-  public static void main(String[] args) {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(2);
-    int k = 2;
-    ListNode res = Solution.reverseKGroup(head, k);
-    while (res != null) {
-      System.out.println(res.val);
-      res = res.next;
     }
   }
 

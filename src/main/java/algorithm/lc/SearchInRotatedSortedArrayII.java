@@ -22,6 +22,7 @@ public class SearchInRotatedSortedArrayII {
         if (target == A[mid]) {
           return true;
         }
+        // skip duplicates
         while (left < mid && A[left] == A[mid]) {
           ++left;
         }
@@ -32,7 +33,7 @@ public class SearchInRotatedSortedArrayII {
           } else {
             left = mid + 1;
           }
-        } else {
+        } else { // right sorted
           if (A[mid] < target && target <= A[right]) {
             left = mid + 1;
           } else {

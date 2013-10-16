@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Given a roman numeral, convert it to an integer.
+ * Given a Roman numeral, convert it to an integer.
  * 
  * Input is guaranteed to be within the range from 1 to 3999.
  * 
@@ -32,13 +32,14 @@ public class RomanToInteger {
       int res = prev;
       for (int i = 1; i < s.length(); ++i) {
         int value = map.get(s.charAt(i));
-        if (value > prev) {
+        if (value > prev) { // current unit is bigger than previousC
           res += value - 2 * prev;
         } else {
           res += value;
         }
         prev = value;
       }
+      
       return res;
     }
   }

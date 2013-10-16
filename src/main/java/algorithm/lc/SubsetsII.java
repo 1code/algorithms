@@ -20,7 +20,7 @@ import java.util.Set;
  * 
  */
 // O(2^n) space, O(2^n) time
-public class SubsetII {
+public class SubsetsII {
 
   public class Solution {
     public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] num) {

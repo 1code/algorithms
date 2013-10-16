@@ -24,27 +24,25 @@ public class ReverseInteger {
 
   public class Solution {
     public int reverse(int x) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      int sign = (x > 0? 1 : -1);
+          // Note: The Solution object is instantiated only once and is reused by each test case.
       if (x == Integer.MIN_VALUE) {
-        return x;
+        return 0;
       }
       
       int res = 0;
+      int sign = x > 0? 1 : -1;
       x = Math.abs(x);
       while (x > 0) {
         int digit = x % 10;
+        if (sign == 1 && (Integer.MAX_VALUE - digit) / 10 < res) {
+          return 0; // overflow
+        }
+        else if (sign == -1 && (Integer.MIN_VALUE + digit) / 10 > res) {
+          return 0; // underflow
+        }
         x /= 10;
-        if (sign == 1 && (Integer.MIN_VALUE + digit) / 10 > res) {
-          return x; // underflow
-        }
-        else if (sign == -1 && (Integer.MAX_VALUE - digit) / 10 < res) {
-          return x; // overflow
-        }
-        res = res * 10 + sign * digit; 
+        res = res * 10 + sign * digit;
       }
-      
       return res;
     }
   }

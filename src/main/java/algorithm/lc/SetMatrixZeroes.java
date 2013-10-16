@@ -13,6 +13,10 @@ import java.util.Arrays;
  */
 public class SetMatrixZeroes {
 
+  // O(1) space, O(mn) time
+  // use first row to indicate whether current column contains zero
+  // use first column to indicate whether current row contains zero
+  // use an extra variable to store whether first column is zero
   public class Solution {
     public void setZeroes(int[][] matrix) {
           // Start typing your Java solution below
@@ -22,12 +26,12 @@ public class SetMatrixZeroes {
       for (int i = 0; i < matrix.length; ++i) {
         for (int j = 0; j < matrix[i].length; ++j) {
           if (matrix[i][j] == 0) {
-            if (j == 0) {
+            if (j == 0) { 
               firstColZero = true;
             }
             else {
-              matrix[0][j] = 0;
-              matrix[i][0] = 0;
+              matrix[0][j] = 0; // indicate current column has 0 
+              matrix[i][0] = 0; // indicate current row has 0
             }
           }
         }
@@ -40,12 +44,12 @@ public class SetMatrixZeroes {
           }
         }
       }
-      // check first row
-      if (matrix[0][0] == 0) {
+      
+      if (matrix[0][0] == 0) { // check if first row contains 0
         Arrays.fill(matrix[0], 0);
       }
       
-      if (firstColZero) {
+      if (firstColZero) { // check if first column contains 0
         for (int i = 0; i < matrix.length; ++i) {
           matrix[i][0] = 0;
         }

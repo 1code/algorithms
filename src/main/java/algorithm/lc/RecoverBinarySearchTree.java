@@ -61,36 +61,37 @@ public class RecoverBinarySearchTree {
     public void recoverTree(TreeNode root) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      Wrapper first = new Wrapper();
-      Wrapper second = new Wrapper();
-      Wrapper pre = new Wrapper();
+      List<TreeNode> first = new ArrayList<TreeNode>();
+      List<TreeNode> second = new ArrayList<TreeNode>();
+      List<TreeNode> pre = new ArrayList<TreeNode>();
+      first.add(null);
+      second.add(null);
+      pre.add(null);
 
       inorder(root, first, second, pre);
       // swap two nodes
-      int val = first.node.val;
-      first.node.val = second.node.val;
-      second.node.val = val;
+      int val = first.get(0).val;
+      first.get(0).val = second.get(0).val;
+      second.get(0).val = val;
     }
 
-    private void inorder(TreeNode node, Wrapper first, Wrapper second,
-        Wrapper pre) {
+    private void inorder(TreeNode node, List<TreeNode> first,
+        List<TreeNode> second, List<TreeNode> pre) {
       if (node == null) {
         return;
       }
       inorder(node.left, first, second, pre);
-      if (pre.node != null && node.val < pre.node.val) {
-        if (first.node == null) {
-          first.node = pre.node;
+      if (pre.get(0) != null && node.val < pre.get(0).val) { // if out-of-order
+                                                          // appears
+        if (first.get(0) == null) {
+          first.set(0, pre.get(0));
         }
-        second.node = node;
+        second.set(0, node);
       }
-      pre.node = node;
+      pre.set(0, node);
       inorder(node.right, first, second, pre);
     }
 
-    public class Wrapper {
-      TreeNode node;
-    }
   }
 
 }

@@ -40,6 +40,32 @@ public class PopulatingNextRightPointersInEachNodeII {
   // recurively linke right sub-tree and left sub-tree
   public class Solution {
     public void connect(TreeLinkNode root) {
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      if (root == null) {
+        return;
+      }      
+      if (root.left != null && root.right != null) {
+        root.left.next = root.right;
+      }
+      if (root.next != null) {
+        TreeLinkNode nextStart = root.right == null? root.left : root.right;
+        if (nextStart != null) {
+          TreeLinkNode nextParent = root.next;
+          while (nextParent != null && nextParent.left == null && nextParent.right == null) {
+            nextParent = nextParent.next;
+          }
+          if (nextParent != null) {
+            nextStart.next = nextParent.left != null? nextParent.left : nextParent.right;
+          }
+        }
+      }
+      connect(root.right);
+      connect(root.left);
+    }
+  }
+  
+  public class Solution2 {
+    public void connect(TreeLinkNode root) {
           // Start typing your Java solution below
           // DO NOT write main() function
       if (root == null) {
@@ -75,36 +101,4 @@ public class PopulatingNextRightPointersInEachNodeII {
     }
   }
   
-  public class Solution2 {
-    public void connect(TreeLinkNode root) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      if (root == null) {
-        return;
-      }       
-      if (root.right != null && root.left != null) {  // link the left to right
-        root.left.next = root.right;
-      }
-      if (root.next != null) { // link the right to next
-        TreeLinkNode nextStart = root.right == null? root.left : root.right;
-        if (nextStart != null) {
-          TreeLinkNode nextEndParent = root.next;
-          while (nextEndParent != null && nextEndParent.left == null && nextEndParent.right == null) {
-            nextEndParent = nextEndParent.next;
-          }
-          if (nextEndParent != null) {
-            if (nextEndParent.left != null) {
-              nextStart.next = nextEndParent.left;
-            }
-            else {
-              nextStart.next = nextEndParent.right;
-            }
-          }
-        }
-      }
-      connect(root.right);
-      connect(root.left);
-    }
-  }
-
 }

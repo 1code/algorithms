@@ -26,6 +26,10 @@ public class RotateList {
     public ListNode rotateRight(ListNode head, int n) {
       // Start typing your Java solution below
       // DO NOT write main() function
+      if (head == null) {
+        return null;
+      }
+      
       int size = 0;
       ListNode cur = head;
       while (cur != null) {
@@ -33,13 +37,9 @@ public class RotateList {
         cur = cur.next;
       }
 
-      if (size == 0) {
-        return null;
-      }
-
       n = n % size;
 
-      if (n == 0) {
+      if (n == 0) { // no need to shift
         return head;
       }
 

@@ -17,18 +17,14 @@ public class RemoveElement {
     public int removeElement(int[] A, int elem) {
       // Start typing your Java solution below
       // DO NOT write main() function
-      int last = A.length - 1;
-      int i = 0;
-      while (i <= last) {
+      int newLen = A.length;
+      for (int i = A.length - 1; i >= 0; --i) {
         if (A[i] == elem) {
-          int tmp = A[i];
-          A[i] = A[last];
-          A[last--] = tmp;
-        } else {
-          ++i;
+          --newLen;
+          A[i] = A[newLen];
         }
       }
-      return last + 1;
+      return newLen;
     }
   }
 

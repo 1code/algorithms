@@ -17,7 +17,7 @@ public class SingleNumberII {
       // each test case.
       int once = 0, twice = 0, threeTimes = 0;
       for (int val : A) {
-        twice |= once & val; // record the bits that the val appears twice
+        twice |= once & val; // record the bits that the val appears twice, is 0 for the first iteration
         once ^= val; // record the bits that the val appears once
 
         threeTimes = once & twice; // records the bits that val appear three times

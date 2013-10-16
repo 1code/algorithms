@@ -30,13 +30,13 @@ public class SortColors {
       int bluePos = A.length - 1;
       int cur = 0;
       while (cur <= bluePos) {
-        if (A[cur] == 0) {
+        if (A[cur] == 0) { // meet red, move to the red area
           int tmp = A[redPos];
           A[redPos] = A[cur];
           A[cur] = tmp;
           ++redPos;
           ++cur;
-        } else if (A[cur] == 2) {
+        } else if (A[cur] == 2) { // meet blue, move to the blue area
           int tmp = A[bluePos];
           A[bluePos] = A[cur];
           A[cur] = tmp;
