@@ -27,7 +27,7 @@ public class ValidParenthesis {
         char ch = s.charAt(i);
         if (ch == '(' || ch == '[' || ch == '{') {
           stack[++top] = ch;
-        } else { // assume 's' only contains parenthesis
+        } else { // assume s only contains parenthesis
           if (top < 0) {
             return false;
           }

@@ -57,7 +57,7 @@ public class UniqueBinarySearchTree {
       count[1] = 1;
 
       for (int i = 2; i <= n; ++i) {
-        for (int j = 0; j < i; ++j) {
+        for (int j = 0; j < i; ++j) { // use j-th node as root
           count[i] += count[j] * count[i - 1 - j];
         }
       }

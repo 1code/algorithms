@@ -67,41 +67,38 @@ public class SymmetricTree {
    *     TreeNode(int x) { val = x; }
    * }
    */
-  public class SolutionIterative {
+  public class Solution {
     public boolean isSymmetric(TreeNode root) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
-      
+          // Note: The Solution object is instantiated only once and is reused by each test case.
       Queue<TreeNode> left = new LinkedList<TreeNode>();
       Queue<TreeNode> right = new LinkedList<TreeNode>();
       left.offer(root);
       right.offer(root);
-      // match two sub-tree by level
+      // pair-wise match
       while (left.peek() != null || right.peek() != null) {
-        if (left.peek() == null || right.peek() == null) {
+        if ((left.peek() == null) != (right.peek() == null)) {
           return false;
         }
-        TreeNode l = left.poll();
-        TreeNode r = right.poll();
-        if (l.val != r.val 
-          || (l.left == null) != (r.right == null) 
-          || (l.right == null) != (r.left == null)) {
+        TreeNode curLeft = left.poll();
+        TreeNode curRight = right.poll();
+        
+        if (curLeft.val != curRight.val) {
           return false;
         }
-        else {
-          if (l.left != null) {
-            left.offer(l.left);
-            right.offer(r.right);
-          }
-          if (l.right != null) {
-            left.offer(l.right);
-            right.offer(r.left);
-          }
+        
+        if (curLeft.left != null) {
+          left.offer(curLeft.left);
+          right.offer(curRight.right);  
         }
+        
+        if (curLeft.right != null) {
+          left.offer(curLeft.right);
+          right.offer(curRight.left);
+        }
+        
       }
       return true;
     }
-    
   }
 
 }

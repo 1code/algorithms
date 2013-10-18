@@ -37,8 +37,7 @@ public class Triangle {
 
       for (int r = rows - 2; r >= 0; --r) {
         for (int c = 0; c <= r; ++c) {
-          mem[r % 2][c] = Math
-              .min(mem[(r + 1) % 2][c], mem[(r + 1) % 2][c + 1]);
+          mem[r % 2][c] = Math.min(mem[(r + 1) % 2][c], mem[(r + 1) % 2][c + 1]);
           mem[r % 2][c] += triangle.get(r).get(c);
         }
       }

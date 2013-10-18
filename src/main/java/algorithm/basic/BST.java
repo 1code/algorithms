@@ -203,7 +203,7 @@ public class BST {
       }
       
       TreeNode node = stack.pop();
-      cur = cur.right;
+      cur = node.right;
       
       return node;
     }

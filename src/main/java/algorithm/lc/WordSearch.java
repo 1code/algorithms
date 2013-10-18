@@ -34,13 +34,15 @@ public class WordSearch {
     }
     
     private boolean search(char[][] board, String word, int idx, int i, int j, boolean[][] visited) {
+      if (idx == word.length() - 1) {
+        return true;
+      }
+      
       char ch = word.charAt(idx);
       if (board[i][j] != ch) {
         return false;
       }
-      if (idx == word.length() - 1) {
-        return true;
-      }
+      
       visited[i][j] = true;
       if (i - 1 >= 0 && !visited[i - 1][j] && search(board, word, idx + 1, i - 1, j, visited)) {
         return true;
