@@ -72,7 +72,6 @@ public class GrayCode {
           base <<= 1;
         }
         grayCodes.add(val);
-        System.out.println(val);
       }
 
       return grayCodes;

@@ -16,24 +16,23 @@ import java.util.Arrays;
 public class PascalTriangleII {
 
   // reuse the arraylist
-  public static class Solution {
+  public class Solution {
     public ArrayList<Integer> getRow(int rowIndex) {
-          // Start typing your Java solution below
-          // DO NOT write main() function
+          // Note: The Solution object is instantiated only once and is reused by each test case.
       ArrayList<Integer> res = new ArrayList<Integer>();
-      for (int i = 0; i <= rowIndex; ++i) {
+      for (int i = 0; i < rowIndex + 1; ++i) {
         res.add(1);
       }
       
-      for (int i = 2; i <= rowIndex; ++i) {
+      for (int level = 0; level < rowIndex + 1; ++level) {
         int upperLeft = res.get(0);
-        int upperRight = res.get(1);
-        for (int j = 1; j < i; ++j) {
-          res.set(j, upperLeft + upperRight);
-          upperLeft = upperRight;
-          upperRight = res.get(j + 1);
+        for (int c = 1; c < level; ++c) {
+          int upper = res.get(c);
+          res.set(c, upperLeft + upper);
+          upperLeft = upper;
         }
       }
+      
       return res;
     }
   }
