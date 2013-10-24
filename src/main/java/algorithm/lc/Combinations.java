@@ -81,4 +81,41 @@ public class Combinations {
     }
   }
   
+  public class Solution3 {
+    public ArrayList<ArrayList<Integer>> combine(int n, int k) {
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      int[] num = new int[n];
+      for (int i = 0; i < n; ++i) {
+        num[i] = i + 1;
+      }
+      ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+      
+      if (k == 0) {
+        return res;
+      }
+      
+      for (int i = 0; i < n; ++i) {
+        ArrayList<Integer> cur = new ArrayList<Integer>();
+        cur.add(num[i]);
+        res.add(cur);
+      }
+      
+      for (int i = 1; i < k; ++i) {
+        ArrayList<ArrayList<Integer>> next = new ArrayList<ArrayList<Integer>>();
+        for (ArrayList<Integer> cur : res) {
+          for (int j = 0; j < num.length; ++j) {
+            if (num[j] > cur.get(cur.size() - 1)) {
+              ArrayList<Integer> newList = new ArrayList<Integer>(cur);
+              newList.add(num[j]);
+              next.add(newList);
+            }
+          }
+        }
+        res = next;
+      }
+      
+      return res;
+    }
+  }
+  
 }
