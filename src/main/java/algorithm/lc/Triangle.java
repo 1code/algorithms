@@ -22,26 +22,26 @@ public class Triangle {
     // O(n) space, O(n^2) time
     // use rolling array to store the intermediate results
     public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      int rows = triangle.size();
-      if (rows == 0) {
+      // IMPORTANT: Please reset any member data you declared, as
+      // the same Solution instance will be reused for each test case.
+      if (triangle.size() == 0) {
         return 0;
       }
-      int lastCols = triangle.get(rows - 1).size();
-      int[][] mem = new int[2][lastCols];
-      int idx = rows - 1;
-      for (int c = 0; c < lastCols; ++c) {
-        mem[idx % 2][c] = triangle.get(idx).get(c);
+      int[][] res = new int[2][triangle.get(triangle.size() - 1).size()];
+
+      int row = triangle.size() - 1;
+      for (int c = 0; c < triangle.get(row).size(); ++c) {
+        res[row % 2][c] = triangle.get(row).get(c);
       }
 
-      for (int r = rows - 2; r >= 0; --r) {
-        for (int c = 0; c <= r; ++c) {
-          mem[r % 2][c] = Math.min(mem[(r + 1) % 2][c], mem[(r + 1) % 2][c + 1]);
-          mem[r % 2][c] += triangle.get(r).get(c);
+      for (int r = row - 1; r >= 0; --r) {
+        for (int c = 0; c < triangle.get(r).size(); ++c) {
+          res[r % 2][c] = Math.min(res[(r + 1) % 2][c], res[(r + 1) % 2][c + 1]);
+          res[r % 2][c] += triangle.get(r).get(c);
         }
       }
-      return mem[0][0];
+
+      return res[0][0];
     }
   }
 
