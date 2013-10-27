@@ -56,7 +56,6 @@ public class PathSumII {
           copy.add(node.val);
           res.add(copy);
         }
-        return;
       } else {
         cur.add(node.val);
         if (node.left != null) {
