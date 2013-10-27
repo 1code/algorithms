@@ -1,5 +1,7 @@
 package algorithm.lc;
 
+import java.util.Arrays;
+
 /**
  * Given a sorted array of integers, find the starting and ending position of a
  * given target value.
@@ -14,7 +16,7 @@ package algorithm.lc;
 // O(1) space, O(lgn) time
 public class SearchForARange {
 
-  public class Solution {
+  public static class Solution {
     // use binary search twice
     public int[] searchRange(int[] A, int target) {
       // Start typing your Java solution below
@@ -53,6 +55,14 @@ public class SearchForARange {
       return res;
     }
 
+  }
+  
+  public static void main(String[] args) {
+    Solution s = new Solution();
+    int[] A = {1};
+    int target = 1;
+    int[] res = s.searchRange(A, target);
+    System.out.println(Arrays.toString(res));
   }
 
 }

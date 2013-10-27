@@ -13,29 +13,29 @@ package algorithm.lc;
 public class TrappingRainWater {
   // O(n) space, O(n) time
   public class Solution {
-    // keep track of left highest and right highest respectively
     public int trap(int[] A) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      int[] leftMax = new int[A.length];
-      int leftHighest = 0;
+          // Note: The Solution object is instantiated only once and is reused by each test case.
+      // for each bin, calculate the left highest and right highest bar
+      int[] left = new int[A.length];
+      int leftMax = 0;
       for (int i = 0; i < A.length; ++i) {
-        leftMax[i] = (A[i] >= leftHighest ? A[i] : leftHighest);
-        leftHighest = Math.max(leftHighest, A[i]);
+        left[i] = Math.max(A[i], leftMax);
+        leftMax = Math.max(leftMax, A[i]);
       }
-
-      int[] rightMax = new int[A.length];
-      int rightHighest = 0;
+      
+      int[] right = new int[A.length];
+      int rightMax = 0;
       for (int i = A.length - 1; i >= 0; --i) {
-        rightMax[i] = (A[i] >= rightHighest ? A[i] : rightHighest);
-        rightHighest = Math.max(rightHighest, A[i]);
+        right[i] = Math.max(A[i], rightMax);
+        rightMax = Math.max(rightMax, A[i]);
       }
-
+      
       int water = 0;
-      for (int i = 0; i < A.length; ++i) {
-        int h = Math.min(leftMax[i], rightMax[i]);
-        water += h - A[i];
+      for (int i = 0; i < left.length; ++i) {
+        int height = Math.min(left[i], right[i]);
+        water += height - A[i];
       }
+      
       return water;
     }
   }
