@@ -43,4 +43,39 @@ public class CountAndSay {
     }
   }
   
+  public static class Solution2 {
+    public String countAndSay(int n) {
+          // IMPORTANT: Please reset any member data you declared, as
+          // the same Solution instance will be reused for each test case.
+      StringBuilder seq = new StringBuilder();
+      seq.append(1);
+      for (int i = 1; i < n; ++i) {
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
+        char prevChar = seq.charAt(0);
+        for (int j = 1; j < seq.length(); ++j) {
+          if (seq.charAt(j) == prevChar) {
+            ++count;
+          }
+          else {
+            sb.append(count);
+            sb.append(prevChar);
+            count = 1;
+            prevChar = seq.charAt(j);
+          }
+        }
+        seq.append(count);
+        seq.append(prevChar);
+        seq = sb;
+      }
+      return seq.toString();
+    }
+    
+  }
+  
+  public static void main(String[] args) {
+    Solution2 solution = new Solution2();
+    solution.countAndSay(3);
+  }
+  
 }
