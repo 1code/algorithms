@@ -12,6 +12,9 @@ public class Pow {
     public double pow(double x, int n) {
       // Start typing your Java solution below
       // DO NOT write main() function
+      if (n == Integer.MIN_VALUE) {
+        return Math.abs(x) == 1? 1 : 0;
+      }
       boolean isPositive = n > 0;
       n = Math.abs(n);
       // right shift index each time
@@ -37,6 +40,10 @@ public class Pow {
       if (n == 0) {
         return 1;
       }
+      else if (n == Integer.MIN_VALUE) {
+        return Math.abs(x) == 1? 1 : 0;
+      }
+      
       boolean isPositive = n > 0;
       n = Math.abs(n);
       double res = pow(x, n / 2);
