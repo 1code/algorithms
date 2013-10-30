@@ -93,21 +93,4 @@ public class LCS {
     return sb.reverse().toString();
   }
   
- public static void main(String[] args) {
-   p("1 2 3 4 5");
- }
- 
- public static void p(String line) {
-   String[] tokens = line.split(" ");
-   for (int i = tokens.length - 1; i >= 0; i -= 2) {
-     System.out.print(tokens[i]);
-     if (i != 0 && i != 1) {
-       System.out.print(" ");
-     }
-     else {
-       System.out.println();
-     }
-   }
- }
-  
 }
