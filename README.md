@@ -12,7 +12,7 @@ Organization:
 * recursive: the popular recursive problem, excluding the problems in cc150 and lc
 
 Problem List: 
-= basic
+## basic
 * binary search
 * binary tree
 * binary search tree (BST)
