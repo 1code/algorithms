@@ -34,13 +34,13 @@ public class WordSearch {
     }
     
     private boolean search(char[][] board, String word, int idx, int i, int j, boolean[][] visited) {
-      if (idx == word.length() - 1) {
-        return true;
-      }
-      
       char ch = word.charAt(idx);
       if (board[i][j] != ch) {
         return false;
+      }
+      
+      if (idx == word.length() - 1) {  // already the last character
+        return true;
       }
       
       visited[i][j] = true;

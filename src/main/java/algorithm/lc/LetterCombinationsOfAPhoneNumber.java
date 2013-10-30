@@ -38,23 +38,17 @@ public class LetterCombinationsOfAPhoneNumber {
       ArrayList<String> res = new ArrayList<String>();
       res.add("");
       for (int i = 0; i < number.length(); ++i) {
-        res = expand(res, number.charAt(i), table);
+        ArrayList<String> newRes = new ArrayList<String>();
+        char curLetter = number.charAt(i);
+        for (String str : res) {
+          for (String chStr : table.get(curLetter)) {
+            newRes.add(str + chStr);
+          }
+        }
+        res = newRes;
       }
 
       return res;
-    }
-
-    private ArrayList<String> expand(ArrayList<String> res,
-        char curLetter, Map<Character, String[]> table) {
-      ArrayList<String> newRes = new ArrayList<String>();
-
-      for (String str : res) {
-        for (String chStr : table.get(curLetter)) {
-          newRes.add(str + chStr);
-        }
-      }
-
-      return newRes;
     }
   }
 }
