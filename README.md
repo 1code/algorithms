@@ -1,7 +1,7 @@
-interview
+Algorithms
 =========
 
-Include the test-cases and the sketch of the algorithms for the interview questions.
+Include the test-cases and the sketch of the algorithms for the interview algorithm questions.
 
 Organization:
 
