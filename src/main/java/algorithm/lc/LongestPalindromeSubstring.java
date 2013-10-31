@@ -16,7 +16,7 @@ public class LongestPalindromeSubstring {
           // DO NOT write main() function
       String res = "";
       for (int i = 0; i < s.length(); ++i) {
-        String palindrome1 = expand(s, i, i); // center is in the middle of two characters
+        String palindrome1 = expand(s, i, i); // center is between two characters
         res = res.length() >= palindrome1.length()? res : palindrome1;
         if (i < s.length() - 1) {
           String palindrome2 = expand(s, i, i + 1); // center is the middle two characters
