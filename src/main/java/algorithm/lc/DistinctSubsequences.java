@@ -18,35 +18,34 @@ public class DistinctSubsequences {
 
   public class Solution {
     // use 2D DP, 
-    //           /  res[i][j - 1]   , if S.charAt(i - 1) == T.charAt(j - 1)
+    //           /  res[i][j - 1]   , if S.charAt(i - 1) != T.charAt(j - 1)
     // res[i][j]  
-    //           \  res[i][j - 1] + res[i - 1][j - 1], if S.charAt(i - 1) != T.charAt(j - 1)
+    //           \  res[i][j - 1] + res[i - 1][j - 1], if S.charAt(i - 1) == T.charAt(j - 1)
     public int numDistinct(String S, String T) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      if (S == null || T == null || T.length() > S.length()) {
+      // IMPORTANT: Please reset any member data you declared, as
+      // the same Solution instance will be reused for each test case.
+      if (T == null || S == null || T.length() > S.length()) {
         return 0;
       }
-      
-      int[][] res = new int[T.length() + 1][S.length() + 1];
-      for (int i = 0; i <= S.length(); ++i) {
-        res[0][i] = 1;
-      }
-      for (int i = 1; i <= T.length(); ++i) {
-        res[i][0] = 0;
-      }
-      
-      for (int i = 1; i <= T.length(); ++i) {
-        for (int j = i; j <= S.length(); ++j) {
-          if (T.charAt(i - 1) == S.charAt(j - 1)) {
-            res[i][j] = res[i][j - 1] + res[i - 1][j - 1];
-          }
-          else {
-            res[i][j] = res[i][j - 1];
+
+      int[][] distinct = new int[T.length() + 1][S.length() + 1];
+
+      for (int i = 0; i < distinct.length; ++i) {
+        for (int j = i; j < distinct[i].length; ++j) {
+          if (i == 0 && j == 0) {
+            distinct[i][j] = 1;
+          } else if (i == 0) {
+            distinct[i][j] = distinct[i][j - 1];
+          } else {
+            distinct[i][j] = distinct[i][j - 1];
+            if (T.charAt(i - 1) == S.charAt(j - 1)) {
+              distinct[i][j] += distinct[i - 1][j - 1];
+            }
           }
         }
       }
-      return res[T.length()][S.length()];
+
+      return distinct[T.length()][S.length()];
     }
   }
 
