@@ -47,6 +47,29 @@ File Organization:
 * sort the elements in stack in ascending order
 * animal shelter
 
+### [chapter 4](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4)
+* is balanced binary tree
+* check whether route exists in a directed graph (needs improvement)
+* create minimal height binary tree
+* traverse binary tree by level (needs improvement)
+* validate binary search tree
+* find the next node of binary tree
+* lowest common ancestor
+* check whether a tree is a sub-tree of another tree
+* find all paths in a binary tree that sum to a specific value (needs improvement)
+
+### [chapter 5](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5)
+
+### [chapter 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7)
+
+### [chapter 9](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9)
+
+### [chapter 11](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11)
+
+### [chapter 17](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter17)
+
+### [chapter 18](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter18)
+
 ## dp
 * longest increasing subsequences
 
