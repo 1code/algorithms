@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class Question9 {
 
-  // this question is available at leetcode, question Path Sum II
   public static class TreeNode {
     public int val;
     public TreeNode left;

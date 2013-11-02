@@ -30,13 +30,12 @@ public class Question3 {
   private TreeNode buildTree(int[] num, int first, int last) {
     if (first > last) {
       return null;
-    } else if (first == last) {
-      return new TreeNode(num[first]);
+    } else {
+      int mid = (first + last) / 2;
+      TreeNode node = new TreeNode(num[mid]);
+      node.left = buildTree(num, first, mid - 1);
+      node.right = buildTree(num, mid + 1, last);
+      return node;
     }
-    int mid = (first + last) / 2;
-    TreeNode node = new TreeNode(num[mid]);
-    node.left = buildTree(num, first, mid - 1);
-    node.right = buildTree(num, mid + 1, last);
-    return node;
   }
 }
