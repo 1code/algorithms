@@ -16,6 +16,10 @@ Problem List:
 * binary search
 * binary tree
 * binary search tree (BST)
+* +-*/ expression calculation
+
+## dp
+* longest increasing subsequences
 
 ## recursive
 * lowest common ancestor (node with parent pointer and node with left/right children pointers)
