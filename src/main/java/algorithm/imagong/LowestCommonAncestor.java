@@ -6,8 +6,7 @@ public class LowestCommonAncestor {
     public NodeWithParent parent;
     public int val;
     
-    public NodeWithParent(NodeWithParent parent, int val) {
-      this.parent = parent;
+    public NodeWithParent(int val) {
       this.val = val;
     }
   }

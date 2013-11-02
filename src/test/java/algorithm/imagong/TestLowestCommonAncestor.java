@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import algorithm.imagong.LowestCommonAncestor.NodeWithParent;
 import algorithm.imagong.LowestCommonAncestor.TreeNode;
 
 
@@ -53,6 +54,52 @@ public class TestLowestCommonAncestor {
     assertEquals(three, lca.lcaRecursive(one, six, eight));
     
     assertEquals(three, lca.lcaRecursive(one, three, nine));
+  }
+  
+  /**
+   *         1
+   *       /   \
+   *      2     3
+   *     / \   / \
+   *    4   5 6   7
+   *             / \
+   *            8   9
+   */
+  @Test
+  public void testLCAWithParent() {
+    NodeWithParent one = new NodeWithParent(1);
+    NodeWithParent two = new NodeWithParent(2);
+    NodeWithParent three = new NodeWithParent(3);
+    NodeWithParent four = new NodeWithParent(4);
+    NodeWithParent five = new NodeWithParent(5);
+    NodeWithParent six = new NodeWithParent(6);
+    NodeWithParent seven = new NodeWithParent(7);
+    NodeWithParent eight = new NodeWithParent(8);
+    NodeWithParent nine = new NodeWithParent(9);
+    
+    two.parent = one;
+    three.parent = one;
+    four.parent = two;
+    five.parent = two;
+    six.parent = three;
+    seven.parent = three;
+    eight.parent = seven;
+    nine.parent = seven;
+    
+    LowestCommonAncestor lca = new LowestCommonAncestor();
+    assertEquals(one, lca.lca(one, two));
+    assertEquals(one, lca.lca(one, five));
+    assertEquals(one, lca.lca(one, nine));
+    assertEquals(one, lca.lca(two, six));
+    assertEquals(one, lca.lca(two, seven));
+    
+    assertEquals(two, lca.lca(four, five));
+    assertEquals(four, lca.lca(four, four));
+    assertEquals(three, lca.lca(three, six));
+    
+    assertEquals(three, lca.lca(six, eight));
+    assertEquals(three, lca.lca(six, nine));
+    assertEquals(one, lca.lca(four, nine));
   }
 
 }
