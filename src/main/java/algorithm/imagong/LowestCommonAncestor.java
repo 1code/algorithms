@@ -1,4 +1,4 @@
-package algorithm.basic;
+package algorithm.imagong;
 
 public class LowestCommonAncestor {
   
@@ -12,9 +12,13 @@ public class LowestCommonAncestor {
     }
   }
   
-  public static class Node {
-    public Node left;
-    public Node right;
+  public static class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    public TreeNode(int val) {
+      this.val = val;
+    }
   }
   
   private int depth(NodeWithParent node) {
@@ -56,16 +60,16 @@ public class LowestCommonAncestor {
     return node1;
   }
   
-  public Node lcaRecursive(Node root, Node left, Node right) {
+  public TreeNode lcaRecursive(TreeNode root, TreeNode left, TreeNode right) {
     if (root == null) {
       return null;
     }
     if (root == left || root == right) {
       return root;
     }
-    Node lcaLeft = lcaRecursive(root.left, left, right);
-    Node lcaRight = lcaRecursive(root.right, left, right);
-    if (lcaLeft == null && lcaRight == null) {
+    TreeNode lcaLeft = lcaRecursive(root.left, left, right); 
+    TreeNode lcaRight = lcaRecursive(root.right, left, right);  
+    if (lcaLeft != null && lcaRight != null) { // both sides find either p or q
       return root;
     }
     return lcaLeft != null? lcaLeft : lcaRight;

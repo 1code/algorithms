@@ -36,7 +36,7 @@ public class WildcardMatching {
   }
 
   // O(mn) space, O(mn) time
-  public class SolutionDP {
+  public static class SolutionDP {
     public boolean isMatch(String s, String p) {
       // Start typing your Java solution below
       // DO NOT write main() function
@@ -56,10 +56,9 @@ public class WildcardMatching {
       for (int i = 1; i < m + 1; ++i) {
         for (int j = 1; j < n + 1; ++j) {
           if (p.charAt(j - 1) == '*') {
-            match[i][j] = match[i][j - 1] // current * matches empty
-                || match[i - 1][j - 1] // current * matches current
-                || match[i - 1][j]; // current * matches previous and current
-                                    // characters
+            match[i][j] = match[i][j - 1] // * matches empty
+                || match[i - 1][j - 1]; // * matches current
+                //|| match[i - 1][j]; // * matches previous and current
           } else if (p.charAt(j - 1) == '?') {
             match[i][j] = match[i - 1][j - 1]; // matches any single character
           } else { // specific character
@@ -75,7 +74,7 @@ public class WildcardMatching {
 
   // O(n) space, O(mn) time
   // use 2D DP + Sliding Window
-  public class SolutionDPSlidingWindow {
+  public static class SolutionDPSlidingWindow {
     public boolean isMatch(String s, String p) {
       // Start typing your Java solution below
       // DO NOT write main() function
@@ -115,7 +114,7 @@ public class WildcardMatching {
     }
   }
 
-  class Solution { 
+  static class Solution { 
     public boolean isMatch(String s, String p) { 
           // Start typing your Java solution below 
           // DO NOT write main() function 
@@ -142,11 +141,11 @@ public class WildcardMatching {
           oldPs = ps;
           oldPp = pp;
           metStar = true;
-          ++pp;
+          ++pp; // use * to match nothing
         }
         else { // no more pattern
           if (metStar) { // restore from previous 
-            ++oldPs; // use previous star to match
+            ++oldPs; // use previous star to match previous character
             ps = oldPs;
             pp = oldPp;
             ++pp;
@@ -159,5 +158,13 @@ public class WildcardMatching {
       
     } 
   };
+  
+  public static void main(String[] args) {
+    String s = "abcsda";
+    String p = "??*d?";
+    
+    SolutionDP sol = new SolutionDP();
+    System.out.println(sol.isMatch(s, p));
+  }
 
 }
