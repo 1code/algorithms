@@ -58,15 +58,15 @@ File Organization:
 * [animal shelter](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question7.java)
 
 ### [chapter 4](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4)
-* is balanced binary tree
-* check whether route exists in a directed graph (needs improvement)
-* create minimal height binary tree
-* traverse binary tree by level (needs improvement)
-* validate binary search tree
-* find the next node of binary tree
-* lowest common ancestor
-* check whether a tree is a sub-tree of another tree
-* find all paths in a binary tree that sum to a specific value (needs improvement)
+* [validate balanced binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question1.java)
+* [check whether route exists in a directed graph (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question2.java)
+* [create minimal height binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question3.java)
+* [traverse binary tree by level (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question4.java)
+* [validate binary search tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question5.java)
+* [link the next sibling of binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question6.java)
+* [lowest common ancestor (LCA)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question7.java)
+* [sub-tree matching](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question8.java)
+* [find all paths in a binary tree that sum to a specific value (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question9.java)
 
 ### [chapter 5](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5)
 
