@@ -2,6 +2,12 @@ package algorithm.basic;
 
 public class BinarySearch {
   
+  /**
+   * The version in JDK. If no answer found, return (-(insertion point) - 1).
+   * @param A
+   * @param target
+   * @return
+   */
   public int binarySearch(int[] A, int target) {
     int start = 0, end = A.length - 1;
     while (start <= end) {
