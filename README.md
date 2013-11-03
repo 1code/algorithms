@@ -93,6 +93,10 @@ File Organization:
 
 ### [chapter 18](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter18)
 
+
+## [lc](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/lc)
+
+
 ## [dp](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/dp)
 * [longest common substring (LCA)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/dp/LCS.java)
 * [longest increasing subsequences (LIS)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/dp/LongestIncreasingSubsequence.java)
