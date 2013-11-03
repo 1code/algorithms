@@ -13,10 +13,20 @@ File Organization:
 
 #Problem List: 
 ## [basic](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/baisic)
-* binary search
-* binary tree
-* binary search tree (BST)
-* +-*/ expression calculation
+* [binary search](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BinarySearch.java)
+* [binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BinaryTree.java)
+* [binary search tree (BST)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BST.java)
+* [+-*/ expression calculation](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/ExpressionCalculate.java)
+* [bubble sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BubbleSort.java)
+* [counting sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/CountingSort.java)
+* [find the kth smallest](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/FindKth.java)
+* [heap sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/HeapSort.java)
+* [insertion sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/InsertionSort.java)
+* [quick sort iterative](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/QuickSortIterative.java)
+* [quick sort recursive](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/QuickSortRecursive.java)
+* [random shuffle](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/RandomShuffle.java)
+* [selection sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/SelectionSort.java)
+* [union find](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/UnionFind.java)
 
 ## cc150
 ### [chapter 1](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1)
