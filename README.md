@@ -29,7 +29,7 @@ File Organization:
 * [union find](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/UnionFind.java)
 
 ## cc150
-### [chapter 1](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1)
+### [chapter 1 (Array)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1)
 * [all unique character](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question1.java)
 * [reverse string](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question2.java)
 * [whether one string is the permutation of the other](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question3.java)
@@ -39,7 +39,7 @@ File Organization:
 * [set matrix zeros](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question7.java)
 * [check string rotation using substring](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question8.java)
 
-### [chapter 2](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2)
+### [chapter 2 (Linked List)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2)
 * [remove duplicate from unsorted linked list](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question1.java)
 * [find the kth to the last from a singly linked list (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question2.java)
 * [delete the middle element from linked list (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question3.java)
@@ -48,7 +48,7 @@ File Organization:
 * [detect the begining of the loop](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question6.java)
 * [check whether a linked list is a palindrome (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question7.java)
 
-### [chapter 3](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3)
+### [chapter 3 (Stack and Queue)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3)
 * [use an array to implement three stacks (not implemented)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question1.java)
 * [add 'push', 'pop', and 'min' operations for stack, all operations should be in O(1)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question2.java)
 * [set of stacks](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question3.java)
@@ -57,7 +57,7 @@ File Organization:
 * [sort the elements in stack in ascending order](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question6.java)
 * [animal shelter](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question7.java)
 
-### [chapter 4](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4)
+### [chapter 4 (Tree and Graph)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4)
 * [validate balanced binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question1.java)
 * [check whether route exists in a directed graph (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question2.java)
 * [create minimal height binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question3.java)
@@ -68,7 +68,7 @@ File Organization:
 * [sub-tree matching](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question8.java)
 * [find all paths in a binary tree that sum to a specific value (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question9.java)
 
-### [chapter 5](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5)
+### [chapter 5 (Bit Operation)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5)
 * [insert bits M into N](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question1.java)
 * [represent double in binary](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question2.java)
 * [next number with same number of 1](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question3.java)
@@ -76,7 +76,14 @@ File Organization:
 * [swap odd and even bits in an integer](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question6.java)
 * [find missing number with fetch operation](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question7.java)
 
-### [chapter 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7)
+### [chapter 7 (Mathematic)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7)
+* [Choose game](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question1.java)
+* [probability of collision](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question2.java)
+* [line intersection](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question3.java)
+* [implement -, *, / with + only](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question4.java)
+* [find line that evenly cuts two squares](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question5.java)
+* [line passes the most points](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question6.java)
+* [find the kth number consists of 3, 5, 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question7.java)
 
 ### [chapter 9](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9)
 
