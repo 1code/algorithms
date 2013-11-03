@@ -40,22 +40,22 @@ File Organization:
 * [check string rotation using substring](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question8.java)
 
 ### [chapter 2](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2)
-* remove duplicate from unsorted linked list
-* find the kth to the last from a singly linked list (needs improvement)
-* delete the middle element from linked list (needs improvement)
-* partition list
-* add numbers
-* detect the begining of the loop
-* check whether a linked list is a palindrome (needs improvement)
+* [remove duplicate from unsorted linked list](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question1.java)
+* [find the kth to the last from a singly linked list (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question2.java)
+* [delete the middle element from linked list (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question3.java)
+* [partition list](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question4.java)
+* [add numbers](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question5.java)
+* [detect the begining of the loop](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question6.java)
+* [check whether a linked list is a palindrome (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2/Question7.java)
 
 ### [chapter 3](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3)
-* use an array to implement three stacks (not implemented)
-* add 'push', 'pop', and 'min' operations for stack, all operations should be in O(1)
-* set of stacks
-* hanoi
-* implement a queue with two stacks
-* sort the elements in stack in ascending order
-* animal shelter
+* [use an array to implement three stacks (not implemented)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question1.java)
+* [add 'push', 'pop', and 'min' operations for stack, all operations should be in O(1)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question2.java)
+* [set of stacks](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question3.java)
+* [hanoi](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question4.java)
+* [implement a queue with two stacks](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question5.java)
+* [sort the elements in stack in ascending order](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question6.java)
+* [animal shelter](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter3/Question7.java)
 
 ### [chapter 4](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4)
 * is balanced binary tree
