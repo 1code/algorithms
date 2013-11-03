@@ -12,7 +12,7 @@ File Organization:
 * recursive: the popular recursive problem, excluding the problems in cc150 and lc
 
 #Problem List: 
-## [basic](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/baisic)
+## [basic](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic)
 * [binary search](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BinarySearch.java)
 * [binary tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BinaryTree.java)
 * [binary search tree (BST)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BST.java)
@@ -30,14 +30,14 @@ File Organization:
 
 ## cc150
 ### [chapter 1](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1)
-* all unique character
-* reverse string
-* whether one string is the permutation of the other
-* replace blank space with '%20'
-* run length encoding
-* rotate image in place
-* set matrix zeros
-* check string rotation using substring
+* [all unique character](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question1.java)
+* [reverse string](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question2.java)
+* [whether one string is the permutation of the other](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question3.java)
+* [replace blank space with '%20'](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question4.java)
+* [run-length encoding](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question5.java)
+* [rotate image in place](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question6.java)
+* [set matrix zeros](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question7.java)
+* [check string rotation using substring](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter1/Question8.java)
 
 ### [chapter 2](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter2)
 * remove duplicate from unsorted linked list
