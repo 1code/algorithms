@@ -85,7 +85,7 @@ File Organization:
 * [line passes the most points](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question6.java)
 * [find the kth number consists of 3, 5, 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question7.java)
 
-### [chapter 9](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9)
+### [chapter 9 (Dynamic Programming)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9)
 
 ### [chapter 11](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11)
 
