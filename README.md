@@ -69,6 +69,12 @@ File Organization:
 * [find all paths in a binary tree that sum to a specific value (needs improvement)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter4/Question9.java)
 
 ### [chapter 5](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5)
+* [insert bits M into N](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question1.java)
+* [represent double in binary](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question2.java)
+* [next number with same number of 1](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question3.java)
+* [number of bits different between A and B](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question5.java)
+* [swap odd and even bits in an integer](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question6.java)
+* [find missing number with fetch operation](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter5/Question7.java)
 
 ### [chapter 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7)
 
@@ -80,8 +86,9 @@ File Organization:
 
 ### [chapter 18](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter18)
 
-## dp
-* longest increasing subsequences
+## [dp](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/dp)
+* [longest common substring (LCA)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/dp/LCS.java)
+* [longest increasing subsequences (LIS)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/dp/LongestIncreasingSubsequence.java)
 
 ## recursive
 * lowest common ancestor (node with parent pointer and node with left/right children pointers)
