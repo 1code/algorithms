@@ -1,5 +1,10 @@
 package algorithm.recursive;
 
+/**
+ * The classical hanoi problem. 
+ *
+ * O(2^n) time
+ */
 public class Hanoi {
   
   public void hanoi(int numOfPlates) {

@@ -1,4 +1,4 @@
-package algorithm.imagong;
+package algorithm.recursive;
 
 public class LowestCommonAncestor {
   
@@ -31,6 +31,7 @@ public class LowestCommonAncestor {
   
   /**
    * Find LCA for nodes with only parent pointer.
+   * O(h) time, where h is the height of the tree
    * @param node1
    * @param node2
    * @return
@@ -59,6 +60,13 @@ public class LowestCommonAncestor {
     return node1;
   }
   
+  /**
+   * O(n) time, where n is the size of the tree.
+   * @param root
+   * @param left
+   * @param right
+   * @return
+   */
   public TreeNode lcaRecursive(TreeNode root, TreeNode left, TreeNode right) {
     if (root == null) {
       return null;

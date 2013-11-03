@@ -4,8 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import algorithm.imagong.LowestCommonAncestor.NodeWithParent;
-import algorithm.imagong.LowestCommonAncestor.TreeNode;
+import algorithm.recursive.LowestCommonAncestor;
+import algorithm.recursive.LowestCommonAncestor.NodeWithParent;
+import algorithm.recursive.LowestCommonAncestor.TreeNode;
 
 
 public class TestLowestCommonAncestor {
