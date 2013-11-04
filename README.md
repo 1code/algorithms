@@ -100,11 +100,13 @@ File Organization:
 
 ## [imagong](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/imagong)
 * [edit distance II](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/imagong/EditDistanceII.java)
-* [lowest common ancestor](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/imagong/LowestCommonAncestor.java)
 * [reverse polish](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/imagong/ReversePolish.java)
 * [generate reverse polish](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/imagong/GenerateReversePolish.java)
+* [LCA of binary search tree](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/imagong/LCAofBST.java)
 
 ## [lc](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/lc)
 * [Add Binary](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/lc/AddBinary.java)
 * [Add Two Numbers](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/lc/AddTwoNumbers.java)
 
+## [recursive](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/recursive)
+* [lowest common ancestor](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/recursive/LowestCommonAncestor.java)
