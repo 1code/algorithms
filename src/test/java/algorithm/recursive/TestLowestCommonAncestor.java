@@ -1,4 +1,4 @@
-package algorithm.imagong;
+package algorithm.recursive;
 
 import static org.junit.Assert.assertEquals;
 
