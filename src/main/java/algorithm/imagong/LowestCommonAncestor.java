@@ -1,4 +1,4 @@
-package algorithm.recursive;
+package algorithm.imagong;
 
 public class LowestCommonAncestor {
   
