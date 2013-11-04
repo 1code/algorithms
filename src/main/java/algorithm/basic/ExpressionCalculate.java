@@ -36,6 +36,7 @@ public class ExpressionCalculate {
         } while (cur != '(');
       }
       else if (ch == '+' || ch == '-') {
+        // pop until the top has no priority
         while (!stack.isEmpty() && (stack.peek() == '*' || stack.peek() == '/')) {
           sb.append(stack.pop());
         }

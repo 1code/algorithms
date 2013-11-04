@@ -8,10 +8,10 @@ import algorithm.TestBase;
 
 public class TestReversePolish extends TestBase {
 
+  private ReversePolish.Solution sol;
   @Override
   protected void initInstance() {
-    // TODO Auto-generated method stub
-    
+    sol = new ReversePolish.Solution();
   }
 
   @Override
@@ -24,8 +24,6 @@ public class TestReversePolish extends TestBase {
     };
     
     double[] res = {-2, 7, 99};
-    
-    ReversePolish.Solution sol = new ReversePolish.Solution();
     
     for (int i = 0; i < sample.length; ++i) {
       assertEquals(res[i], sol.calculateRPNotation(sample[i]), 0.000001);
