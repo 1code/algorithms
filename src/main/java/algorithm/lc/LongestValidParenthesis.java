@@ -25,21 +25,21 @@ public class LongestValidParenthesis {
       // DO NOT write main() function
       int start = Integer.MAX_VALUE;
       int maxLen = 0;
-      Stack<Integer> stack = new Stack<Integer>();
+      Stack<Integer> leftPos = new Stack<Integer>();
       for (int i = 0; i < s.length(); ++i) {
         char ch = s.charAt(i);
         if (ch == '(') {
-          stack.push(i); // record candidate start
+          leftPos.push(i); // record candidate start
         } else { // meet ')'
-          if (stack.isEmpty()) { 
+          if (leftPos.isEmpty()) { 
             start = i + 1;  // all previous characters become invalid, start from scratch
           } else {
-            start = Math.min(start, stack.pop());
+            start = Math.min(start, leftPos.pop());
             int curLen = 0;
-            if (stack.isEmpty()) {
+            if (leftPos.isEmpty()) {
               curLen = i - start + 1;
             } else {
-              curLen = i - stack.peek();
+              curLen = i - leftPos.peek();
             }
             maxLen = Math.max(maxLen, curLen);
           }
