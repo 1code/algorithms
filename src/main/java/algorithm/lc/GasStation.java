@@ -24,8 +24,8 @@ public class GasStation {
       int start = 0, total = 0, remain = 0;
 
       for (int i = 0; i < gas.length; ++i) {
-        remain = gas[i] - cost[i];
-        total = gas[i] - cost[i];
+        remain += gas[i] - cost[i];
+        total += gas[i] - cost[i];
         if (remain < 0) {
           start = i + 1; // i cannot reach to i + 1
           remain = 0;
