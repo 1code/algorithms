@@ -19,6 +19,7 @@ File Organization:
 * [binary search tree (BST)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BST.java)
 * [+-*/ expression calculation](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/ExpressionCalculate.java)
 * [bubble sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BubbleSort.java)
+* [data structure that supports O(1) add, del, and getRandom](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/ConstantTimeDS.java)
 * [counting sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/CountingSort.java)
 * [find the kth smallest](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/FindKth.java)
 * [hashmap](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/HashMap.java)
