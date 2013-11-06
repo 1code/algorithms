@@ -93,7 +93,12 @@ File Organization:
 * [climbing stairs](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question1.java)
 * [unique paths](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question2.java)
 * [find the magic index](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question3.java)
-* []
+* [generate all permutations](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question5.java)
+* [generate parenthesis](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question6.java)
+* [paint fill](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question7.java)
+* [find changes](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question8.java)
+* [eight queens](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question9.java)
+* [tallest stack](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question10.java)
 
 ### [chapter 11](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11)
 * [merge two arrays](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question1.java)
