@@ -90,8 +90,18 @@ File Organization:
 * [find the kth number consists of 3, 5, 7](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter7/Question7.java)
 
 ### [chapter 9 (Dynamic Programming)](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9)
+* [climbing stairs](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question1.java)
+* [unique paths](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question2.java)
+* [find the magic index](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question3.java)
+* []
 
 ### [chapter 11](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11)
+* [merge two arrays](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question1.java)
+* [anagram](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question2.java)
+* [search in rotated array](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question3.java)
+* [find string in an empty string interspersed array](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question5.java)
+* [find element in sorted matrix](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question6.java)
+* [get the rank of elements in stream](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter11/Question8.java)
 
 ### [chapter 17](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter17)
 
