@@ -20,7 +20,6 @@ File Organization:
 * [+-*/ expression calculation](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/ExpressionCalculate.java)
 * [bubble sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BubbleSort.java)
 * [data structure that supports O(1) add, del, and getRandom](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/ConstantTimeDS.java)
-* [closest element in BST](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/CloestInBST.java)
 * [counting sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/CountingSort.java)
 * [find the kth smallest](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/FindKth.java)
 * [hashmap](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/HashMap.java)
@@ -30,6 +29,7 @@ File Organization:
 * [quick sort recursive](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/QuickSortRecursive.java)
 * [random shuffle](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/RandomShuffle.java)
 * [selection sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/SelectionSort.java)
+* [subarray with sum zero](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/SubarrayWithSumZero.java)
 * [union find](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/UnionFind.java)
 
 ## cc150
@@ -113,3 +113,4 @@ File Organization:
 
 ## [recursive](https://github.com/yxjiang/algorithms/tree/master/src/main/java/algorithm/recursive)
 * [lowest common ancestor](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/recursive/LowestCommonAncestor.java)
+* [closest element in BST](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/recursive/CloestInBST.java)
