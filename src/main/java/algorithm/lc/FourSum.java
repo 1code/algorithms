@@ -27,51 +27,52 @@ public class FourSum {
       // DO NOT write main() function
       Arrays.sort(num);
       ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-
+      
       for (int i = 0; i < num.length - 3; ++i) {
-        if (i > 0 && num[i] == num[i - 1]) {
+        if (i > 0 && num[i] == num[i - 1]) { // skip duplicate
           continue;
         }
         for (int j = i + 1; j < num.length - 2; ++j) {
-          if (j > i + 1 && num[j] == num[j - 1]) {
-            continue;
+          if (j > i + 1 && num[j] == num[j - 1]) { // skip duplicate
+            continue; 
           }
           int k = j + 1;
           int l = num.length - 1;
-
           while (k < l) {
             int sum = num[i] + num[j] + num[k] + num[l];
-            if (sum == target) {
-              if (k > j + 1 && num[k] == num[k - 1]) {
-                ++k;
-                continue;
-              }
-              if (l < num.length - 1 && num[l] == num[l + 1]) {
-                --l;
-                continue;
-              }
-              ArrayList<Integer> quad = new ArrayList<Integer>();
-              quad.add(num[i]);
-              quad.add(num[j]);
-              quad.add(num[k]);
-              quad.add(num[l]);
-              res.add(quad);
-              --l;
+            if (sum < target) {
               ++k;
-            } else if (sum > target) {
-              do {
-                --l;
-              } while (k < l && num[l] == num[l + 1]);
-            } else {
-              do {
+              while (k > j + 1 && k < l && num[k] == num[k - 1]) { // skip duplicate
                 ++k;
-              } while (k < l && num[k] == num[k - 1]);
+              }
             }
+            else if (sum > target) {
+              --l;
+              while (k < l && num[l] == num[l + 1]) {  // skip duplicate
+                --l;
+              }
+            }
+            else {
+              ArrayList<Integer> sol = new ArrayList<Integer>();
+              sol.add(num[i]);
+              sol.add(num[j]);
+              sol.add(num[k]);
+              sol.add(num[l]);
+              res.add(sol);
+              ++k;
+              --l;
+              while (k > j + 1 && k < l && num[k] == num[k - 1]) { // skip duplicate
+                ++k;
+              }
+              while (k < l && num[l] == num[l + 1]) {  // skip duplicate
+                --l;
+              }
+            }
+            
           }
-
         }
       }
-
+      
       return res;
     }
   }
