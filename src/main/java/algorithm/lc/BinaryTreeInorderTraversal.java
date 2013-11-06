@@ -47,9 +47,10 @@ public class BinaryTreeInorderTraversal {
         }
         
         TreeNode next = stack.pop();
+        res.add(next.val);
+        
         // push right
         cur = next.right;
-        res.add(next.val);
       }
       
       return res;
