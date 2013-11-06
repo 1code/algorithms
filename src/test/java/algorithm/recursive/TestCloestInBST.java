@@ -1,10 +1,11 @@
-package algorithm.basic;
+package algorithm.recursive;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import algorithm.basic.CloestInBST.TreeNode;
+import algorithm.recursive.CloestInBST;
+import algorithm.recursive.CloestInBST.TreeNode;
 
 /**
  * 
