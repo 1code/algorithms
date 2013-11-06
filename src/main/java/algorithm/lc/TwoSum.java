@@ -24,13 +24,11 @@ public class TwoSum {
       // DO NOT write main() function
       Map<Integer, Integer> map = new HashMap<Integer, Integer>();
       for (int i = 0; i < numbers.length; ++i) {
-        map.put(numbers[i], i + 1);
-      }
-      for (int i = 0; i < numbers.length; ++i) {
-        Integer idx = map.get(target - numbers[i]);
-        if (idx != null) {
-          return new int[] { Math.min(i + 1, idx), Math.max(i + 1, idx) };
+        Integer other = map.get(target - numbers[i]);
+        if (other != null) {
+          return new int[] {other, i};
         }
+        map.put(numbers[i], i + 1);
       }
       return null;
     }
