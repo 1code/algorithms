@@ -1,6 +1,7 @@
 package algorithm.basic;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -9,7 +10,7 @@ public class TestHashMap {
   
   @Test
   public void testHashMap() {
-    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    OpenAddressHashMap<Integer, Integer> map = new OpenAddressHashMap<Integer, Integer>();
     map.put(100, 200);
     map.put(200, 300);
     assertEquals(200, map.get(100).intValue());
@@ -20,7 +21,9 @@ public class TestHashMap {
     assertEquals(3, map.get(100).intValue());
     map.put(100, 5);
     assertEquals(5, map.get(100).intValue());
-    
+    map.put(500, 20);
+    assertEquals(20, map.get(500).intValue());
+    assertFalse(200 == map.get(100).intValue());
   }
 
 }

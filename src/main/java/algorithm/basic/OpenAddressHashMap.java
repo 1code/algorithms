@@ -8,7 +8,7 @@ import java.util.List;
  * Collion is resolved by list. 
  *
  */
-public class HashMap<K extends Comparable<K>, V> {
+public class OpenAddressHashMap<K extends Comparable<K>, V> {
   
   private class Entry<K, V> {
     private K key;
@@ -23,14 +23,14 @@ public class HashMap<K extends Comparable<K>, V> {
   private List<Entry<K, V>>[] array;
   private int capacity = 100;
   
-  public HashMap(int capacity) {
+  public OpenAddressHashMap(int capacity) {
     if (capacity > this.capacity) {
       this.capacity = capacity;
     }
     this.array = new ArrayList[capacity];
   }
   
-  public HashMap() {
+  public OpenAddressHashMap() {
     this(100);
   }
 
