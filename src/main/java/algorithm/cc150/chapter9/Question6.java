@@ -12,39 +12,41 @@ import java.util.Set;
  * Implement an algorithm to print all valid (e.g., properly opened and closed)
  * combinations of n-pairs of parentheses.
  */
-// O(n^2) space, O(n^2) time 
+// O(2^n) space, O(2^n) time, a more strict bound is the catalan number 
 public class Question6 {
 
   // available at leetcode.com online judge, question Generate Parentheses
-  public class Solution {
+  public static class Solution {
     public ArrayList<String> generateParenthesis(int n) {
           // Start typing your Java solution below
           // DO NOT write main() function
-      Set<String> set = new HashSet<String>();
-      Queue<String> queue = new LinkedList<String>();
-      queue.add("");
-      while (!queue.isEmpty()) {
-        String seed = queue.poll();
-        if (seed.length() == n * 2 - 2) {
-          set.addAll(generate(seed));
-        }
-        else {
-          for (String str : generate(seed)){
-            queue.add(str);
-          }
-        }
-      }
-      return new ArrayList<String>(set);
+      ArrayList<String> res = new ArrayList<String>();
+      StringBuilder sb = new StringBuilder();
+      int nLeft = n;
+      int nRight = n;
+      generate(nLeft, nRight, sb, res);
+      return res;
     }
 
-    private Collection<String> generate(String seed) {
-      List<String> list = new ArrayList<String>();
-      for (int i = 0; i <= seed.length() / 2; ++i) {
-        StringBuilder sb = new StringBuilder(seed);
-        sb.insert(i, "()");
-        list.add(sb.toString());
+    private void generate(int nLeft, int nRight, StringBuilder sb, ArrayList<String> res) {
+      if (nLeft == 0 && nRight == 0) {
+        res.add(sb.toString());
+        return;
       }
-      return list;
-    }      
+      
+      if (nLeft > 0) {
+        sb.append("(");
+        generate(nLeft - 1, nRight, sb, res);
+        sb.deleteCharAt(sb.length() - 1);
+      }
+      
+      if (nRight > nLeft) {
+        sb.append(")");
+        generate(nLeft, nRight - 1, sb, res);
+        sb.deleteCharAt(sb.length() - 1);
+      }
+      
+    }
   }
+  
 }
