@@ -21,6 +21,7 @@ File Organization:
 * [bubble sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/BubbleSort.java)
 * [counting sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/CountingSort.java)
 * [find the kth smallest](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/FindKth.java)
+* [hashmap](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/HashMap.java)
 * [heap sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/HeapSort.java)
 * [insertion sort](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/InsertionSort.java)
 * [quick sort iterative](https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/basic/QuickSortIterative.java)
