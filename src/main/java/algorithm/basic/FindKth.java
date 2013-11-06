@@ -9,11 +9,13 @@ public class FindKth {
    * @param k
    * @return
    */
-  public int findKth(int[] A, int k) {
-    if (k < 0 || k >= A.length) {
+  public static int findKth(int[] A, int k) {
+    if (k <= 0 || k >= A.length) {
       throw new IllegalArgumentException(String.format(
           "k should be in range [0, %d]\n.", A.length));
     }
+    k = k - 1; // index starts from 0
+    
     int start = 0, end = A.length - 1;
 
     int pivot = -1;
@@ -29,7 +31,7 @@ public class FindKth {
     return A[pivot];
   }
 
-  private int findKth(int[] A, int k, int start, int end) {
+  private static int findKth(int[] A, int k, int start, int end) {
     int pivot = pivotHoare(A, start, end);
 
     if (pivot == k) {
