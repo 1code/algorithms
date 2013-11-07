@@ -35,59 +35,8 @@ public class InsertInterval {
     }
   }
 
-  // insert into lists and then use the same method of merge interval.
-  public class Solution {
-    public ArrayList<Interval> insert(ArrayList<Interval> intervals,
-        Interval newInterval) {
-      // Start typing your Java solution below
-      // DO NOT write main() function
-      ArrayList<Interval> res = new ArrayList<Interval>();
-      IntervalCmp comparator = new IntervalCmp();
-
-      // insert newInterval to proper location
-      int i = 0;
-      while (true) {
-        if (i == intervals.size()) {
-          break;
-        }
-        Interval interval = intervals.get(i);
-        int cmp = comparator.compare(newInterval, interval);
-        if (cmp > 0) {
-          ++i;
-        } else {
-          break;
-        }
-      }
-      intervals.add(i, newInterval);
-
-      // merge intervals
-      int start = intervals.get(0).start;
-      int end = intervals.get(0).end;
-      for (i = 1; i < intervals.size(); ++i) {
-        int curStart = intervals.get(i).start;
-        int curEnd = intervals.get(i).end;
-        if (end >= curStart) {
-          end = Math.max(end, curEnd);
-        } else {
-          res.add(new Interval(start, end));
-          start = curStart;
-          end = curEnd;
-        }
-      }
-      res.add(new Interval(start, end));
-      return res;
-    }
-
-    private class IntervalCmp implements Comparator<Interval> {
-      public int compare(Interval i1, Interval i2) {
-        int cmp = i1.start - i2.start;
-        return cmp == 0 ? i1.end - i2.end : cmp;
-      }
-    }
-  }
-
   // only one scan
-  public class Solution2 {
+  public class Solution {
     public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
           // Start typing your Java solution below
           // DO NOT write main() function
