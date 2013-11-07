@@ -26,22 +26,21 @@ public class ValidPalindrome {
         return true;
       }
       int i = 0, j = s.length() - 1;
-      char left = Character.toLowerCase(s.charAt(i));
-      char right = Character.toLowerCase(s.charAt(j));
       while (i < j) {
-        if (!Character.isLetterOrDigit(left)) {
-          left = Character.toLowerCase(s.charAt(++i));
+        while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+          ++i;
         }
-        else if (!Character.isLetterOrDigit(right)) {
-          right = Character.toLowerCase(s.charAt(--j));
+        while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+          --j;
         }
-        else if (left != right) {
+        if (i >= j) {
+          return true;
+        }
+        if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
           return false;
-        } 
-        else {
-          left = Character.toLowerCase(s.charAt(++i));
-          right = Character.toLowerCase(s.charAt(--j));
         }
+        ++i;
+        --j;
       }
       return true;
     }

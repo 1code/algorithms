@@ -11,7 +11,7 @@ package algorithm.lc;
  */
 public class FirstMissingPositive {
 
-  //O(1) space, O(n) time
+  //O(n) space, O(n) time
   public static class Solution {
     // if size of A is n, create an boolean array with size n + 1,
     // the nth elements indicate whether the number n + 1 appears
@@ -43,7 +43,9 @@ public class FirstMissingPositive {
       int i = 0;
       while (i < A.length) {
         // move A[i] to appropriate position
-        if (A[i] != i + 1 && A[i] > 0 && A[i] <= A.length && A[A[i] - 1] != A[i]) { 
+        if (A[i] > 0 && A[i] <= A.length 
+            && A[A[i] - 1] != A[i] // two swap numbers are not equal
+            && A[i] != i + 1) {  // current number is not in appropriate location
           int tmp = A[i];
           int idx = A[i] - 1;
           A[i] = A[idx];
